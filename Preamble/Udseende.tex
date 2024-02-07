@@ -1,0 +1,179 @@
+\setcounter{secnumdepth}{5}
+\bibliographystyle{Bibliografi/vancouver}
+
+\setcitestyle{square}
+
+\addto\captionsdanish{
+	\renewcommand\contentsname{Table of Contents}	
+	\renewcommand{\bibname}{References}
+}
+
+
+%HEADER
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{ \markboth{\thechapter.\ #1}{}}
+\fancyheadoffset{0pt}
+
+\lhead{\nouppercase \leftmark}
+\rhead{Aalborg University}
+
+\renewcommand{\chaptermark}[1]%
+        {\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]%
+        {\markright{\thesection\ #1}}
+
+\lfoot[\fancyplain{}{\bfseries\thepage}]%
+    {\fancyplain{}{}}
+\rfoot[\fancyplain{}{}]%
+    {\fancyplain{}{\bfseries\thepage}}
+
+
+%KAPITEL
+\patchcmd{\chapter}{plain}{fancy}{}{}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{15pt}}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{5pt}{25pt}
+
+\newmdtheoremenv{theo}{Sætning}[section]
+
+% %Sætninger, definitioner, mm.
+% \declaretheoremstyle[
+%     spaceabove=14pt, 
+%     spacebelow=6pt, 
+%     headfont=\normalfont\bfseries, 
+%     bodyfont = \normalfont,
+%     postheadspace=2mm, 
+%     headpunct={.}]{mystyle}
+
+
+% %Sætning    
+% \declaretheorem[name={Theorem}, style=mystyle,numberwithin=section]{thmx}
+% %Definition
+% \declaretheorem[name={Definition}, style=mystyle,sibling=thmx]{defn}
+% %Eksempel
+% \declaretheorem[name={Example}, style=mystyle,sibling=thmx]{exmp}
+% %Lemma
+% \declaretheorem[name={Lemma}, style=mystyle,sibling=thmx]{lem}
+% %Proposition
+% \declaretheorem[name={Proposition}, style=mystyle,sibling=thmx]{pro}
+% %Korollar
+% \declaretheorem[name={Corollary}, style=mystyle,sibling=thmx]{kor}
+
+\usepackage{framed}
+\definecolor{myGray}{HTML}{F9F9F9}
+
+%--------
+
+\renewenvironment{leftbar}[4][\hsize]
+{
+    \def\FrameCommand
+    {
+        {\color{#2}\vrule width #4pt}
+        \hspace{-8pt}
+        \fboxsep=\FrameSep\colorbox{#3}
+    }
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}
+}
+{\endMakeFramed}
+
+\usepackage{array}
+\usepackage{makecell}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lemm}[thm]{Lemma}
+\newtheorem{pro}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{eks}[thm]{Example}
+
+\usepackage{changepage}
+
+
+
+%----
+
+\newenvironment{thmx}[1]
+    {\begin{leftbar}{black}{myGray}{3}
+    \begin{thm}#1\\
+        }{
+    \end{thm}
+    \end{leftbar}
+    }
+    
+\newenvironment{prop}[1]
+    {\begin{leftbar}{black}{myGray}{3}
+    \begin{pro}#1\\
+        }{
+    \end{pro}
+    \end{leftbar}
+    }
+    
+\newenvironment{lem}[1]
+    {\begin{leftbar}{black}{myGray}{3}
+    \begin{lemm}#1\\
+        }{
+    \end{lemm}
+    \end{leftbar}
+    }
+  
+\newenvironment{defn}[1]
+    {\begin{leftbar}{black}{myGray}{3}
+    \begin{defi}#1\\
+        }{
+    \end{defi}
+    \end{leftbar}
+    }
+    
+    \newenvironment{kor}[1]
+    {\begin{leftbar}{black}{myGray}{3}
+    \begin{cor}#1\\
+        }{
+    \end{cor}
+    \end{leftbar}
+    }
+    
+\newenvironment{exmp}[1]
+    {\begin{leftbar}{gray}{white}{2}
+    \begin{eks}#1\\
+        }{
+    \end{eks}
+    \end{leftbar}
+    }
+
+
+
+%Bevis
+\newtheoremstyle{beviss}% name of the style to be used
+  {10pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {14pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {0pt}% measure of space to indent
+  {\bfseries}% name of head font
+  {.}% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  {\thmname{#1}}
+\theoremstyle{beviss}
+\newtheorem{bev}{Proof}
+\AtEndEnvironment{bev}{\null\hfill$\blacksquare$}%
+
+\makeatletter
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{-2\p@}}}{}{}
+\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{0\p@}}}{}{}
+\makeatother
+
+\titlespacing*{\subsection}
+{0pt}{1em}{1em}
+
+
+
+
