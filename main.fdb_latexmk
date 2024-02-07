@@ -1,13 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1707313802 "main.aux" "main.bbl" "main" 1707313804
+["bibtex main"] 1707313802 "main.aux" "main.bbl" "main" 1707314470
   "./Bibliografi/vancouver.bst" 1634635874 38292 e5727b3d3378e67dc2aae1e4ae3be97d ""
   "Bibliografi/Litteratur.bib" 1634635874 5900 d85da0e0683c3085d0fd8de50ae2c14c ""
   "main.aux" 1707313803 2827 cd0a49ab6c63999f722bbf8bf5b6041e "pdflatex"
   (generated)
   "main.blg"
   "main.bbl"
-  "main.blg"
-["pdflatex"] 1707313802 "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.tex" "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.pdf" "main" 1707313804
+["pdflatex"] 1707313802 "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.tex" "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.pdf" "main" 1707314470
   "/etc/texmf/web2c/texmf.cnf" 1619212389 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.aux" 1707313803 2827 cd0a49ab6c63999f722bbf8bf5b6041e ""
   "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.tex" 1707313707 289 5f79cf5acccf25cfb48f30db1d782285 ""
@@ -332,14 +331,13 @@
   "Preamble/preamble.tex" 1634635874 118 8bcbf4d5de49b174f054e2cf482c15cc ""
   "main.aux" 1707313803 2827 cd0a49ab6c63999f722bbf8bf5b6041e "pdflatex"
   "main.bbl" 1707313802 193 799c47e4a144aff6e1f271d4c9136977 "bibtex main"
-  "main.out" 1707313803 340 773030133bf5e9e8ed56134a689cdd66 "pdflatex"
+  "main.out" 1707313803 340 773030133bf5e9e8ed56134a689cdd66 ""
   "main.tex" 1707313707 289 5f79cf5acccf25cfb48f30db1d782285 ""
   "main.toc" 1707313803 515 a78f25c2dd3926714272533b3388a1a3 "pdflatex"
   (generated)
-  "main.toc"
-  "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.pdf"
-  "main.pdf"
-  "main.log"
+  "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.log"
   "main.aux"
-  "main.toc"
   "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.pdf"
+  "main.log"
+  "main.pdf"
+  "main.toc"
