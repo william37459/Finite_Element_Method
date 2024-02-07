@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.23)  9 FEB 2022 09:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.9)  7 FEB 2024 14:48
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**"/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.tex"
+(/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (./Preamble/preamble.tex (./Preamble/Pakker.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+L3 programming layer <2020-02-14> (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Preamble/preamble.tex (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Preamble/Pakker.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
 File: bk12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
@@ -44,9 +44,9 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
 Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language10) on input line 105.
+(babel)             (\language63) on input line 105.
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language10) on input line 108.
+(babel)             (\language63) on input line 108.
 )) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ) (/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
@@ -437,8 +437,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
@@ -634,8 +633,7 @@ Normal \dimen register pool exhausted, switching to extended pool.
 \pgfutil@tempdimb=\dimen257
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box59
-
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
@@ -692,8 +690,7 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 \pgfmath@toks=\toks45
 \pgfmath@stack@operand=\toks46
 \pgfmath@stack@operation=\toks47
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count340
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -765,8 +762,7 @@ File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfnodeparttextbox=\box65
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@nodesepstart=\dimen293
 \pgf@nodesepend=\dimen294
@@ -853,8 +849,7 @@ File: tikzlibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
 File: tikzlibraryangles.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tkz-berge/tkz-berge.sty
 Package: tkz-berge 2011/06/01 1.00 c tkz-berge for named graphs
@@ -862,7 +857,8 @@ Package: tkz-berge 2011/06/01 1.00 c tkz-berge for named graphs
 Package: tkz-graph 2018/09/19 ctan v 1.00 d base for graphs
  (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks50
 \XKV@tempa@toks=\toks51
 )
@@ -938,8 +934,7 @@ Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 \t@pgfplotstable@a=\toks58
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count379
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen314
 \pgfdecoratedremainingdistance=\dimen315
 \pgfdecoratedinputsegmentcompleteddistance=\dimen316
@@ -962,10 +957,9 @@ Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))) (./Preamble/Udseende.tex
+)))) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Preamble/Udseende.tex
 \c@theo=\count382
-
-(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip164
 \fb@frw=\dimen327
@@ -985,7 +979,7 @@ Package: changepage 2009/10/20 v1.0c check page and change page layout
 \cp@tempcnt=\count386
 )
 \c@bev=\count387
-) (./Preamble/Commands.tex) (./Preamble/Orddeling.tex)) (./main.aux)
+) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Preamble/Commands.tex) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Preamble/Orddeling.tex)) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1084,7 +1078,7 @@ LaTeX Info: Redefining \Ref on input line 520.
 LaTeX Info: Redefining \ref on input line 7.
 LaTeX Info: Redefining \pageref on input line 7.
 LaTeX Info: Redefining \nameref on input line 7.
- (./main.out) (./main.out)
+ (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.out) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -1092,7 +1086,7 @@ LaTeX Info: Redefining \Ref on input line 7.
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.16} (current compat level: 1.12).
 
-(./Formalia/structure.tex (./Formalia/Forside.tex
+(/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/structure.tex (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/Forside.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1105,17 +1099,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-]) (./Formalia/Titelblad.tex
+]) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/Titelblad.tex
 <Formalia/AAU-logo-stud-ENG.png, id=48, 173.14688pt x 113.67468pt>
 File: Formalia/AAU-logo-stud-ENG.png Graphic file (type png)
 <use Formalia/AAU-logo-stud-ENG.png>
 Package pdftex.def Info: Formalia/AAU-logo-stud-ENG.png  used on input line 14.
 (pdftex.def)             Requested size: 173.3578pt x 113.81102pt.
- (./Formalia/Synopsis.tex)) [3
+ (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/Synopsis.tex)) [3
 
- <./Formalia/AAU-logo-stud-ENG.png>] [4
+ </home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/AAU-logo-stud-ENG.png>] [4
 
-] (./Formalia/Forord.tex) (./Formalia/Symbolregister.texpdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+] (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/Forord.tex) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Formalia/Symbolregister.texpdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \section*{List of Symbols}
@@ -1123,7 +1117,7 @@ l.1 \section*{List of Symbols}
 <to be read again> 
                    \relax 
 l.14 \tableofcontents
-                      [2] (./main.toc)
+                      [2] (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -1139,7 +1133,7 @@ l.16 \clearemptydoublepage
 l.16 \clearemptydoublepage
                            [4
 
-]) (./Afsnit/Kapitel1/Indledning.tex
+]) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Afsnit/Kapitel1/Indledning.tex
 Chapter 1.
 Package hyperref Info: bookmark level for unknown defi defaults to 0 on input line 6.
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input line 10.
@@ -1148,37 +1142,37 @@ Package hyperref Info: bookmark level for unknown pro defaults to 0 on input lin
 Package hyperref Info: bookmark level for unknown cor defaults to 0 on input line 23.
 Package hyperref Info: bookmark level for unknown eks defaults to 0 on input line 27.
 Package hyperref Info: bookmark level for unknown bev defaults to 0 on input line 32.
-) (./Afsnit/Kapitel2/PreliminaryTheory.tex [1
+) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/Afsnit/Kapitel2/PreliminaryTheory.tex [1
 
 ] [2
 
 ]
 Chapter 2.
-) (./main.bbl [3] [4
+) (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.bbl [3] [4
 
 ]
 Chapter 3.
 ) 
 AED: lastpage setting LastPage
 [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 22.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 22.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 22.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 22.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 23.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 23.
+ (/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 23.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 23.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 773030133BF5E9E8ED56134A689CDD66;340.
  ) 
 Here is how much of TeX's memory you used:
- 36754 strings out of 481239
- 835039 string characters out of 5920377
- 1318388 words of memory out of 5000000
+ 36759 strings out of 481239
+ 838396 string characters out of 5920378
+ 1318386 words of memory out of 5000000
  51171 multiletter control sequences out of 15000+600000
  552067 words of font info for 68 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 69i,12n,102p,1193b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,12n,102p,1266b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (13 pages, 251675 bytes).
+Output written on "/home/engberg/uni/6semester/projekt/Finite Element Method/bachelor_fem/main.pdf" (13 pages, 251700 bytes).
 PDF statistics:
  198 PDF objects out of 1000 (max. 8388607)
  162 compressed objects within 2 object streams
