@@ -1,6 +1,20 @@
 
 \begin{defn}
 
-    The general linear
-
+	The general linear partial differential equation of second order in $n$ variables $x=(x_1,\ldots,x_n)$ has the form
+	\begin{equation}
+		-\sum_{ i, k = 1 }^n a_{ ik } (x) u_{ x_i x_k } + \sum_{ i = 1 }^n b_i (x) u_{ x_i } + c (x) u = f (x).
+		\label{eq:generalPDE}
+	\end{equation}
 \end{defn}
+
+\begin{defn}{Classification of a PDE}
+	The equation (\ref{eq:generalPDE}) is classified as
+		\begin{itemize}
+			\item elliptic at $x$, if $A(x)$ is positive definite,
+			\item hyperbolic at $x$, if $A(x)$ has one negative and $n-1$ eigenvalues and
+			\item parabolic at $x$, if $A(x)$ is positive semidefinite, not positive definite, and rank$([A(x), b(x)])=0$  
+		\end{itemize}
+	
+	If, an equation holds the above conditions for all points of the domain, the equation is called elliptic, hyperbolic or parabolic respectively. 
+	\end{defn}
