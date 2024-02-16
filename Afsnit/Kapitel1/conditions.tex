@@ -1,15 +1,37 @@
-\section{Boundary Value or Variational Problems}
-When working with ODE's, both problems with boundary conditions 
-and initial value conditions can be solved. When working with 
+\section{Boundary or Initial Value Problems}
+When working with ODE's,
+whether a problem explicitly states the boundary conditions 
+or the initial values does not affect whether a problem can be solved.
+When working with 
 PDE's that is no longer the case. The different types 
 of PDE's demand differently posed problems. 
 
+
+----THE ABOVE: SKAL DET OVERHOVEDET MED?----
+
+
 The theory of FEM springs from elliptic PDE's, so we will start 
-describing these problems for elliptic PDE's. Since we are working with 
-elliptic PDE's, we write
-\begin{align*}
-    Lu &= f \quad \text{in } \Omega \\
-    u &= 0 \quad \text{on } \partial \Omega,
-\end{align*}
+describing these problems for elliptic PDE's.
+We therefore assume that we can write a general linear PDE of second 
+order with $n$ variables as 
+\begin{equation*}
+    Lu = f.
+\end{equation*}
+Since we are trying to solve the PDE over some space $\Omega$, we write
+\begin{align}
+    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
+    u &= g \quad \text{on } \partial \Omega. \nonumber
+\end{align}
+A boundary condition on the form (\ref{eq:b_v_problem}) is called a 
+Dirichlet condition, which is when $u$ is specified on the boundary. 
+If $u=0$ we have homogeneous boundary conditions.
+
+A problem on the form (\ref{eq:b_v_problem}) can some times???????? 
+be changed into a homogeneous form. Assume 
+\begin{align}
+    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
+    u &= 0 \quad \text{on } \partial \Omega, \nonumber
+\end{align}
 which have what is called homogeneous boundary conditions. Of course, 
-if $u=c$ on $\partial \Omega$ for some $c \in \RR$.
+if $u=c$ on $\partial \Omega$ for some $c \in \RR$ it is 
+rather simple process to convert it to the form (\ref{eq:b_v_problem}).
