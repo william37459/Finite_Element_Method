@@ -1,0 +1,44 @@
+\section{Hilbert Spaces}
+When working with variational problems and the finite 
+element method, the end goal is to arrive at some function.
+The setup in which we work is therefore spaces of function. 
+It is often the case that a classical solution to a given PDE can 
+not be found. 
+So we define a "weak derivative" using Lebesgue integrals, meaning 
+the derivative exists in some strict mathematical sense. 
+
+To use these integrals, we define $L_2(\Omega)$, which are all 
+function $f$ over $\Omega$ such that 
+\begin{equation*}
+   \int_\Omega f^2 dx < \infty. 
+\end{equation*}
+We use this space to define a weak derivative.
+\begin{defn}{Weak derivative}
+    A function $f \in L_2(\Omega)$ has a weak derivative $g \in L_2(\Omega)$
+    if
+    \begin{equation*}
+        \int_\Omega g(x)\phi(x) dx = (-1)^{|\alpha|}\int_\Omega 
+        \partial ^{\alpha}\phi(x) f(x) dx
+        \quad\quad \forall \phi \in C^\infty_0(\Omega).
+    \end{equation*}
+    We then write $g=\partial ^{\alpha}f$.
+    \label{def:weak_derivative}
+\end{defn}
+We will use derivative and weak derivative interchangeably in this 
+text.
+If the derivative must be the normal, or strong, derivative, we will 
+specify. 
+
+We use Definition \ref*{def:weak_derivative} and $L_2(\Omega)$ spaces 
+define the Hilbert space we are going to be working with. 
+\begin{defn}{Hilbert Space}
+   Let $m \geq 0$. Then $H^m(\Omega)$ is 
+   \begin{equation*}
+    H^m(\Omega) = \{  f \in L_2(\Omega) \mid \partial ^{\alpha}f \in 
+    L_2(\Omega) \quad \forall |\alpha| \leq m  \}.
+   \end{equation*}
+   In other words, $H^m(\Omega)$ is the functions in $L_2(\Omega)$ 
+   which contains weak derivatives up degree $m$.
+\end{defn}
+
+SNAK OM $H_0^m$ OG $C_0^{\infty}$. SIDE 29.
