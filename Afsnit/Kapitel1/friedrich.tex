@@ -5,5 +5,17 @@ Let $\Omega$ be contained in a hypercube with sidelength $s$. Then
 \end{equation*}
 \end{thmx}
 \begin{bev}
-
+We will start by assuming $v \in C_0^{\infty}(\Omega)$, and later use the 
+completeness of $H_0^1(\Omega)$ to extend the proof.
+Let $W = \{ (x_1, \ldots, x_n) \mid 0 < x_i < s \}$ be the box 
+which contains $\Omega$, and let $v(x)=0$ \, $\forall x
+\in W\setminus \Omega$. We can the write 
+\begin{equation*}
+v(x)=v(0, x_2, \ldots, x_n) + \int_{0}^{x_1} \partial _1 v(t,x_2, \ldots, x_n) dt.
+\end{equation*}
+Due to the definition of $W$, the first term (the boundary term) 
+disappears, and Cauchy-Schwartz results in 
+\begin{align*}
+    |v(x)|^2 &\leq \int_{0}^{x_1} 
+\end{align*}
 \end{bev}
