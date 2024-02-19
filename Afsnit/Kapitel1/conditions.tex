@@ -24,14 +24,12 @@ Since we are trying to solve the PDE over some space $\Omega$, we write
 \end{align}
 A boundary condition on the form (\ref{eq:b_v_problem}) is called a 
 Dirichlet condition, which is when $u$ is specified on the boundary. 
-If $u=0$ we have homogeneous boundary conditions.
-
-A problem on the form (\ref{eq:b_v_problem}) can some times???????? 
-be changed into a homogeneous form. Assume 
+If $u=0$ we have homogeneous boundary conditions, which we usually assume 
+to make things easier. If that is not the case, we can some times?????? 
+transform the problem. To do this, we assume there exists a function 
+$\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
+$w = u - \tilde{u}$ and $\tilde{f}=f-Lu$ and we get that
 \begin{align}
-    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
-    u &= 0 \quad \text{on } \partial \Omega, \nonumber
+    Lw &= \tilde{f} \quad \text{in } \Omega \label{eq:b_v_problem} \\
+    w &= 0 \quad \text{on } \partial \Omega, \nonumber
 \end{align}
-which have what is called homogeneous boundary conditions. Of course, 
-if $u=c$ on $\partial \Omega$ for some $c \in \RR$ it is 
-rather simple process to convert it to the form (\ref{eq:b_v_problem}).
