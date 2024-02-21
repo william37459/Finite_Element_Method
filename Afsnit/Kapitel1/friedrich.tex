@@ -19,7 +19,9 @@ v(x)=v(0, x_2, \ldots, x_n) + \int_{0}^{x_1} \partial _1 v(t,x_2, \ldots, x_n) d
 Due to the definition of $W$, the first term (the boundary term) 
 disappears, and Cauchy-Schwartz results in 
 \begin{align*}
-    |v(x)|^2 &\leq \int_{0}^{x_1} 1^2 dt \int_{0}^{x_1}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt \\ 
+    |v(x)|^2 &= \left|\int_{0}^{x_1} \partial _1 v(t,x_2, \ldots, x_n) dt \right|^2 \\ 
+    &= |(1, \partial _1 v)_{L^2([0,x_1])}|^2 \\
+    & \leq \int_{0}^{x_1} 1^2 dt \int_{0}^{x_1}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt \\ 
     &\leq s \int_{0}^{s}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt. 
 \end{align*}
 After expanding the integral and getting the last inequality, we know 
