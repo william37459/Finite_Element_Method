@@ -3,19 +3,47 @@ Let $\Omega$ be contained in a hypercube with sidelength $s$. Then
 \begin{equation*}
     \| v \|_0 \leq s |v|_1 \quad \quad \forall v \in H_0^1(\Omega).
 \end{equation*}
+\label{thm:friedrich}
 \end{thmx}
 \begin{bev}
 We will start by assuming $v \in C_0^{\infty}(\Omega)$, and later use the 
 completeness of $H_0^1(\Omega)$ to extend the proof.
 Let $W = \{ (x_1, \ldots, x_n) \mid 0 < x_i < s \}$ be the box 
 which contains $\Omega$, and let $v(x)=0$ \, $\forall x
-\in W\setminus \Omega$. We can the write 
+\in W\setminus \Omega$. Otherwise we can simply translate $\Omega$ such 
+this is true.
+ We can the write 
 \begin{equation*}
 v(x)=v(0, x_2, \ldots, x_n) + \int_{0}^{x_1} \partial _1 v(t,x_2, \ldots, x_n) dt.
 \end{equation*}
 Due to the definition of $W$, the first term (the boundary term) 
 disappears, and Cauchy-Schwartz results in 
 \begin{align*}
-    |v(x)|^2 &\leq \int_{0}^{x_1} 
+    |v(x)|^2 &\leq \int_{0}^{x_1} 1^2 dt \int_{0}^{x_1}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt \\ 
+    &\leq s \int_{0}^{s}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt. 
 \end{align*}
+After expanding the integral and getting the last inequality, we know 
+the right hand side is independent of $x_1$, and so by integrating we find 
+\begin{equation*}
+    \int_{0}^{s}|v(x)|^2dx_1 \leq s^2\int_{0}^{s}|\partial _1 v(x)|^2dx_1.
+\end{equation*}
+This can done for every variable, and finding the integral over the entire 
+domain gives us 
+\begin{equation*}
+    \|v\|_0 = \int_{W}|v|^2 dx \leq s^2 \int_{W} |\partial _1v|^2 \leq s^2 |v|_1^2.
+\end{equation*}
+Since $C^\infty_0(\OO)$ is complete in $H_0^1(\OO)$, for every $u \in H_0^1(\OO)\setminus C^\infty_0(\OO)$
+there exists some Cauchy sequence of smooth functions $u_k \in C^\infty_0(\OO)$
+ such that 
+\begin{equation}
+    \lim_{k \to \infty} \| u-u_k\|_1 \to 0.
+    \label{eq:friedrich_cauchy_limit}
+\end{equation}
+We have proven Theorem \ref*{thm:friedrich} for every one of these $u_k$, and 
+since $s^2$ is independent of $k$, we can write 
+\begin{equation*}
+    \|u\|_0 \leq \|u_k\|_0 + \|u-u_k\|_0 \leq  s^2|u_k|_1 +  \|u-u_k\|_0 \leq s^2|u|_1 + s^2|u-u_k|_1 + \|u-u_k\|_0.
+\end{equation*}
+By Equation (\ref*{eq:friedrich_cauchy_limit}) both of the last terms in the 
+previous equation must tend to $0$ as $k \to \infty$, and we have the proof.
 \end{bev}
