@@ -1,0 +1,47 @@
+
+\begin{thmx}{Characterization Theorem}
+    Let $V$ be a linear subspace, such that
+        \[
+            a: VxV \rightarrow \mathbb{R}
+        \]
+    is a symmetric positive bilinear form, then $a(v,v)>0$ for all $v \in V$, $v \neq 0$. In addition, let
+        \[
+            \ell: V \rightarrow \mathbb{R}
+        \]
+    be a linear functional. Then the quantity
+
+        \[
+            J(v):=\frac{1}{2} a(v,v) - \langle\ell,v\rangle 
+        \]
+    optains its minimum over $V$ at $u$ if and only if
+        \begin{equation}
+        \label{eq:charac}
+            a(u,v) = \ell(v) \quad \text{for all } v \in V.
+        \end{equation}
+    There is at most one solution to~\eqref{eq:charac}.
+\end{thmx}
+
+\begin{proof}
+
+    For $u,v \in V$ and $t \in \mathbb{R}$ we have, that
+    \begin{align}
+        J(u+tv) &= \frac{1}{2} a(u+tv,u+tv) - \langle\ell,u+tv\rangle \nonumber \\
+        &= \frac{1}{2} \left( a(u,u) + a(tv,tv) + 2a(u,tv) \right) - \left( \langle \ell,u\rangle + \langle\ell,tv\rangle \right) \nonumber \\
+        &= J(u) + t\left( a(u,v) - \langle\ell,v\rangle \right) + \frac{1}{2}t^2a(v,v). \label{eq:charac_proof_J(u+tv)}
+    \end{align}
+
+    If $u \in V$ satisfies~\eqref{eq:charac} and $t=1$, then from~\eqref{eq:charac_proof_J(u+tv)} we have, that
+    \begin{alignat}{2}
+        J(u+v) &= J(u) + \frac{1}{2}a(v,v) \quad &&\text{for all } v\in V  \nonumber \\
+        &> J(u) \quad &&\text{for } v \neq 0.
+    \end{alignat}
+    Thus $u$ is a ubnique minimal point. 
+
+    To prove the opposite way, we assume that $J$ has a minimum at $u$, then for every $v\in V$, the derirative of the function $t \mapsto J(u+tv)$ must vanish at $t=0$. 
+    By~\eqref{eq:charac_proof_J(u+tv)} the derirative of $J(u+tv)$ with respect to $t$ can be found using, that
+    \begin{align*}
+          J(u+(t+h)v) &= J(u) + (t+h) (a(u,v) - \langle \ell,v\rangle) + \frac{1}{2}(t+h)^2 a(v,v) \\
+          &= J(u+tv) + h(a(u,v) - \langle \ell,v\rangle) + \frac{1}{2}((h^2+2th)a(v,v)),
+    \end{align*}
+    thus the derirative is $a(u,v) - \langle \ell,v\rangle$, and~\eqref{eq:charac} then follows.
+\end{proof}
