@@ -6,7 +6,7 @@
     \end{alignat}
     is a solution to the variational problem, given by
     \[
-        J(v):=\int_\Omega [\frac{1}{2}\sum_{i,k} a_{ik} \parital_i v\partial_k v + \frac{1}{2} a_0 v^2 -fv]dx \longrightarrow \min
+        J(v):=\int_\Omega [\frac{1}{2}\sum_{i,k} a_{ik} \partial_i v\partial_k v + \frac{1}{2} a_0 v^2 -fv]dx \longrightarrow \min
     \]
     among all functions in $C^2(\Omega)\cap C^0(\bar{\Omega})$ with zero boundary values. 
 \end{thmx}
@@ -15,7 +15,7 @@
     We start off by applying Green's formula
     \[
     \label{eq:Greens_formula}
-        \int_\Omega v\partial_i w dx = -\int_\Omega w\parital_i v dx + \int_{\partial \Omega} v w v_i ds.
+        \int_\Omega v\partial_i w dx = -\int_\Omega w\partial_i v dx + \int_{\partial \Omega} v w v_i ds.
     \]
     Here we assume $v$ and $w$ to be $C^1$ functions, and $v_i$ is the $i$'th component of the outward-pointing normal $v$.
     \\
@@ -42,5 +42,5 @@
         &= \int_\Omega v [Lu - f] dx \\
         &= 0
     \end{align*}
-    given, that $Lu = f$, this property holds if $u$ is a classical solution. The minimal property is then implied by theorem \ref{thm:charac_theorem}
+    given, that $Lu = f$, this property holds if $u$ is a classical solution. The minimal property is then implied by theorem~\ref{thm:charac_theorem}
 \end{proof}
