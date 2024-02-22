@@ -23,7 +23,6 @@ a bit.
    called continuous if there exists some $C > 0$ such that 
    \begin{equation}
     |a(u,v)| \leq C \|u\|\, \|v\| \quad \forall u,v \in H.
-    \label{eq:testte}
    \end{equation} 
    If the bilinear form $a$ is symmetric and continuous, it is called 
    elliptic if there exists som $\alpha >0$ such that 
@@ -41,3 +40,31 @@ This gives a connection between classical solutions and solutions of
 variational problems. We now proceed to examine the existence of a 
 solution.
 \input{Afsnit/Kapitel1/sætninger/lax-mil.tex}
+
+\begin{defn}{\quad}
+    The Dirichlet problem with homogeneous boundary conditions,
+     (\ref{eq:b_v_problem_homogeneous}), has a weak solution $u\in H_0^1(\OO)$
+     if 
+     \begin{equation*}
+        a(u,v) = (\tilde{f},v)_0 \quad \forall v \in H_0^1(\OO).
+     \end{equation*}
+     where $a(u,v)$ is the bilinear from from Equation (\ref{eq:a(u,v)}).
+\end{defn}
+
+%TODO INDSÆT EXISTENCE THM HER
+
+
+
+We can use Theorem INSERTHERE to examine the inhomogeneous Dirichlet problem, 
+see (\ref{eq:b_v_problem}). From (\ref{eq:b_v_problem_homogeneous}), let 
+$\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
+\begin{equation*}
+   \tilde{u} = g \quad \text{on } \partial \OO.
+\end{equation*}
+To find a weak solution $w \in H_0^1(\OO)$, using Theorem INSERTHERE, and the 
+fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve (\ref{eq:b_v_problem}), 
+we find $u \in H^1(\OO)$ such that 
+\begin{align*}
+   a(u,v) &= (f,v)_0 \quad \forall v \in H_0^1(\OO) \\
+   u-\tilde{u} & \in H_0^1(\OO).
+\end{align*}
