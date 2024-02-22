@@ -19,8 +19,7 @@
             a(u,v) = \ell(v) \quad \text{for all } v \in V.
         \label{eq:charac}
         \end{equation}
-    There is at most one solution to~\eqref{eq:charac}.
-\label{thm:charac_theorem}
+    There is at most one solution to~\eqref{eq:charac}.\label{thm:charac_theorem}
 \end{thmx}
 
 \begin{proof}
@@ -45,7 +44,7 @@
     value of $J$.
     This derivative can be found using little-o notation, like so:
     \begin{align*}
-          f(t+h) = J(u+(t+h)v) &= J(u) + (t+h) (a(u,v) - \ell(v)) + \frac{1}{2}(t+h)^2 a(v,v) \\
+          f(t+h) = J(u+(t+h)v) &= J(u) + (t+h) (a(u,v) - \ell(v)) + \frac{1}{2}{(t+h)}^2 a(v,v) \\
           &= J(u+tv) + h(a(u,v) - \ell(v)) + \frac{1}{2}((h^2+2th)a(v,v)).
     \end{align*}
     Thus the derivative is $a(u,v) - \ell(v)$, and~\eqref{eq:charac} then follows.
