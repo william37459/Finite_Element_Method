@@ -34,11 +34,11 @@
         \ell(v) = \int_\Omega fv dx.
     \end{equation}
     Then by summing~\eqref{eq:Greens_formula_inserted} over $i$ and $k$ we get that for every $v\in C^1(\Omega) \cap C(\bar{\Omega})$ with $v=0$ on $\partial \Omega$ we have, that 
-    \begin{align*}
-        a(u,v) - \ell(v) &= \int_\Omega v\left[ -\sum_{i,k} \partial_i (a_{ik} \partial_k u) + a_0 u - f \right] dx \\     
-        &= \int_\Omega v [Lu - f] dx \\
-        &= 0
-    \end{align*}
+    \begin{align}
+        a(u,v) - \ell(v) &= \int_\Omega v\left[ -\sum_{i,k} \partial_i (a_{ik} \partial_k u) + a_0 u - f \right] dx \label{eq:min_prop_variational_problem}\\
+        &= \int_\Omega v [Lu - f] dx \nonumber \\
+        &= 0 \nonumber
+    \end{align}
     given that $Lu = f$. This property holds if $u$ is a classical solution.
      The minimal property is then implied by Theorem \ref{thm:charac_theorem}
 \end{proof}
