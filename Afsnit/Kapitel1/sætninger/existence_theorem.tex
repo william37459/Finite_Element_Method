@@ -1,0 +1,36 @@
+%TODO skriv (2.17) s. 40 og refere til den
+\begin{thmx}{Existence theorem}
+    Let L be a second order uniformly elliptic partial differ- ential operator. Then the Dirichlet problem always has a weak solution in $H_0^1(\OO)$. It is a minimum of the variational problem
+
+    \begin{equation}
+        \frac{1}{2} a(v,v) - {(f, v)}_0 \rightarrow \text{min}
+    \end{equation}
+    over $H_0^1(\OO)$.
+\end{thmx}
+
+\begin{bev}
+    Let $c = \sup\{\left| a_{ik}(x) \right| \; | \; x \in \OO, 1 \leq i,k \leq n\}$. Then by the Cauchy-Schwarz inequality we get
+    \begin{align}
+        \left| \sum_{i,k} \int a_{ik} \partial_i u \partial_k v dx \right| &\leq c \sum_{i,k} \int  \left| a_{ik} \partial_i u \partial_k v dx\right|\\
+        &\leq c \sum_{i,k} {\left[ \int {\left( \partial_i u \right)}^2 dx \int {\left( \partial_k v \right)}^2 dx  \right]}^{1/2} \\
+        &\leq C {\left| u \right|}_1 {\left| v \right|}_1
+    \end{align}
+
+    where $C=cn^2$. 
+    We also assume, that $C\geq \sup\{|a_0(x)| \; | \; x\in \Omega\}$ giving us
+    \[
+        \left|\int a_0 u v dx \right| \leq C \int |u v| dx \leq C \|u\|_0 \|v\|_0      
+    \]
+    Further more the the uniform ellipticity implies the pointwise estimate
+    \[
+        \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
+    \]
+
+    For $\text{C}^1$ functions. Integrating both sides and using $\text{a}_0 \leq 0$ leads to
+    \begin{equation}
+        a(v,v) \leq \alpha \sum_i \int_\OO {\left(\partial_i v\right)}^2 dx = \alpha |v|^2_1, \quad \forall v \in H^1(\OO)
+    \end{equation}
+
+    %TODO ref Friedrich og Lax-Milgram
+    We know from Friedrichs' inequality $|\cdot|_1$ and $\| \cdot \|_1$ are equavivalent norms on $H_0^1$. Resulting in $a$ being an $H^1$-elliptic bilinear form on $H_0^1(\OO)$. From the Lax-Milgram theorem there exists a unique weak solution which is also a solution of the variational problem.
+\end{bev}
