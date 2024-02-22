@@ -48,23 +48,25 @@ solution.
      \begin{equation*}
         a(u,v) = (\tilde{f},v)_0 \quad \forall v \in H_0^1(\OO).
      \end{equation*}
-     where $a(u,v)$ is the bilinear from from Equation (\ref{eq:a(u,v)}).
+     where $a(u,v)$ is the bilinear from from Equation (\ref{eq:a(u,v)}), 
+     and $(\tilde{f},v)_0$ is $\ell(v)$ from Equation (\ref{eq:l(v)}).
 \end{defn}
 
-%TODO INDSÆT EXISTENCE THM HER
+
+\input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
 
 
-
-We can use Theorem INSERTHERE to examine the inhomogeneous Dirichlet problem, 
+We can use Theorem \ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
 see (\ref{eq:b_v_problem}). From (\ref{eq:b_v_problem_homogeneous}), let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
 \begin{equation*}
    \tilde{u} = g \quad \text{on } \partial \OO.
 \end{equation*}
-To find a weak solution $w \in H_0^1(\OO)$, using Theorem INSERTHERE, and the 
+To find a weak solution $w \in H_0^1(\OO)$, using Theorem \ref{thm:existence_hom_dirichlet}, and the 
 fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve (\ref{eq:b_v_problem}), 
 we find $u \in H^1(\OO)$ such that 
 \begin{align*}
    a(u,v) &= (f,v)_0 \quad \forall v \in H_0^1(\OO) \\
    u-\tilde{u} & \in H_0^1(\OO).
 \end{align*}
+%TODO Hvorfor u i H^1? Density assumptions?
