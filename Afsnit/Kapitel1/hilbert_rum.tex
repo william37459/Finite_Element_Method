@@ -4,7 +4,7 @@ element method, the end goal is to arrive at some function.
 The setup in which we work is therefore spaces of function. 
 It is often the case that a classical solution to a given PDE can 
 not be found. 
-So we define a "weak derivative" using Lebesgue integrals, meaning 
+So we define a `weak derivative' using Lebesgue integrals, meaning 
 the derivative exists in some strict mathematical sense. 
 
 To use these integrals, we define $L_2(\Omega)$, which are all 
@@ -17,19 +17,18 @@ We use this space to define a weak derivative.
     A function $f \in L_2(\Omega)$ has a weak derivative $g \in L_2(\Omega)$
     if
     \begin{equation*}
-        \int_\Omega g(x)\phi(x) dx = (-1)^{|\alpha|}\int_\Omega 
+        \int_\Omega g(x)\phi(x) dx = {(-1)}^{|\alpha|}\int_\Omega 
         \partial ^{\alpha}\phi(x) f(x) dx
         \quad\quad \forall \phi \in C^\infty_0(\Omega).
     \end{equation*}
-    We then write $g=\partial ^{\alpha}f$.
-    \label{def:weak_derivative}
+    We then write $g=\partial ^{\alpha}f$.\label{def:weak_derivative}
 \end{defn}
 We will use derivative and weak derivative interchangeably in this 
 text.
 If the derivative must be the normal, or strong, derivative, we will 
 specify. 
 
-We use Definition \ref*{def:weak_derivative} and $L_2(\Omega)$ spaces 
+We use Definition~\ref*{def:weak_derivative} and $L_2(\Omega)$ spaces 
 define the Hilbert space we are going to be working with. 
 \begin{defn}{Hilbert Space}
    Let $m \geq 0$. Then $H^m(\Omega)$ is 
@@ -40,15 +39,14 @@ define the Hilbert space we are going to be working with.
    In other words, $H^m(\Omega)$ is the functions in $L_2(\Omega)$ 
    which contains weak derivatives up degree $m$.
 \end{defn}
-In \cite{Brezis} one can find a proof for the following theorem, which 
+In~\cite{Brezis} one can find a proof for the following theorem, which 
 we use for defining a specific subspace.
 \begin{thmx}{\quad}
    Let $\OO \subset \RR^n$ be an open set with piecewise smooth boundary, 
    and let $m \geq 0$. Then $C^\infty (\OO) \cap H^m(\OO)$ is dense in 
-   $H^m(\OO)$.
-   \label{thm:c_dense_in_h}
+   $H^m(\OO)$.\label{thm:c_dense_in_h}
 \end{thmx}
-The reason we state Theorem \ref{thm:c_dense_in_h} is that it implies a 
+The reason we state Theorem~\ref{thm:c_dense_in_h} is that it implies a 
 similar relationship for a smaller subset, namely $C^\infty_0(\OO)$, 
 continuous differentiable functions with a compact support. So we can 
 define it thusly:
@@ -60,5 +58,5 @@ Since $H_0^m(\OO)$ is a restriction on the functions in $H^m(\OO)$,
 we obviously know $H_0^m(\OO) \subset H^m(\OO)$ and, in the same 
 sense, obviously $H^{n+1}(\OO) \subset H^n(\OO)$.
 We know move on to discussing the norms on these spaces, 
-which is the first step in figuring out how to "get closer" to 
+which is the first step in figuring out how to `get closer' to 
 the solution.

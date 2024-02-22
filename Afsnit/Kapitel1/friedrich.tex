@@ -2,8 +2,7 @@
 Let $\Omega$ be contained in a hypercube with sidelength $s$. Then 
 \begin{equation*}
     \| v \|_0 \leq s |v|_1 \quad \quad \forall v \in H_0^1(\Omega).
-\end{equation*}
-\label{thm:friedrich}
+\end{equation*}\label{thm:friedrich}
 \end{thmx}
 \begin{bev}
 We will start by assuming $v \in C_0^{\infty}(\Omega)$, and later use the 
@@ -20,7 +19,7 @@ Due to the definition of $W$, the first term (the boundary term)
 disappears, and Cauchy-Schwartz results in 
 \begin{align*}
     |v(x)|^2 &= \left|\int_{0}^{x_1} \partial _1 v(t,x_2, \ldots, x_n) dt \right|^2 \\ 
-    &= |(1, \partial _1 v)_{L^2([0,x_1])}|^2 \\
+    &= |{(1, \partial _1 v)}_{L^2([0,x_1])}|^2 \\
     & \leq \int_{0}^{x_1} 1^2 dt \int_{0}^{x_1}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt \\ 
     &\leq s \int_{0}^{s}|\partial_1 v(t, x_2, \ldots, x_n)|^2 dt. 
 \end{align*}
@@ -41,7 +40,7 @@ there exists some Cauchy sequence of smooth functions $u_k \in C^\infty_0(\OO)$
     \lim_{k \to \infty} \| u-u_k\|_1 \to 0.
     \label{eq:friedrich_cauchy_limit}
 \end{equation}
-We have proven Theorem \ref*{thm:friedrich} for every one of these $u_k$, and 
+We have proven Theorem~\ref*{thm:friedrich} for every one of these $u_k$, and 
 since $s^2$ is independent of $k$, we can write 
 \begin{equation*}
     \|u\|_0 \leq \|u_k\|_0 + \|u-u_k\|_0 \leq  s^2|u_k|_1 +  \|u-u_k\|_0 \leq s^2|u|_1 + s^2|u-u_k|_1 + \|u-u_k\|_0.
