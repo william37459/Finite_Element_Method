@@ -1,0 +1,52 @@
+
+\begin{thmx}{Characterization Theorem}
+    Let $V$ be a linear subspace, such that
+        \(
+            a: V \times V \rightarrow \mathbb{R}
+        \) and
+   % is a symmetric positive bilinear form
+    %, then $a(v,v)>0$ for all $v \in V$, $v \neq 0$. In addition,
+     let
+        \(
+            \ell: V \rightarrow \mathbb{R}
+        \)
+    be a linear functional. Then the quantity
+        \[
+            J(v):=\frac{1}{2} a(v,v) - \ell(v)
+        \]
+    obtains its minimum over $V$ at $u$ if and only if
+        \begin{equation}
+            a(u,v) = \ell(v) \quad \text{for all } v \in V.
+        \label{eq:charac}
+        \end{equation}
+    There is at most one solution to~\eqref{eq:charac}.
+\label{thm:charac_theorem}
+\end{thmx}
+
+\begin{proof}
+    For $u,v \in V$ and $t \in \mathbb{R}$ we have, that
+    \begin{align}
+        J(u+tv) &= \frac{1}{2} a(u+tv,u+tv) - \ell(u+tv) \nonumber \\
+        &= \frac{1}{2} \left( a(u,u) + a(tv,tv) + 2a(u,tv) \right) - \left(  \ell(u) + \ell(tv)\right) \nonumber \\
+        &= J(u) + t\left( a(u,v) - \ell(v) \right) + \frac{1}{2}t^2a(v,v). \label{eq:charac_proof_J(u+tv)}
+    \end{align}
+    If $u \in V$ satisfies~\eqref{eq:charac} and $t=1$, then from~\eqref{eq:charac_proof_J(u+tv)} we have, that
+    \begin{alignat}{2}
+        J(u+v) &= J(u) + \frac{1}{2}a(v,v) \quad &&\text{for all } v\in V  \nonumber \\
+        &> J(u) \quad &&\text{for } v \neq 0.
+    \end{alignat}
+    Thus $u$ is a unique minimal point. 
+    To prove the opposite way, we assume that $J$ has a minimum at $u$.
+    Then for every $v\in V$, the function $f(t)= J(u+tv)$ must fulfill the condition
+    \begin{equation*}
+        \frac{d}{dt}f(0) = 0,
+    \end{equation*}
+    since $J$ has a minimum at $u$, and as such any $t>0$ must increase the 
+    value of $J$.
+    This derivative can be found using little-o notation, like so:
+    \begin{align*}
+          f(t+h) = J(u+(t+h)v) &= J(u) + (t+h) (a(u,v) - \ell(v)) + \frac{1}{2}(t+h)^2 a(v,v) \\
+          &= J(u+tv) + h(a(u,v) - \ell(v)) + \frac{1}{2}((h^2+2th)a(v,v)).
+    \end{align*}
+    Thus the derivative is $a(u,v) - \ell(v)$, and~\eqref{eq:charac} then follows.
+\end{proof}
