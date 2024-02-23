@@ -1,19 +1,18 @@
 \section{Hilbert Spaces}
-When working with variational problems and the finite 
-element method, the end goal is to arrive at some function.
-The setup in which we work is therefore spaces of function. 
+When working with variational problems and FEM,
+ the end goal is to arrive at some function which we call the solution.
+The setup in which we work is therefore spaces of functions. 
 It is often the case that a classical solution to a given PDE can 
-not be found. 
-So we define a `weak derivative' using Lebesgue integrals, meaning 
+not be found, 
+so we define a `weak derivative' using Lebesgue integrals, meaning 
 the derivative exists in some strict mathematical sense. 
-
 To use these integrals, we define $L_2(\Omega)$, which are all 
 function $f$ over $\Omega$ such that 
 \begin{equation*}
    \int_\Omega f^2 dx < \infty. 
 \end{equation*}
 We use this space to define a weak derivative.
-\begin{defn}{Weak derivative}
+\begin{defn}{Weak Derivative}
     A function $f \in L_2(\Omega)$ has a weak derivative $g \in L_2(\Omega)$
     if
     \begin{equation*}
@@ -27,8 +26,7 @@ We will use derivative and weak derivative interchangeably in this
 text.
 If the derivative must be the normal, or strong, derivative, we will 
 specify. 
-
-We use Definition~\ref*{def:weak_derivative} and $L_2(\Omega)$ spaces 
+We use Definition~\ref*{def:weak_derivative} and $L_2(\Omega)$ to 
 define the Hilbert space we are going to be working with. 
 \begin{defn}{Hilbert Space}
    Let $m \geq 0$. Then $H^m(\Omega)$ is 
@@ -37,7 +35,7 @@ define the Hilbert space we are going to be working with.
     L_2(\Omega) \quad \forall |\alpha| \leq m  \}.
    \end{equation*}
    In other words, $H^m(\Omega)$ is the functions in $L_2(\Omega)$ 
-   which contains weak derivatives up degree $m$.
+   which contains weak derivatives up to degree $m$.
 \end{defn}
 In~\cite{Brezis} one can find a proof for the following theorem, which 
 we use for defining a specific subspace.
@@ -48,15 +46,16 @@ we use for defining a specific subspace.
 \end{thmx}
 The reason we state Theorem~\ref{thm:c_dense_in_h} is that it implies a 
 similar relationship for a smaller subset, namely $C^\infty_0(\OO)$, 
-continuous differentiable functions with a compact support. So we can 
-define it thusly:
+continuous differentiable functions with a compact support. So the following 
+definition makes sense.
 \begin{defn}{\quad}
   Let $H_0^m(\OO)$ be the completion of $C^\infty_0(\OO)$ with respect 
-  to the Sobolev norm.
+  to the Sobolev norm
+ ($\| \cdot \|_m$).
 \end{defn} 
 Since $H_0^m(\OO)$ is a restriction on the functions in $H^m(\OO)$, 
 we obviously know $H_0^m(\OO) \subset H^m(\OO)$ and, in the same 
 sense, obviously $H^{n+1}(\OO) \subset H^n(\OO)$.
-We know move on to discussing the norms on these spaces, 
+We now move on to discussing the norms on these spaces, 
 which is the first step in figuring out how to `get closer' to 
 the solution.

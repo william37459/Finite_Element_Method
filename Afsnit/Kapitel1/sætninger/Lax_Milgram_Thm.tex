@@ -1,7 +1,7 @@
 \begin{thmx}{Lax-Milgram Theorem}
 Let $V$ be a closed convex set in a Hilbert space $H$, and let $a:H \times H \rightarrow \mathbb{R}$ be an elliptic bilinear form. Then for every $\ell\in H'$, the variational problem given by
 \[
-    J(v):=\frac{1}{2} a(v,v) - \ell(v) \longrightarrow \min    
+    J(v)=\frac{1}{2} a(v,v) - \ell(v) \longrightarrow \min    
 \]
 has a unique solution in $V$.
 \end{thmx}
@@ -13,7 +13,7 @@ has a unique solution in $V$.
         &= \frac{1}{2\alpha} {(\alpha \|v\|-\|\ell\|)}^2 - \frac{\|\ell\|^2}{2\alpha} \\
         &\geq - \frac{\|\ell\|^2}{2\alpha}.
     \end{align*}
-    We then let $c_1 := \inf\{J(v); \in V\}$ and $(v_n)$ be a minimizing sequence then we get, that 
+    We then let $c_1 = \inf\{J(v); \in V\}$ and $(v_n)$ be a minimizing sequence. Then we get, that 
     \begin{align*}
         \alpha \|v_n-v_m\|^2 &\leq a(v_n-v_m,v_n-v_m) \\
         &= 2a(v_n,v_n) + 2a(v_m,v_m) - a (v_n+v_m,v_n+v_m) \\

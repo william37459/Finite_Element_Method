@@ -4,36 +4,35 @@ precision to know of the existence of solutions to a PDE, and find
 them. 
 To do this, we start with a general abstract theorem on how solutions 
 behave in certain problems, then we look at a connection between 
-classical solutions and solutions of variational problems, then a 
-theorem regarding uniqueness of solutions, and then existence of 
+classical solutions and solutions of variational problems, a 
+theorem regarding uniqueness of solutions, and existence of 
 weak solutions.
 
 \input{Afsnit/Kapitel1/sætninger/Charac_Theorem.tex}
 Theorem~\ref{thm:charac_theorem} does not guarantee the existence 
 of solutions, only their shape. In Theorem~\ref{thm:charac_theorem} we 
 also only make assumptions on the linearity of the space. 
-It is possible to setup a variational problem such that $J$ does 
+It is possible to set up a variational problem such that $J$ does 
 not obtain its minimum.
 To engage with the existence of solutions, we make more assumptions on 
 the space in which we work. To do this we work with Hilbert spaces. 
-We start by specifying the bilinear form in Theorem~\ref{thm:charac_theorem} 
-a bit.
+We start by specifying the bilinear form in Theorem~\ref{thm:charac_theorem}.
 \begin{defn}{\quad}
-   Let $H$ be a Hilbert space. A bilinear form $a : H \times H \mapsto \RR$ is 
+   Let $H$ be a Hilbert space. A bilinear form $a : H \times H \to \RR$ is 
    called continuous if there exists some $C > 0$ such that 
    \begin{equation}
     |a(u,v)| \leq C \|u\|\, \|v\| \quad \forall u,v \in H.
    \end{equation} 
-   If the bilinear form $a$ is symmetric and continuous, it is called 
-   elliptic if there exists som $\alpha >0$ such that 
+   If a bilinear form $a$ is symmetric and continuous, and there exists som $\alpha >0$ such that 
    \begin{equation*}
-    a(v,v) \geq \alpha \|v\|^2 \quad \forall v \in H.
+    a(v,v) \geq \alpha \|v\|^2 \quad \forall v \in H,
    \end{equation*}
-\end{defn}
+   $a$ is called elliptic.
+ \end{defn}
 We now use Theorem~\ref{thm:charac_theorem} to show a link between classical 
 solutions and solutions of appropriate variational problems.
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
-The same kind of proof can be used to show, that a solution $u$ to 
+The same kind of proof can be used to show that a solution $u$ to 
 (\ref{eq:min_prop_variational_problem}) which fulfills 
 $u\in C^2(\OO) \cap C^0(\OO)$ is also a classical solution. 
 This gives a connection between classical solutions and solutions of 

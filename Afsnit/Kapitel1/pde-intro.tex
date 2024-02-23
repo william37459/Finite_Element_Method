@@ -1,15 +1,15 @@
 This chapter is based on \cite{Braess}.
-The theory of Finite Element Theory (FEM) springs from a 
-wish to solve Partial Differential Equations (PDE's) 
-which may or may not have be analytically solvable. 
-To do this, we introduce the kind of PDE's we will 
-be working with, introducing the forms of the 
-problems, and examining the spaces of solutions. 
-In this chapter, we will always be working with 
-equations with $n$ variables, and $\Omega$ will be 
+The theory of Finite Element Method (FEM) stems from a 
+wish to solve Partial Differential Equations (PDE's),
+which may or may not be analytically solvable. 
+To do this we will introduce different kind of PDE's, 
+the type of
+problems, and examining the spaces containing solutions. 
+The functions used in this chapter wil be of $n$ 
+variables and $\Omega$ will be 
 an open subset of $\RR^n$ with a piecewise smooth boundary.
-The PDE which we start with is a second order PDE, 
-with the following form.
+The first PDE we introduce is a second order PDE and as 
+such has the form
 \begin{equation}
 	f(x) = c(x) u + \sum_{i=1}^{n}b_i(x)u_{x_{i}}
 	- \sum_{i,k=1}^{n}a_{ik}(x)u_{x_i x_k}\label{eq:pde_order2_n}
@@ -22,16 +22,16 @@ Assuming $u$ in (\ref*{eq:pde_order2_n}) is sufficiently
 smooth, then $u_{x_i x_k} =u_{x_k x_i} $, and $A(x)$ is 
 symmetric. 
 We use $A(x)$ to define the type of equation we are working 
-with, and therefore to characterize the problem we are 
+with and therefore to characterize the problem we are 
 working with.
 \begin{defn}{Classification of a PDE}
 	The Equation (\ref{eq:pde_order2_n}) is classified as follows:
 	\begin{itemize}
 		\item Elliptic at $x$, if $A(x)$ is positive definite
-		\item Hyperbolic at $x$, if $A(x)$ has one negative and $n-1$ eigenvalues
+		\item Hyperbolic at $x$, if $A(x)$ has one negative and $n-1$ postive eigenvalues
 		\item Parabolic at $x$, if $A(x)$ is positive semidefinite, not positive definite, and rank$([A(x), b(x)])=0$
 	\end{itemize}
-	If, for every element in the domain of a function, the function is elliptic, hyperbolic, or parabolic, the function itself is called it.
+	If an equation holds the above conditions for all points of the domain, the equation is called elliptic, hyperbolic or parabolic respectively.
 \end{defn}
 This chapter will work in several different spaces, with different norms and 
 seminorms. 

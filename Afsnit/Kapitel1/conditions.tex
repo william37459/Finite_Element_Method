@@ -1,3 +1,4 @@
+\iffalse 
 \section{Boundary or Initial Value Problems}
 When working with ODE's,
 whether a problem explicitly states the boundary conditions 
@@ -8,9 +9,9 @@ of PDE's demand differently posed problems.
 
 
 ----THE ABOVE\@: SKAL DET OVERHOVEDET MED?----
+\fi
 
-
-The theory of FEM springs from elliptic PDE's, so we will start 
+The theory of FEM stems from elliptic PDE's, so we will start by
 describing these problems for elliptic PDE's.
 We therefore assume that we can write a general linear PDE of second 
 order with $n$ variables as 
@@ -25,7 +26,7 @@ Since we are trying to solve the PDE over some space $\Omega$, we write
 A boundary condition on the form (\ref{eq:b_v_problem}) is called a 
 Dirichlet condition, which is when $u$ is specified on the boundary. 
 If $u=0$ we have homogeneous boundary conditions, which we usually assume 
-to make things easier. If that is not the case, we can some times?????? 
+to make things easier. If that is not the case, we can
 transform the problem. To do this, we assume there exists a function 
 $\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
 $w = u - \tilde{u}$ and $\tilde{f}=f-Lu$ and we get that
@@ -37,4 +38,4 @@ To make these explicit demands for $u$ on $\partial \OO$ can
 be rather restrictive.
 Instead we can make implicit restrictions, by constraining 
 $\partial _i u$ on $\partial \OO$.
-This will be dealth with later.
+This will be dealt with later.
