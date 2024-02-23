@@ -15,18 +15,17 @@
         &\leq c \sum_{i,k} {\left[ \int {\left( \partial_i u \right)}^2 dx \int {\left( \partial_k v \right)}^2 dx  \right]}^{1/2} \\
         &\leq C {\left| u \right|}_1 {\left| v \right|}_1
     \end{align}
-
     where $C=cn^2$. 
     We also assume, that $C\geq \sup\{|a_0(x)| \; | \; x\in \Omega\}$ giving us
     \[
         \left|\int a_0 u v dx \right| \leq C \int |u v| dx \leq C \|u\|_0 \|v\|_0      
     \]
-    Further more the the uniform ellipticity implies the pointwise estimate
+    Further more the the uniform ellipticity implies the pointwise estimate %TODO Hvorfor gør den det?
     \[
         \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
     \]
 
-    For $\text{C}^1$ functions. Integrating both sides and using $\text{a}_0 \leq 0$ leads to
+    For $\text{C}^1$ functions. Integrating both sides and using $\text{a}_0 \leq 0$ leads to %TODO Er det fordi man fjerner noget i integralet?
     \begin{equation}
         a(v,v) \leq \alpha \sum_i \int_\OO {\left(\partial_i v\right)}^2 dx = \alpha |v|^2_1, \quad \forall v \in H^1(\OO)
     \end{equation}
