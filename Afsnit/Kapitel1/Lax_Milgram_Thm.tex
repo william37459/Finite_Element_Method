@@ -1,5 +1,5 @@
 \begin{thmx}{Lax-Milgram Theorem}
-Let $V$ be a closed convex set in a Hilbert space $H$, and let $a:H x H \rightarrow \mathbb{R}$ be an elliptic bilinear form. Then for every $\ell\in H'$ the variational problem, given by
+Let $V$ be a closed convex set in a Hilbert space $H$, and let $a:H \times H \rightarrow \mathbb{R}$ be an elliptic bilinear form. Then for every $\ell\in H'$, the variational problem given by
 \[
     J(v):=\frac{1}{2} a(v,v) - \ell(v) \longrightarrow \min    
 \]
@@ -9,20 +9,20 @@ has a unique solution in $V$.
 \begin{proof}
     $J$ is bounded from below given the fact, that
     \begin{align*}
-        J(v) &\geq \frac{1}{2} \alpha ||v||^2 - ||\ell|| ||v||\\
-        &= \frac{1}{2\alpha} {(\alpha ||v||-||\ell||)}^2 - \frac{||\ell||^2}{2\alpha} \\
-        &\geq - \frac{||\ell||^2}{2\alpha}.
+        J(v) &\geq \frac{1}{2} \alpha \|v\|^2 - \|\ell\| \, \|v\|\\
+        &= \frac{1}{2\alpha} {(\alpha \|v\|-\|\ell\|)}^2 - \frac{\|\ell\|^2}{2\alpha} \\
+        &\geq - \frac{\|\ell\|^2}{2\alpha}.
     \end{align*}
     We then let $c_1 := \inf\{J(v); \in V\}$ and $(v_n)$ be a minimizing sequence then we get, that 
     \begin{align*}
-        \alpha ||v_n-v_m||^2 &\leq a(v_n-v_m,v_n-v_m) \\
+        \alpha \|v_n-v_m\|^2 &\leq a(v_n-v_m,v_n-v_m) \\
         &= 2a(v_n,v_n) + 2a(v_m,v_m) - a (v_n+v_m,v_n+v_m) \\
         &= 4J(v_n) + 4J(v_m) - 8J(\frac{v_m+v_n}{2}) \\
         &\leq 4J(v_n) + 4J(v_m) - 8c_1. 
     \end{align*}
     We get the last inequality by the assumed convexity of $V$, which means that $\frac{1}{2}(v_n + v_m) \in V$. 
     \\
-    We now get, that $(v_n)$ is a Cauchy sequence in $H$ and $u = \lim_{n\rightarrow \infty}v_n$ exists given the fact, that $J(v_n),J(v_m)\rightarrow c_1$ implies $||v_n - v_m|| \rightarrow 0$ for $n,m\rightarrow \infty$.  
+    We now get, that $(v_n)$ is a Cauchy sequence in $H$ and $u = \lim_{n\rightarrow \infty}v_n$ exists given the fact, that $J(v_n),J(v_m)\rightarrow c_1$ implies $\|v_n - v_m\| \rightarrow 0$ for $n,m\rightarrow \infty$.  
     \\
     Now, we see that $J(u) = \lim_{n\rightarrow infty} J(v_n) = \inf_{v\in V} J(v)$ from the fact, that $J$ is continious. Moreover, we also have that $u\in V$, because we assumed $V$ to be closed. 
     \\
