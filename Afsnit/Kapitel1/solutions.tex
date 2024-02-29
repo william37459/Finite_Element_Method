@@ -39,7 +39,14 @@ This gives a connection between classical solutions and solutions of
 variational problems. We now proceed to examine the existence of a 
 solution.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Thm.tex}
+The Hilbert spaces we are going to be working with are all going to be 
+vector spaces, and thus convex by definition. 
+We can therefore use Theorem \ref{thm:lax_milgram} without further considerations 
+on our spaces.
 
+After proving these statements on qualities of a solution, we can now move 
+on to discussing the existence of these solutions. We start by looking at 
+sufficiently well-defined solutions.
 \begin{defn}{\quad}
     The Dirichlet problem with homogeneous boundary conditions,
      (\ref{eq:b_v_problem_homogeneous}), has a weak solution $u\in H_0^1(\OO)$
@@ -61,11 +68,11 @@ $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such tha
 \begin{equation*}
    \tilde{u} = g \quad \text{on } \partial \OO.
 \end{equation*}
-To find a weak solution $w \in H_0^1(\OO)$, using Theorem \ref{thm:existence_hom_dirichlet}, and the 
-fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve (\ref{eq:b_v_problem}), 
+To find a weak solution $w \in H_0^1(\OO)$, we use Theorem \ref{thm:existence_hom_dirichlet} and the 
+fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve (\ref{eq:b_v_problem}), and
 we find $u \in H^1(\OO)$ such that 
 \begin{align*}
-   a(u,v) &= (f,v)_0 \quad \forall v \in H_0^1(\OO) \\
+   a(u,v) = (f,v)_0 \quad \forall v &\in H_0^1(\OO) \\
    u-\tilde{u} & \in H_0^1(\OO).
 \end{align*}
 %TODO Hvorfor u i H^1? Density assumptions?
