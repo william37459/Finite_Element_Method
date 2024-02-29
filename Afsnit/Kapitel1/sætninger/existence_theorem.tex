@@ -5,21 +5,23 @@
         \frac{1}{2} a(v,v) - {(f, v)}_0 \rightarrow \text{min}
     \end{equation}
     over $H_0^1(\OO)$.
-    \label{thm:existence_hom_dirichlet}
+\label{thm:existence_hom_dirichlet}
 \end{thmx}
 
 \begin{bev}
     Let $c = \sup\{\left| a_{ik}(x) \right| \; | \; x \in \OO, 1 \leq i,k \leq n\}$. Then by the Cauchy-Schwarz inequality we get
     \begin{align}
-        \left| \sum_{i,k} \int a_{ik} \partial_i u \partial_k v dx \right| &\leq c \sum_{i,k} \int  \left| a_{ik} \partial_i u \partial_k v dx\right|\\
+        \left| \sum_{i,k} \int a_{ik} \partial_i u \partial_k v dx \right| &\leq c \sum_{i,k} \int  \left|  \partial_i u \partial_k v dx\right|\\
         &\leq c \sum_{i,k} {\left[ \int {\left( \partial_i u \right)}^2 dx \int {\left( \partial_k v \right)}^2 dx  \right]}^{1/2} \\
-        &\leq C {\left| u \right|}_1 {\left| v \right|}_1
+        &\leq C {\left| u \right|}_1 {\left| v \right|}_1 \label{eq:Cuv}
     \end{align}
     where $C=cn^2$. 
     We also assume $C\geq \sup\{|a_0(x)| \; | \; x\in \Omega\}$ giving us
-    \[
-        \left|\int a_0 u v dx \right| \leq C \int |u v| dx \leq C \|u\|_0 \|v\|_0      
-    \]
+    \begin{equation}
+        \left|\int a_0 u v dx \right| \leq C \int |u v| dx \leq C \|u\|_0 \|v\|_0.  
+        \label{eq:estimate_a_0}   
+    \end{equation}
+    Then by \eqref{eq:Cuv} and \eqref{eq:estimate_a_0} we get continuity of $a$.
     Furthermore the uniform ellipticity implies the pointwise estimate %TODO Hvorfor gør den det?
     \[
         \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
