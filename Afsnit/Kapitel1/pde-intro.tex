@@ -2,25 +2,27 @@ This chapter is based on \cite{Braess}.
 The theory of Finite Element Method (FEM) stems from a 
 wish to solve Partial Differential Equations (PDE's),
 which may or may not be analytically solvable. 
-To do this we will introduce different kind of PDE's, 
+To do this we will introduce various kind of PDE's, 
 the type of
-problems, and examining the spaces containing solutions. 
+problems, and examine the spaces containing solutions. 
 The functions used in this chapter wil be of $n$ 
 variables and $\Omega$ will be 
 an open subset of $\RR^n$ with a piecewise smooth boundary.
 The first PDE we introduce is a second order PDE and as 
 such has the form
 \begin{equation}
-	f(x) = c(x) u + \sum_{i=1}^{n}b_i(x)u_{x_{i}}
+	 c(x) u + \sum_{i=1}^{n}b_i(x)u_{x_{i}}
 	- \sum_{i,k=1}^{n}a_{ik}(x)u_{x_i x_k}\label{eq:pde_order2_n}
+	= f(x)
 \end{equation}
 The coefficients in (\ref*{eq:pde_order2_n}) can be 
 organized nicely in a vector containing every $b_i$ 
 in $b(x)$
 and a matrix $A(x)$ containing every $a_{ik}$.
 Assuming $u$ in (\ref*{eq:pde_order2_n}) is sufficiently 
-smooth, then $u_{x_i x_k} =u_{x_k x_i} $, and $A(x)$ is 
-symmetric. 
+smooth, then $u_{x_i x_k} =u_{x_k x_i} $, and we can 
+assume without loss of generality $A(x)$ is 
+symmetric. % TODO Passer dette bedre?
 We use $A(x)$ to define the type of equation we are working 
 with and therefore to characterize the problem we are 
 working with.
@@ -29,7 +31,7 @@ working with.
 	\begin{itemize}
 		\item Elliptic at $x$, if $A(x)$ is positive definite
 		\item Hyperbolic at $x$, if $A(x)$ has one negative and $n-1$ postive eigenvalues
-		\item Parabolic at $x$, if $A(x)$ is positive semidefinite, not positive definite, and rank$([A(x), b(x)])=0$
+		\item Parabolic at $x$, if $A(x)$ is positive semidefinite, not positive definite, and rank$([A(x), b(x)])=n$
 	\end{itemize}
 	If an equation holds the above conditions for all points of the domain, the equation is called elliptic, hyperbolic or parabolic respectively.
 \end{defn}
