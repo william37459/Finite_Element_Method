@@ -13,6 +13,8 @@ function $f$ over $\Omega$ such that
 \end{equation*}
 We use this space to define a weak derivative.
 \begin{defn}{Weak Derivative}
+   Let $\alpha$ be a $n$-dimensional multi-index, e.i. an $n$-dimensional vector, 
+   with entries from the natural numbers.
     A function $f \in L_2(\Omega)$ has a weak derivative $g \in L_2(\Omega)$
     if
     \begin{equation*}
@@ -24,21 +26,23 @@ We use this space to define a weak derivative.
 \end{defn}
 We will use derivative and weak derivative interchangeably in this 
 text.
-If the derivative must be the normal, or strong, derivative, we will 
-specify. 
+If the derivative must be the classical, or strong, derivative, we will 
+specify so explicitly. 
 We use Definition~\ref*{def:weak_derivative} and $L_2(\Omega)$ to 
 define the Hilbert space we are going to be working with. 
-\begin{defn}{Hilbert Space}
-   Let $m \geq 0$. Then $H^m(\Omega)$ is 
+\begin{defn}{Sobolev Space}
+   Let $m \geq 0$ be an integer. Then $H^m(\Omega)$ is 
    \begin{equation*}
     H^m(\Omega) = \{  f \in L_2(\Omega) \mid \partial ^{\alpha}f \in 
     L_2(\Omega) \quad \forall |\alpha| \leq m  \}.
    \end{equation*}
-   In other words, $H^m(\Omega)$ is the functions in $L_2(\Omega)$ 
-   which contains weak derivatives up to degree $m$.
+   In other words, $H^m(\Omega)$ is the set of functions in $L_2(\Omega)$ 
+   which possess weak derivatives up to degree $m$.
 \end{defn}
+Since $H^m(\OO)$ is complete with respect to the $\| \cdot\|_m$ norm, 
+$H^m(\OO)$ is also a Hilbert space, hence the $H$.
 In~\cite{Brezis} one can find a proof for the following theorem, which 
-we use for defining a specific subspace.
+we use for defining a specific subspace of $H^m(\OO)$.
 \begin{thmx}{\quad}
    Let $\OO \subset \RR^n$ be an open set with piecewise smooth boundary, 
    and let $m \geq 0$. Then $C^\infty (\OO) \cap H^m(\OO)$ is dense in 
@@ -49,7 +53,7 @@ similar relationship for a smaller subset, namely $C^\infty_0(\OO)$,
 continuous differentiable functions with a compact support. So the following 
 definition makes sense.
 \begin{defn}{\quad}
-  Let $H_0^m(\OO)$ be the completion of $C^\infty_0(\OO)$ with respect 
+  We define $H_0^m(\OO)$ be the completion of $C^\infty_0(\OO)$ with respect 
   to the Sobolev norm
  ($\| \cdot \|_m$).
 \end{defn} 
