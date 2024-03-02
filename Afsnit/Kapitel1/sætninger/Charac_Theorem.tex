@@ -3,14 +3,14 @@
     Let $V$ be a linear subspace, such that
         \(
             a: V \times V \rightarrow \mathbb{R}
-        \) and
-   % is a symmetric positive bilinear form
+        \) 
+    is a strictly positive symmetric bilinear form
     %, then $a(v,v)>0$ for all $v \in V$, $v \neq 0$. In addition,
-     let
+     and
         \(
             \ell: V \rightarrow \mathbb{R}
         \)
-    be a linear functional. Then the quantity
+    is a linear functional. Then the quantity
         \[
             J(v)=\frac{1}{2} a(v,v) - \ell(v)
         \]
@@ -32,8 +32,9 @@
     If $u \in V$ satisfies~\eqref{eq:charac} and $t=1$, then from~\eqref{eq:charac_proof_J(u+tv)} we have, that
     \begin{alignat}{2}
         J(u+v) &= J(u) + \frac{1}{2}a(v,v) \quad &&\text{for all } v\in V  \nonumber \\
-        &> J(u) \quad &&\text{for } v \neq 0.
+        &> J(u) \quad &&\text{for } v \neq 0,
     \end{alignat}
+    since $a$ is positive.
     Thus $u$ is a unique minimal point. 
     To prove the opposite way, we assume that $J$ has a minimum at $u$.
     Then for every $v\in V$, the function $f(t)= J(u+tv)$ must fulfill the condition
@@ -42,10 +43,14 @@
     \end{equation*}
     since $J$ has a minimum at $u$, and as such any $t>0$ must increase the 
     value of $J$.
+    \iffalse
     This derivative can be found using little-o notation.
     \begin{align*}
           f(t+h) = J(u+(t+h)v) &= J(u) + (t+h) (a(u,v) - \ell(v)) + \frac{1}{2}{(t+h)}^2 a(v,v) \\
           &= J(u+tv) + h(a(u,v) - \ell(v)) + \frac{1}{2}((h^2+2th)a(v,v)).
     \end{align*}
-    Thus the derivative is $a(u,v) - \ell(v)$, and~\eqref{eq:charac} then follows.
+    \fi
+    Equation (\ref{eq:charac_proof_J(u+tv)}) is an equivalent statement to a 
+    the usual definition of differentiability, which gives us that 
+     the derivative is $a(u,v) - \ell(v)$, and~\eqref{eq:charac} then follows.
 \end{bev}
