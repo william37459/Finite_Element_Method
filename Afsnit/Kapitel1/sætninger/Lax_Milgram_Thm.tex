@@ -3,8 +3,7 @@ Let $V$ be a closed convex set in a Hilbert space $H$, and let $a:H \times H \ri
 \[
     J(v)=\frac{1}{2} a(v,v) - \ell(v) \longrightarrow \min    
 \]
-has a unique solution in $V$.
-\label{thm:lax_milgram}
+has a unique solution in $V$.\label{thm:lax_milgram}
 \end{thmx}
 
 \begin{bev}
@@ -14,7 +13,7 @@ has a unique solution in $V$.
         &= \frac{1}{2\alpha} {(\alpha \|v\|-\|\ell\|)}^2 - \frac{\|\ell\|^2}{2\alpha} \\
         &\geq - \frac{\|\ell\|^2}{2\alpha}.
     \end{align*}
-    We then let $c_1 = \inf\{J(v); v \in V\}$ and $\{v_n \}_{n=1}^\infty$ be a minimizing sequence. Then we get 
+    We then let $c_1 = \inf\{J(v); v \in V\}$ and ${\{v_n \}}_{n=1}^\infty$ be a minimizing sequence. Then we get 
     \begin{align*}
         \alpha \|v_n-v_m\|^2 &\leq a(v_n-v_m,v_n-v_m) \\
         &= 2a(v_n,v_n) + 2a(v_m,v_m) - a (v_n+v_m,v_n+v_m) \\
@@ -23,7 +22,7 @@ has a unique solution in $V$.
     \end{align*}
     By the convexity assumption on $V$, we get that $\frac{1}{2}(v_n + v_m) \in V$, and from that we get the last 
     inequality.
-    We now get that $\{v_n \}_{n=1}^\infty$ is a Cauchy sequence in $H$ and $u = \lim_{n\rightarrow \infty}v_n$ exists given the fact that $J(v_n),J(v_m)\rightarrow c_1$ implies $\|v_n - v_m\| \rightarrow 0$ for $n,m\rightarrow \infty$.  
+    We now get that ${\{v_n \}}_{n=1}^\infty$ is a Cauchy sequence in $H$ and $u = \lim_{n\rightarrow \infty}v_n$ exists given the fact that $J(v_n),J(v_m)\rightarrow c_1$ implies $\|v_n - v_m\| \rightarrow 0$ for $n,m\rightarrow \infty$.  
 
     Since $J$ is continuous,
     we see $J(u) = \lim_{n\rightarrow \infty} J(v_n) = \inf_{v\in V} J(v)$.
