@@ -1,0 +1,66 @@
+\begin{thmx}{\quad}
+   Let $\OO$  be bounded, have a piecewise smooth boundary, and satisfy the 
+   cone condition. Let $f \in L_2( \OO)$ and $g\in L_2(\partial \OO)$.
+   There exists a unique $u \in H^1(\OO)$ that solves the variational problem 
+   \begin{equation*}
+    J(v) = \frac{1}{2}a(v,v) - (f,v)_{0,\OO} - (g,v)_{0,\partial\OO} \to \min.
+   \end{equation*}
+   Also, $u \in C^2(\OO)\cap C^1(\bar{\OO})$ if and only if a classical solution 
+   of 
+   \begin{align}
+    Lu &= f \quad \text{ in }\OO, \nonumber \\
+    \sum_{i,k}  \vec{n}_i a_{ik} \partial_k u &= g \quad \text{ on } \partial \OO, \label{eq:neuman_condition_boundary}
+   \end{align}
+   exists, in which case these $2$ solutions are the same. Here $\vec{n}$ is outward 
+   pointing normal on $\partial \OO$, defined almost everywhere.
+\end{thmx}
+\begin{bev}
+   % TODO H^1 ellipticitet af a
+   Obviously $ (f,v)_{0,\OO} - (g,v)_{0,\partial\OO}$ is a linear functional, 
+   and since $a$ is $H^1$ elliptic, Theorem \ref{thm:lax_milgram} gives us the 
+   uniqueness and existence of $u$.
+   % TODO Lav ligheden i Lax-Milgram der bliver brugt her.
+   It also gives us 
+   \begin{equation}
+      a(u,v) = (f,v)_{0,\OO} - (g,v)_{0,\partial\OO} \quad \forall v \in H^1(\OO). \label{eq:neumann_lax}
+   \end{equation}
+   We therefore now move on to the "if and only if" part of the theorem. Start by 
+   assuming $u \in C^2(\OO)\cap C^1(\bar{\OO})$.
+   If we look in the interior, and as such at $v \in H^1_0(\OO)$, we get $\gamma v=0$ 
+   and Equation (\ref{eq:neumann_lax}) simply becomes a a Dirichlet problem where 
+   $u$ is used to define the boundary condition, see HERE*. %TODO REFERENCE
+   On the interior we then have 
+   \begin{equation}
+    Lu = f \quad \text{ in }\OO, \label{eq:neumann_on_interior}
+   \end{equation} 
+   which is the first condition in (\ref{eq:neuman_condition_boundary}).
+   We now examine the boundary, and we assume $v\in H^1(\OO)$.
+   In the proof of Theorem \ref{thm:minimal_property}, we used Green's formula,
+    \begin{equation} %? Skal dette slettes?
+        \int_\Omega v\partial_i w dx = -\int_\Omega w \partial_i v dx + \int_{\partial \Omega} v w \vec{n}_i ds.
+    \end{equation}
+   In that proof we could assume the integral on the boundary to be zero, which 
+   we cannot do here. However, with the same arguments regarding summing and substituting, 
+   we get that 
+   \begin{equation}
+      a(v,v) - (f,v)_{0,\OO} - (g,v)_{0,\partial\OO} = 
+      \int_\OO v[Lu - f] dx + \int_{\partial \OO}
+     [ \sum_{i,k}  \vec{n}_i a_{ik} \partial_k u-g]v ds.
+     \label{eq:existence_neumann_last_eq}
+   \end{equation}
+   Using Equation (\ref{eq:neumann_lax}) and Equation (\ref{eq:neumann_on_interior}),
+   the last integral in Equation (\ref{eq:existence_neumann_last_eq}) must be $0$.
+
+   Suppose that for some $i$ and $k$ the function $v_0 = \vec{n}_i a_{ik} \partial_k u -g$ does 
+   not vanish. Then $\int_{\partial\OO}v_0^2ds>0$, and by the density of 
+   $C^1(\bar{\OO})$ in $C^0(\bar{\OO})$, there exists a $v\in C^1(\bar{\OO})$
+   such that  $\int_{\partial\OO}v_0\cdot vds>0$, which cannot happen, due that 
+   what we found out using Equation (\ref{eq:existence_neumann_last_eq}). 
+   We therefore have the second condition in (\ref{eq:neuman_condition_boundary}),
+   and $u$ is a classical solution of this boundary problem.
+
+   On the other hand, assuming $u$ is a classical solution and satisfy (\ref{eq:neuman_condition_boundary}),
+   we see from Equation (\ref{eq:existence_neumann_last_eq}) that $u$ also satisfy 
+   Equation (\ref{eq:neumann_lax}), and is therefore and solution to the variational 
+   problem, and by Theorem \ref{thm:lax_milgram} unique.
+\end{bev}
