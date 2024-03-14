@@ -13,11 +13,22 @@ of PDE's demand differently posed problems.
 
 The theory of FEM stems from elliptic PDE's, so we will start by
 describing these problems for elliptic PDE's.
+We will use a second order elliptic partial differential operator $L$ as 
+\begin{equation}
+    Lu = - \sum_{i,k=1}^n \partial_i(a_{ik} \partial_k u)+ a_0u.
+    \label{eq:Lu}
+\end{equation}
+The ellipticity requirement in Definition \ref{def:pde_classification} only 
+makes demands on the coefficients for the second order partial derivatives, 
+and we will ignore the other parts for now. Unless otherwise stated, $L$ is 
+always defined as here.
+\iffalse
 We therefore assume that we can write a general linear PDE of second 
 order with $n$ variables as 
 \begin{equation*}
     Lu = f.
 \end{equation*}
+\fi
 Since we are trying to solve the PDE over some space $\Omega$, we write
 \begin{align}
     Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
