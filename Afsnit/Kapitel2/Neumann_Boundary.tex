@@ -1,0 +1,55 @@
+
+
+\begin{defn}{Neumann Boundary condition}
+    Let $\frac{\partial u}{\partial n}$ be the normal derivative. Then the Neumann boundary condition is given by
+    \begin{equation}
+        \frac{\partial u}{\partial n} := n\cdot \nabla u = g.
+    \end{equation}
+\end{defn}
+
+Using this definition, we can look at the Poisson equation with Neumann boundary conditions. Thus
+
+\begin{align}
+\label{eq:Neumann_Poisson}
+\begin{split}
+    -\Delta u &= f \quad \text{in } \Omega, \\
+    \frac{\partial u}{\partial n} &= g \quad \text{on } \partial \Omega.
+\end{split}
+\end{align}
+
+Due to the fact that \ref{eq:Neumann_Poisson} only contains derivatives with respect to $u$. 
+Thus if $u$ satisfies \ref{eq:Neumann_Poisson}, then $u + c$ also satisfies \ref{eq:Neumann_Poisson} for any constant $c$.
+This means that the solution to \ref{eq:Neumann_Poisson} is only unique up to a constant.
+
+It turns out that we can formulate the weak form of this problem, by restricting to the form $V:=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}.$
+This gives us V-elipticity in the form of \ref{eq:elliptic}. 
+
+We now want to assert that every classical solution to the variational problem satisfies equation \ref{eq:Neumann_Poisson}.
+To do this, we set $w:=\nabla u$. Thus equation \ref*{eq:Neumann_Poisson} can be written as
+\begin{align}\label{eq:Neumann_Poisson_weak}
+\begin{split}
+    -\text{div } w &= f \quad \in \Omega, \\
+    v'w &= g \quad \text{on} \Gamma.
+\end{split}    
+\end{align}
+
+From the Gauss Integral Theorem, we have that
+
+\[\int_{\Omega} \text{div } w dx = \int_{\Gamma} wv ds.\]
+
+Then from \ref{eq:Neumann_Poisson_weak}, we get
+
+\begin{align}
+\begin{split}
+\int_{\Omega} \text{div } w dx &= \int_{\Gamma} vw ds \\
+\int_{\Omega} -f dx &= \int_{\Gamma} g ds.
+\end{split}
+\end{align}
+
+We now use theorem \ref{label}, and get $u\in V$ where
+
+\begin{equation}\label{eq:Lax-Milgram_Neumann}
+  a(u,v) = (f,v)_{0,\Omega} + (g,v)_{1,\Gamma} \quad \forall v\in V.  
+\end{equation}
+We say that equation \ref{eq:Neumann_Poisson} must satisfiy some compatibility condition in order to have a solution. This is due to the fact that the solution is only unique up to a constant. From this, we get that equation \ref{eq:Lax-Milgram_Neumann} also holds for $v=const$.
+Then since all functions in $H^1(\Omega)$ can be expressed as a direct sum of some function $v\in V$ plus a constant, \ref{eq:Lax-Milgram_Neumann} holds for all $v\in H^1(\Omega)$.
