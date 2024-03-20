@@ -1,0 +1,13 @@
+\begin{defn}{Affine Family}
+    A family of finite element spaces $S_h$ for partitions $\mathcal{T}_h$ of 
+    $\OO\subset \RR^d$ is called an affine family if there exists a finite 
+    element $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma)$, such that, beside the 
+    usual properties of a finite element, there exists some affine mappings 
+    $F_j:T_{\text{ref}}\to T_j$ such that
+    \begin{equation*}
+        \forall v \in S_h \,\,\land \,\, \forall x \in T_j:\,\, v(x) = p(F^{-1}_j(x)) \quad 
+        p \in \Pi_{\text{ref}}.
+    \end{equation*}
+    Meaning, when restricting $v\in S_h$ to some $T_j$, we can fully describe 
+    $v$ using some affine mapping and an element in $\Pi_{\text{ref}}$.
+\end{defn}
