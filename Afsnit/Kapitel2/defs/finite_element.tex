@@ -1,5 +1,6 @@
 \begin{defn}{Finite Element}
     A finite element is a triple $(T, \Pi,\Sigma)$ which has the following properties:
+    \label{def:finite_element}
     \begin{enumerate}
         \item $T\subset \RR^d$ is a polyhedron
         \item $\Pi \subset C(T)$ with finite dimension $s$
@@ -7,3 +8,9 @@
         Every $p\in \Pi$ is uniquely defined by the values of the $s$ functionals in $\Sigma$.
     \end{enumerate}
 \end{defn}
+The vernacular can be extended as follows:
+\begin{itemize}
+    \item The parts of $\partial T$ which lies in different hyperplanes are called faces
+    \item A set of functions in $\Pi$ which form a basis are called shape functions 
+    \item $s$ is the number of local degrees of freedom or local dimension
+\end{itemize}
