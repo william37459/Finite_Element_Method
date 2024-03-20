@@ -1,0 +1,43 @@
+\begin{lem}{Cea's Lemma}
+    Let the bilinear form $a$ be $V$-elliptic with $H_0^m(\Omega)\subset V \subset H^m(\Omega)$. In addition, let $u$ and $u_h$ be solutions to the variational problem in $V$ and $S_h\subset V$, respectively. Then
+    \begin{equation}
+        \label{eq:cea}
+        \|u-u_h\|_m\leq \frac{C}{\alpha}\inf_{v_h\in s_h} \|u-v_h\|_m.
+    \end{equation}
+\end{lem}
+\begin{proof}
+    The way we define $u$ and $u_h$ yields
+    \begin{align}
+    \begin{split}
+        a(u,v)&=\langle \ell ,v\rangle \quad \forall v\in V,\\
+        a(u_h,v)&=\langle \ell ,v_h\rangle \quad \forall v\in S_h.
+    \end{split}
+    \end{align}
+    We assumed $S_h\subset V$, and we therefore by subtraction get
+    \begin{equation}
+        a(u,v)-a(u_h,v)=0 \quad \forall v\in S_h.
+    \end{equation}
+    which by linearity of $a$ yields
+    \begin{equation}
+        \label{eq:cea_proof}
+        a(u-u_h,v)=0 \quad \forall v\in S_h.
+    \end{equation}
+    Now let $v_h\in S_h$ and $v=v_h-u_h$. Then combining this with \ref{eq:cea_proof}, we get  
+    \begin{equation}
+        a(u-u_h,v_h-u_h)=0 \quad \forall v_h\in S_h,
+    \end{equation}
+    and
+    \begin{align*}
+        \alpha\|u-u_h\|_V^2&\leq a(u-u_h,u-u_h)\\
+        &=a(u-u_h,u-v_h)+a(u-u_h,v_h-u_h)\\ 
+        &\leq C\|u-u_h\|_m\|u-v_h\|_m.
+    \end{align*}
+    Rearranging the inequality yields 
+    \begin{equation}
+        \|u-u_h\|_m\leq \frac{C}{\alpha} \|u-v_h\|_m,
+    \end{equation} 
+    and therefore
+    \begin{equation}
+        \|u-u_h\|_m\leq \frac{C}{\alpha}\inf_{v_h\in s_h} \|u-v_h\|_m.
+    \end{equation}
+\end{proof}
