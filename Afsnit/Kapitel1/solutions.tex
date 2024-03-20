@@ -51,6 +51,19 @@ We can therefore use Theorem \ref{thm:lax_milgram} without further consideration
 on our spaces.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
+When working with PDE's, the equation shown in Corollary \ref{cor:lax_milgram} 
+is called the variational formulation of a boundary condition problem. 
+The general gist is to find some trial function $u$, and examine wether this 
+is a solution to our problem, by using some test function $v$. 
+As in Corollary \ref{cor:lax_milgram}, all the parts involving the trail function 
+is grouped into one part, $a$, and the parts only involving the test functions into 
+another, $\ell$.
+This changes to problem to something easier to approximate, and widens the 
+space in which we look for solutions.
+%https://fab.cba.mit.edu/classes/864.14/text/variational.pdf
+%https://www.ljll.fr/ledret/M1English/M1ApproxPDE_Chapter3.pdf
+%https://hplgit.github.io/num-methods-for-PDEs/doc/pub/varform/sphinx/._main_varform001.html#abstract-notation-for-variational-formulations
+
 After proving these statements on qualities of a solution, we can now move 
 on to discussing the existence of these solutions. We start by looking at 
 sufficiently well-defined solutions. 
