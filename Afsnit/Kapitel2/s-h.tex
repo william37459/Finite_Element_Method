@@ -25,3 +25,13 @@ be the entries the vectors $z$ and $b$ respectively, this can be written in the 
 \begin{equation*}
     Az = b.
 \end{equation*}
+
+It can shown that the matrix $A$ is symmetric and positive definite, when $a$ is an $H^m$-elliptic bilinear form, as follows. 
+To show that $A$ is positive definite, we need to show that $z^TAz > 0$ for all $z \neq 0$. Thus
+\begin{align*}
+    z^TAz &= \sum_{i,j} z_iA_{ik}z_k \\
+    &= a\left(\sum_{k} z_k\psi_k,\sum_{i} z_i\psi_i\right) \\
+    &= a(u_h,u_h) \geq \alpha \|u_h\|^2 > 0.
+\end{align*}
+
+From now on, we will assume for simplicity that $a$ is $H^m$-elliptic and $V\subset H^m(\Omega)$.
