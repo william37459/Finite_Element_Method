@@ -31,8 +31,10 @@ order with $n$ variables as
 \fi
 Since we are trying to solve the PDE over some space $\Omega$, we write
 \begin{align}
+\begin{split}
     Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
-    u &= g \quad \text{on } \partial \Omega. \nonumber
+    u &= g \quad \text{on } \partial \Omega.
+\end{split}
 \end{align}
 A boundary condition on the form (\ref{eq:b_v_problem}) is called a 
 Dirichlet condition, which is when $u$ is specified on the boundary. 
@@ -42,8 +44,10 @@ transform the problem. To do this, we assume there exists a function
 $\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
 $w = u - \tilde{u}$ and $\tilde{f}=f-L\tilde{u}$ and we get that
 \begin{align}
+\begin{split}
     Lw &= \tilde{f} \quad \text{in } \Omega \label{eq:b_v_problem_homogeneous} \\
-    w &= 0 \quad \text{on } \partial \Omega. \nonumber
+    w &= 0 \quad \text{on } \partial \Omega. 
+\end{split}
 \end{align}
 To make these explicit demands for $u$ on $\partial \OO$ can 
 be rather restrictive.
