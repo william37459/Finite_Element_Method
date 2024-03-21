@@ -10,7 +10,7 @@ earlier theory, we know that the solution is given by
 \end{equation*}
 Since we assumed $S_h$ to be finite, we can let $ \{ \psi_1, \psi_2, \ldots, \psi_N \}$ 
 be a basis for $S_h$. Since $\ell$ is a linear functional, 
-the solution is 
+$u_h$ can be found using the following weak formulation:
 \begin{equation*}
     a(u_h, \psi_i) = \ell(\psi_i) \quad i = 1, 2, \ldots, N.
 \end{equation*}
@@ -20,18 +20,18 @@ equations
 \begin{equation*}
     \sum_{k=1}^N z_k a(\psi_k,\psi_i) = \ell(\psi_i) \quad i = 1,2,\ldots,N.
 \end{equation*}
-Letting $a(\psi_k,\psi_i)$ be the $i,j$-entries in a matrix $A$, $z_i$ and $\ell(\psi_i)$ 
-be the entries the vectors $z$ and $b$ respectively, this can be written in the matrix form 
+Letting $a(\psi_i,\psi_j)$ be the $i,j$-entries in a matrix $A$, $z_i$ and $\ell(\psi_i)$ 
+be the entries the vectors $z$ and $b$ respectively, this can be written in matrix form 
 \begin{equation*}
     Az = b.
 \end{equation*}
 
-It can shown that the matrix $A$ is symmetric and positive definite, when $a$ is an $H^m$-elliptic bilinear form, as follows. 
-To show that $A$ is positive definite, we need to show that $z^TAz > 0$ for all $z \neq 0$. Thus
+It can be shown that the matrix $A$ is symmetric and positive definite, when $a$ is an $H^m$-elliptic bilinear form, as follows. 
+The symmetry of $A$ follows directly from the symmetry of $a$, as $a$ is $H^m$-elliptic.
+To show that $A$ is positive definite, we need to show that $x^TAx > 0$ for all $x \neq 0$. Thus
 \begin{align*}
-    z^TAz &= \sum_{i,j} z_iA_{ik}z_k \\
-    &= a\left(\sum_{k} z_k\psi_k,\sum_{i} z_i\psi_i\right) \\
+    x^TAx &= \sum_{i,j} x_iA_{ik}x_k \\
+    &= a\left(\sum_{k} x_k\psi_k,\sum_{i} x_i\psi_i\right) \\
     &= a(u_h,u_h) \geq \alpha \|u_h\|^2 > 0.
 \end{align*}
-
-From now on, we will assume for simplicity that $a$ is $H^m$-elliptic and $V\subset H^m(\Omega)$.
+From now on, we will assume for simplicity that $V\subset H^m(\Omega)$ and $a$ is $V$-elliptic.
