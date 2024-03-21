@@ -1,9 +1,9 @@
 
 
 \begin{defn}{Neumann Boundary condition}
-    Let $\frac{\partial u}{\partial n}= n\cdot \nabla u$ be the normal derivative. Then the Neumann boundary condition is given by
+    Let $\frac{\partial u}{\partial \mathbf{n}}= \mathbf{n}\cdot \nabla u$ be the normal derivative. Then the Neumann boundary condition is given by
     \begin{equation}
-        \frac{\partial u}{\partial n}  = g.
+        \frac{\partial u}{\partial \mathbf{n}}  = g.
     \end{equation}
 \end{defn}
 Using this definition, we can look at the Poisson equation with Neumann boundary conditions. Thus
@@ -11,7 +11,7 @@ Using this definition, we can look at the Poisson equation with Neumann boundary
 \label{eq:Neumann_Poisson}
 \begin{split}
     -\Delta u &= f \quad \text{in } \Omega, \\
-    \frac{\partial u}{\partial n} &= g \quad \text{on } \partial \Omega.
+    \frac{\partial u}{\partial \mathbf{n}} &= g \quad \text{on } \partial \Omega.
 \end{split}
 \end{align}
 Due to the fact that \eqref{eq:Neumann_Poisson} only contains derivatives with respect to $u$,
@@ -28,15 +28,15 @@ To do this, we let $w=\nabla u$. Thus \eqref{eq:Neumann_Poisson} can be written 
 \begin{align}\label{eq:Neumann_Poisson_weak}
 \begin{split}
     -\text{div } w &= f \quad \text{in } \Omega, \\
-    \vec{n}^Tw &= g \quad \text{on } \partial \OO.
+    \mathbf{n}^Tw &= g \quad \text{on } \partial \OO.
 \end{split}    
 \end{align}
 From the Gauss Integral Theorem, we have that
-\[\int_{\Omega} \text{div } w dx = \int_{\partial \OO} \vec{n}^Tw ds.\]
+\[\int_{\Omega} \text{div } w dx = \int_{\partial \OO} \mathbf{n}^Tw ds.\]
 Then from \eqref{eq:Neumann_Poisson_weak} we get
 \begin{align}
 \begin{split}
-%\int_{\Omega} \text{div } w dx &= \int_{\partial \OO} \vec{n}^Tw ds \\ 
+%\int_{\Omega} \text{div } w dx &= \int_{\partial \OO} \mathbf{n}^Tw ds \\ 
 \int_{\Omega} -f dx &= \int_{\partial \OO} g ds.
 \end{split}
 \end{align}
