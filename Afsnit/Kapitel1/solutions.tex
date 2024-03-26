@@ -1,6 +1,6 @@
 \section{Variational Problems and Solutions}
 The goal of this section is to start developing the mathematical 
-precision to know of the existence of solutions to a PDE, and how to find 
+precision to know of the existence of solutions to a PDE with boundary conditions, and how to find 
 them. 
 To do this, we start with a general abstract theorem on how solutions 
 behave in certain problems, then we look at a connection between 
@@ -37,6 +37,7 @@ unless otherwise stated.
 
 We now use Theorem~\ref{thm:charac_theorem} to show a link between classical 
 solutions and solutions of appropriate variational problems.
+%! Anton ellipticitet rettelser mht a
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
 The same kind of proof can be used to show that a solution $u$ to 
 (\ref{eq:min_prop_variational_problem}) which fulfills 
@@ -51,6 +52,7 @@ We can therefore use Theorem \ref{thm:lax_milgram} without further consideration
 on our spaces.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
+%! Efterfølgende tekst mht variational problem skal flytttes op til lige før sætning 1.9
 When working with PDE's the equation shown in Corollary \ref{cor:lax_milgram} 
 is called the variational formulation of a boundary condition problem. 
 The general gist is to find some trial function $u$ and examine whether this 
@@ -67,7 +69,7 @@ space in which we look for solutions.
 After proving these statements on qualities of a solution, we can now move 
 on to discussing the existence of these solutions. We start by looking at 
 sufficiently well-defined solutions. 
-% TODO Ændre tekst - har vist noget med eksistens og entydighed, kigger på rum af løsningerne
+%! Bedre overgang 
 \begin{defn}{\quad}
     The Dirichlet problem with homogeneous boundary conditions,
      (\ref{eq:b_v_problem_homogeneous}), has a weak solution $u\in H_0^1(\OO)$
@@ -81,7 +83,7 @@ sufficiently well-defined solutions.
 
 
 \input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
-
+%! Sætning 1.9 til sætning 1.13 skal fortællingen tydeliggøres - hvad gør hvad sætning for os (i ord), og hvorfor gør vi det
 
 We can use Theorem \ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
 see (\ref{eq:b_v_problem}). From (\ref{eq:b_v_problem_homogeneous}), let 

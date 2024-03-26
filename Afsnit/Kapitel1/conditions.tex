@@ -13,7 +13,7 @@ of PDE's demand differently posed problems.
 
 The theory of FEM stems from elliptic PDE's, so we will start by
 describing these problems for elliptic PDE's.
-We will use a second order elliptic partial differential operator $L$ as 
+We will use the second order elliptic partial differential operator $L$ as 
 \begin{equation}
     Lu = - \sum_{i,k=1}^n \partial_i(a_{ik} \partial_k u)+ a_0u.
     \label{eq:Lu}
@@ -37,8 +37,8 @@ Since we are trying to solve the PDE over some space $\Omega$, we write
 \end{split}
 \end{align}
 A boundary condition on the form (\ref{eq:b_v_problem}) is called a 
-Dirichlet condition, which is when $u$ is specified on the boundary. 
-If $u=0$ we have homogeneous boundary conditions, which we usually assume 
+Dirichlet condition, which is when $u$ itself is specified on the boundary. 
+If $u=0$ on the boundary we have homogeneous boundary conditions, which we usually assume 
 to make things easier. If that is not the case, we can
 transform the problem. To do this, we assume there exists a function 
 $\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
@@ -54,3 +54,4 @@ be rather restrictive.
 Instead we can make implicit restrictions, by constraining 
 $\partial _i u$ on $\partial \OO$.
 This will be dealt with later.
+%! Bedre overgang
