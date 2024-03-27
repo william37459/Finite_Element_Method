@@ -3,7 +3,7 @@
    cone condition. Let $f \in L_2( \OO)$ and $g\in L_2(\partial \OO)$.
    There exists a unique $u \in H^1(\OO)$ that solves the variational problem 
    \begin{equation*}
-    J(v) = \frac{1}{2}a(v,v) - (f,v)_{0,\OO} - (g,v)_{0,\partial\OO} \to \min.
+    J(v) = \frac{1}{2}a(v,v) - {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} \to \min.
    \end{equation*}
    Also, $u \in C^2(\OO)\cap C^1(\bar{\OO})$ if and only if a classical solution 
    of 
@@ -16,14 +16,14 @@
    \end{thmx}
 \begin{bev}
    % TODO H^1 ellipticitet af a
-   Obviously $ (f,v)_{0,\OO} - (g,v)_{0,\partial\OO}$ is a linear functional, 
-   and since $a$ is $H^1$ elliptic, Theorem \ref{thm:lax_milgram} gives us the 
+   Obviously $ {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO}$ is a linear functional, 
+   and since $a$ is $H^1$ elliptic, Theorem~\ref{thm:lax_milgram} gives us the 
    uniqueness and existence of $u$.
-   Corollary \ref{cor:lax_milgram} gives us
+   Corollary~\ref{cor:lax_milgram} gives us
    \begin{equation}
-      a(u,v) = (f,v)_{0,\OO} - (g,v)_{0,\partial\OO} \quad \forall v \in H^1(\OO). \label{eq:neumann_lax}
+      a(u,v) = {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} \quad \forall v \in H^1(\OO). \label{eq:neumann_lax}
    \end{equation}
-   We now move on to the "if and only if" part of the theorem. Start by 
+   We now move on to the ``if and only if'' part of the theorem. Start by 
    assuming $u \in C^2(\OO)\cap C^1(\bar{\OO})$.
    If we look in the interior, and as such at $v \in H^1_0(\OO)$, we get $\gamma v=0$ 
    and (\ref{eq:neumann_lax}) simply becomes a a Dirichlet problem where 
@@ -34,7 +34,7 @@
    \end{equation} 
    which is the first condition in (\ref{eq:neuman_condition_boundary}).
    We now examine the boundary, and we assume $v\in H^1(\OO)$.
-   In the proof of Theorem \ref{thm:minimal_property}, we used Green's formula,
+   In the proof of Theorem~\ref{thm:minimal_property}, we used Green's formula,
     \begin{equation} %? Skal dette slettes?
         \int_\Omega v\partial_i w dx = -\int_\Omega w \partial_i v dx + \int_{\partial \Omega} v w \mathbf{n}_i ds.
     \end{equation}
@@ -42,7 +42,7 @@
    we cannot do here. However, with the same arguments regarding summing and substituting, 
    we get
    \begin{equation}
-      a(v,v) - (f,v)_{0,\OO} - (g,v)_{0,\partial\OO} = 
+      a(v,v) - {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} = 
       \int_\OO v[Lu - f] dx + \int_{\partial \OO}
      [ \sum_{i,k}  \mathbf{n}_i a_{ik} \partial_k u-g]v ds.
      \label{eq:existence_neumann_last_eq}
@@ -61,5 +61,5 @@
    On the other hand, assuming $u$ is a classical solution and satisfy (\ref{eq:neuman_condition_boundary}),
    we see from (\ref{eq:existence_neumann_last_eq}) that $u$ also satisfy 
    (\ref{eq:neumann_lax}), and is therefore a solution to the variational 
-   problem, and by Theorem \ref{thm:lax_milgram} unique.
+   problem, and by Theorem~\ref{thm:lax_milgram} unique.
 \end{bev}

@@ -31,7 +31,7 @@ We start by specifying the bilinear form in Theorem~\ref{thm:charac_theorem}.
  \end{defn}
 From this point forward $a$ will be referring to the bilinear form, given by
 \begin{equation}
-   a(u,v) = \int_\Omega \left[\sum_{i,k} a_{ik}\partial_iu\partial_kv+a_0uv\right]dx,
+   a(u,v) = \int_\Omega \left[\sum_{i,k} a_{ik}\partial_i u\partial_k v+a_0uv\right]dx,
 \end{equation}
 unless otherwise stated.
 
@@ -48,16 +48,16 @@ solution.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Thm.tex}
 The Hilbert spaces we are going to be working with are all going to be 
 vector spaces, and thus convex by definition. 
-We can therefore use Theorem \ref{thm:lax_milgram} without further considerations 
+We can therefore use Theorem~\ref{thm:lax_milgram} without further considerations 
 on our spaces.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
 %! Efterfølgende tekst mht variational problem skal flytttes op til lige før sætning 1.9
-When working with PDE's the equation shown in Corollary \ref{cor:lax_milgram} 
+When working with PDE's the equation shown in Corollary~\ref{cor:lax_milgram} 
 is called the variational formulation of a boundary condition problem. 
 The general gist is to find some trial function $u$ and examine whether this 
 is a solution to our problem, by using some test function $v$. 
-As in Corollary \ref{cor:lax_milgram}, all the parts involving the trail function 
+As in Corollary~\ref{cor:lax_milgram}, all the parts involving the trail function 
 is grouped into one part, $a$, and the parts only involving the test functions into 
 another, $\ell$.
 This changes the problem to something easier to approximate and widens the 
@@ -75,10 +75,10 @@ sufficiently well-defined solutions.
      (\ref{eq:b_v_problem_homogeneous}), has a weak solution $u\in H_0^1(\OO)$
      if 
      \begin{equation*}
-        a(u,v) = (\tilde{f},v)_0 \quad \forall v \in H_0^1(\OO).
+        a(u,v) = {(\tilde{f},v)}_0 \quad \forall v \in H_0^1(\OO).
      \end{equation*}
-     Here $a(u,v)$ is the bilinear from from(\ref{eq:a(u,v)}), 
-     and $(\tilde{f},v)_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in(\ref{eq:l(v)}).
+     Here $a(u,v)$ is the bilinear from from (\ref{eq:a(u,v)}), 
+     and ${(\tilde{f},v)}_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in (\ref{eq:l(v)}).
 \end{defn}
 
 

@@ -21,7 +21,7 @@ Thus if $u$ satisfies~\eqref{eq:Neumann_Poisson}, then $u + c$ also satisfies~\e
 This means that the solution to~\eqref{eq:Neumann_Poisson} is only unique up to a constant,
  which extends to other equations with Neumann boundary conditions.
 
-It turns out that we can formulate the weak form of this problem by restricting to the form $V=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}.$
+It turns out that we can formulate the weak form of this problem by restricting to the form $V=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}$.
 This gives us V-elipticity in the form of Definition~\eqref{eq:elliptic}. 
 
 We now want to assert that every classical solution to the variational problem satisfies~\eqref{eq:Neumann_Poisson}.
@@ -29,11 +29,11 @@ To do this, we let $w=\nabla u$. Thus~\eqref{eq:Neumann_Poisson} can be written 
 \begin{align}\label{eq:Neumann_Poisson_weak}
 \begin{split}
     -\text{div } w &= f \quad \text{in } \Omega, \\
-    \mathbf{n}^Tw &= g \quad \text{on } \partial \OO.
+    \mathbf{n}^T w &= g \quad \text{on } \partial \OO.
 \end{split}    
 \end{align}
 From the Gauss Integral Theorem, we have that
-\[\int_{\Omega} \text{div } w dx = \int_{\partial \OO} \mathbf{n}^Tw ds.\]
+\[\int_{\Omega} \text{div } w dx = \int_{\partial \OO} \mathbf{n}^T w ds.\]
 Then from~\eqref{eq:Neumann_Poisson_weak} we get
 \begin{align}
 \begin{split}
@@ -41,11 +41,11 @@ Then from~\eqref{eq:Neumann_Poisson_weak} we get
 \int_{\Omega} -f dx &= \int_{\partial \OO} g ds.
 \end{split}
 \end{align}
-We now use Corollary \ref{cor:lax_milgram}, and get $u\in V$ where
+We now use Corollary~\ref{cor:lax_milgram}, and get $u\in V$ where
 \begin{equation}\label{eq:Lax-Milgram_Neumann}
-  a(u,v) = (f,v)_{0,\Omega} + (g,v)_{0,\partial \OO} \quad \forall v\in V.  
+  a(u,v) = {(f,v)}_{0,\Omega} + {(g,v)}_{0,\partial \OO} \quad \forall v\in V.  
 \end{equation}
 We say that~\eqref{eq:Neumann_Poisson} must satisfiy some compatibility condition in order to have a solution.
  This is due to the fact that the solution is only unique up to a constant.
-  From this, we get that \ref{eq:Lax-Milgram_Neumann} also holds for $v=const$.
+  From this, we get that~\ref{eq:Lax-Milgram_Neumann} also holds for $v=const$.
 Then since all functions in $H^1(\Omega)$ can be expressed as a direct sum of some function $v\in V$ plus a constant,~\eqref{eq:Lax-Milgram_Neumann} holds for all $v\in H^1(\Omega)$.

@@ -15,7 +15,7 @@
 \renewcommand{\chaptermark}[1]{ \markboth{\thechapter.\ #1}{}}
 \fancyheadoffset{0pt}
 
-\lhead{\nouppercase \leftmark}
+\lhead{\nouppercase\leftmark}
 \rhead{Aalborg University}
 
 \renewcommand{\chaptermark}[1]%
@@ -68,8 +68,7 @@
 
 \renewenvironment{leftbar}[4][\hsize]
 {
-    \def\FrameCommand
-    {
+    \def\FrameCommand{
         {\color{#2}\vrule width #4pt}
         \hspace{-8pt}
         \fboxsep=\FrameSep\colorbox{#3}
