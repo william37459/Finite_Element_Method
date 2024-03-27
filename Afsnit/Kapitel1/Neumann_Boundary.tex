@@ -7,7 +7,6 @@
     \end{equation}
 \end{defn}
 Using this definition, we can look at the Poisson equation with Neumann boundary conditions. Thus
-%! Skriv Anthons svar ind
 \begin{align}
 \label{eq:Neumann_Poisson}
 \begin{split}
@@ -21,9 +20,10 @@ Thus if $u$ satisfies~\eqref{eq:Neumann_Poisson}, then $u + c$ also satisfies~\e
 This means that the solution to~\eqref{eq:Neumann_Poisson} is only unique up to a constant,
  which extends to other equations with Neumann boundary conditions.
 
-It turns out that we can formulate the weak form of this problem by restricting to the form $V=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}$.
-This gives us V-elipticity in the form of Definition~\eqref{eq:elliptic}. 
-
+It turns out that we can formulate the weak form of this problem by restricting to the form $V=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}.$
+Define $a(u,v) = \int_\OO \nabla u \cdot \nabla v dx$. Examining a version of 
+the Friedrich inequality, Theorem~\ref{thm:friedrich}, which can be found on 
+page 46 of \cite{Braess}, $a$ can be found to be $V$-elliptic.
 We now want to assert that every classical solution to the variational problem satisfies~\eqref{eq:Neumann_Poisson}.
 To do this, we let $w=\nabla u$. Thus~\eqref{eq:Neumann_Poisson} can be written as
 \begin{align}\label{eq:Neumann_Poisson_weak}
@@ -41,11 +41,24 @@ Then from~\eqref{eq:Neumann_Poisson_weak} we get
 \int_{\Omega} -f dx &= \int_{\partial \OO} g ds.
 \end{split}
 \end{align}
-We now use Corollary~\ref{cor:lax_milgram}, and get $u\in V$ where
+We now use Corollary \ref{cor:lax_milgram}, and get $u\in V$, where
 \begin{equation}\label{eq:Lax-Milgram_Neumann}
   a(u,v) = {(f,v)}_{0,\Omega} + {(g,v)}_{0,\partial \OO} \quad \forall v\in V.  
 \end{equation}
-We say that~\eqref{eq:Neumann_Poisson} must satisfiy some compatibility condition in order to have a solution.
- This is due to the fact that the solution is only unique up to a constant.
-  From this, we get that~\ref{eq:Lax-Milgram_Neumann} also holds for $v=const$.
-Then since all functions in $H^1(\Omega)$ can be expressed as a direct sum of some function $v\in V$ plus a constant,~\eqref{eq:Lax-Milgram_Neumann} holds for all $v\in H^1(\Omega)$.
+Equation~\eqref{eq:Neumann_Poisson} has now been shown to be true for 
+every classical solution of the variational problem for $u\in V$. However, for some 
+$u\in H^1(\OO)\setminus V$, we can use the following construction for 
+the constant $c$:
+\begin{equation*}
+    \forall f \in H^1(\OO): \,\, c = \frac{\int_\OO f(x) dx }{\int_\OO 1 dx}.
+\end{equation*}
+Define $v(x) = f(x) - c$, and then 
+\begin{equation*}
+    \int_\OO v(x)dx = \int_\OO f(x) dx - c\int_\OO 1 dx = \int_\OO f(x) dx - \frac{\int_\OO f(x) dx }{\int_\OO 1 dx} \int_\OO 1 dx = 0,
+\end{equation*}
+so $v \in V$. For every $u\in H^1(\OO)\setminus V$ we can find a fitting 
+constant such that $u+c \in V$. Every classical solution of the 
+variational problem corresponding to a Neumann Boundary condition therefore 
+satisfies \eqref{eq:Neumann_Poisson}, and \eqref{eq:Neumann_Poisson} becomes the weak formulation.
+%! Definerer nyt a i bogen? Ækvivalens?
+%? Skal det flyttes til efter 1.16 som i bogen?
