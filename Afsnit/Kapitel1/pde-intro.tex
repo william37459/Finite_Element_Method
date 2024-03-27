@@ -15,7 +15,7 @@ such has the form
 	- \sum_{i,k=1}^{n}a_{ik}(x)u_{x_i x_k}\label{eq:pde_order2_n}
 	= f(x).
 \end{equation}
-%! Tilføj eksempler for hver type PDE
+
 The coefficients in (\ref*{eq:pde_order2_n}) can be 
 organized nicely in a vector containing every $b_i$ 
 in $b(x)$
@@ -36,6 +36,25 @@ working with.
 	\end{itemize}
 	If for a given equation the above conditions hold for all points of the domain, the equation is called elliptic, hyperbolic or parabolic respectively.\label{def:pde_classification}
 \end{defn}
+
+
+\begin{exmp}
+The PDE $c(x)u + u_{x_1x_1} + u_{x_2x_2}$ is an example of a simple Elliptic PDE, since
+\begin{equation}\label{eq:Basic matrix}
+	A(x) = \begin{bmatrix}
+		1 & 0\\
+		0 & 1
+	\end{bmatrix}, \quad
+	b(x) = \begin{bmatrix}
+		0 & 0\\
+		0 & 0
+	\end{bmatrix}
+\end{equation}
+
+Had entry $a_{11}$ been negative, the PDE would have been Hyperbolic, since the eigenvalues would be $-1$ and $1$. To convert~\eqref{eq:Basic matrix} to matrices for a Parabolic PDE, we can simply change $a_{11}$ to $0$, which results in $A(x)$ being positive semidefinite and $\text{rank}([A(x), b(x)]) = 2 = n$.
+\end{exmp}
+	
+
 This chapter will work with several different spaces, and with different norms and 
 seminorms. 
 These norms are defined in~\cite{Braess} and in the List of Symbols. 
