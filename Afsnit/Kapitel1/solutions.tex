@@ -85,22 +85,22 @@ sufficiently well-defined solutions.
 \input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
 %! Sætning 1.9 til sætning 1.13 skal fortællingen tydeliggøres - hvad gør hvad sætning for os (i ord), og hvorfor gør vi det
 
-We can use Theorem \ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
+We can use Theorem~\ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
 see (\ref{eq:b_v_problem}). From (\ref{eq:b_v_problem_homogeneous}), let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
 \begin{equation*}
    \tilde{u} = g \quad \text{on } \partial \OO.
 \end{equation*}
-To find a weak solution $w \in H_0^1(\OO)$, we use Theorem \ref{thm:existence_hom_dirichlet} and the 
+To find a weak solution $w \in H_0^1(\OO)$, we use Theorem~\ref{thm:existence_hom_dirichlet} and the 
 fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve (\ref{eq:b_v_problem}), and
 we find $u \in H^1(\OO)$ such that 
 \begin{align*}
-   a(u,v) = (f,v)_0 \quad \forall v &\in H_0^1(\OO) \\
+   a(u,v) = {(f,v)}_0 \quad \forall v &\in H_0^1(\OO) \\
    u-\tilde{u} & \in H_0^1(\OO).
 \end{align*}
 %TODO Hvorfor u i H^1? Density assumptions?
 We now require $a_0(x)$ in the Elliptic PDE to be bounded from below by a positive number. 
-Inequality \eqref{eq:alpha_ellipticity} will also be true for smaller $\alpha$, so if 
+Inequality~\eqref{eq:alpha_ellipticity} will also be true for smaller $\alpha$, so if 
 necessary we can reduce it, and assume 
 \begin{equation*}
   a_0(x) \geq \alpha >0 \quad \forall x \in \OO.
@@ -109,4 +109,6 @@ This gives us the lower bound on $a$ as
 \begin{equation*}
    a(v,v)  \geq \alpha |v|^2_1 + \alpha \|v\|^2_0 = \alpha \|v\|^2_1 \quad \forall v \in H^1(\OO).
 \end{equation*}
-We can therefore assume from this point on, that $a$ is $H^1$ elliptic.
+We can therefore assume from this point on that $a$ is $H^1$ elliptic.
+
+%! Skridtet fra svage løsninger til at overgå til Neumann

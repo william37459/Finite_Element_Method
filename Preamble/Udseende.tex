@@ -149,6 +149,7 @@
     \end{eks}
     \end{leftbar}
     }
+    \AtEndEnvironment{exmp}{\null\hfill$\Diamond$}%
 
 
 
@@ -164,7 +165,7 @@
   {\thmname{#1}}
 \theoremstyle{beviss}
 \newtheorem{bev}{Proof}
-\AtEndEnvironment{bev}{\null\hfill$\blacksquare$}%
+\AtEndEnvironment{bev}{\null\hfill$\square$}%
 
 \makeatletter
 \pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{-2\p@}}}{}{}
