@@ -1,11 +1,10 @@
 \begin{thmx}{Existence theorem}
-    Let $L$ be a second order uniformly elliptic partial differential operator from \eqref{eq:Lu}. Then the homogeneous Dirichlet problem,
+    Let $L$ be a second order uniformly elliptic partial differential operator from~\eqref{eq:Lu}. Then the homogeneous Dirichlet problem,
      (\ref{eq:b_v_problem_homogeneous}), always has a weak solution in $H_0^1(\OO)$. It is a minimum of the variational problem
     \begin{equation}
         \frac{1}{2} a(v,v) - {(f, v)}_0 \rightarrow \text{min}
     \end{equation}
-    over $H_0^1(\OO)$.
-\label{thm:existence_hom_dirichlet}
+    over $H_0^1(\OO)$.\label{thm:existence_hom_dirichlet}
 \end{thmx}
 
 \begin{bev}
@@ -23,7 +22,7 @@
         \left|\int a_0 u v dx \right| \leq C \int |u v| dx \leq C \|u\|_0 \|v\|_0.  
         \label{eq:estimate_a_0}   
     \end{equation}
-    Then by \eqref{eq:Cuv} and \eqref{eq:estimate_a_0} we get continuity of $a$.
+    Then by~\eqref{eq:Cuv} and~\eqref{eq:estimate_a_0} we get continuity of $a$.
     Furthermore the uniform ellipticity implies the pointwise estimate %TODO Hvorfor gør den det?
     \[
         \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
@@ -36,5 +35,5 @@
     %TODO ref Friedrich equivalent
     We know from Friedrichs' Inequality $|\cdot|_1$ and $\| \cdot \|_1$ are equivalent norms on $H_0^1$,
      resulting in $a$ being an $H^1$-elliptic bilinear form on $H_0^1(\OO)$.
-    From Theorem \ref{thm:lax_milgram} there exists a unique weak solution which is also a solution of the variational problem.
+    From Theorem~\ref{thm:lax_milgram} there exists a unique weak solution which is also a solution of the variational problem.
 \end{bev}

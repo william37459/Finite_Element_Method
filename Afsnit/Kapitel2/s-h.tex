@@ -1,5 +1,5 @@
 The idea of $S_h$ is to solve the same variational problem as in the global case, 
-but in a smaller space - meaning solving
+but in a smaller space-meaning solving
 \begin{equation*}
     J(v) = \frac{1}{2}a(v,v) - \ell(v) \to \underset{S_h}{\min}.
 \end{equation*}
@@ -28,9 +28,9 @@ be the entries the vectors $z$ and $b$ respectively, this can be written in matr
 
 It can be shown that the matrix $A$ is symmetric and positive definite, when $a$ is an $H^m$-elliptic bilinear form, as follows. 
 The symmetry of $A$ follows directly from the symmetry of $a$, as $a$ is $H^m$-elliptic.
-To show that $A$ is positive definite, we need to show that $x^TAx > 0$ for all $x \neq 0$. Thus
+To show that $A$ is positive definite, we need to show that $x^T Ax > 0$ for all $x \neq 0$. Thus
 \begin{align*}
-    x^TAx &= \sum_{i,j} x_iA_{ik}x_k \\
+    x^T Ax &= \sum_{i,j} x_i A_{ik}x_k \\
     &= a\left(\sum_{k} x_k\psi_k,\sum_{i} x_i\psi_i\right) \\
     &= a(u_h,u_h) \geq \alpha \|u_h\|^2 > 0.
 \end{align*}
