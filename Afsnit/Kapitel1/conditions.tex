@@ -1,38 +1,13 @@
 The theory of FEM stems from elliptic PDE's, so we will start by
 describing these problems for elliptic PDE's.
-We will use the second order elliptic partial differential operator $L$ as 
-\begin{equation}
-    Lu = - \sum_{i,k=1}^n \partial_i(a_{ik} \partial_k u)+ a_0u.
-    \label{eq:Lu}
-\end{equation}
+\begin{defn}{Partial Differential Operator}~\label{def:pde_operator}
+    Let $L$ denote the Partial Differential Operator defined as
+    \begin{equation}
+        Lu = - \sum_{i,k=1}^n \partial_i(a_{ik} \partial_k u)+ a_0u.
+    \end{equation}
+    Where $a_{ik}$ are entries in a matrix denoted $A(x)$.
+\end{defn}
 The ellipticity requirement in Definition~\ref{def:pde_classification} only 
 makes demands on the coefficients for the second order partial derivatives, 
 and we will ignore the other parts for now. Unless otherwise stated, $L$ is 
-always defined as here.
-
-Since we are trying to solve the PDE over some space $\Omega$, we write
-\begin{align}
-\begin{split}
-    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
-    u &= g \quad \text{on } \partial \Omega.
-\end{split}
-\end{align}
-A boundary condition on the form (\ref{eq:b_v_problem}) is called a 
-Dirichlet condition, which is when $u$ itself is specified on the boundary. 
-If $u=0$ on the boundary we have homogeneous boundary conditions, which we usually assume 
-to make things easier. If that is not the case, we can
-transform the problem. To do this, we assume there exists a function 
-$\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
-$w = u - \tilde{u}$ and $\tilde{f}=f-L\tilde{u}$ and we get that
-\begin{align}
-\begin{split}
-    Lw &= \tilde{f} \quad \text{in } \Omega \label{eq:b_v_problem_homogeneous} \\
-    w &= 0 \quad \text{on } \partial \Omega. 
-\end{split}
-\end{align}
-To make these explicit demands for $u$ on $\partial \OO$ can 
-be rather restrictive.
-Instead we can make implicit restrictions, by constraining 
-$\partial _i u$ on $\partial \OO$.
-This will be dealt with later.
-%! Bedre overgang
+always defined as in Definition~\ref{def:pde_operator}.

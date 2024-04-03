@@ -26,13 +26,13 @@
    We now move on to the ``if and only if'' part of the theorem. Start by 
    assuming $u \in C^2(\OO)\cap C^1(\bar{\OO})$.
    If we look in the interior, and as such at $v \in H^1_0(\OO)$, we get $\gamma v=0$ 
-   and (\ref{eq:neumann_lax}) simply becomes a a Dirichlet problem where 
-   $u$ is used to define the boundary condition, see (\ref{eq:b_v_problem_homogeneous}).
+   and \eqref{eq:neumann_lax} simply becomes a a Dirichlet problem where 
+   $u$ is used to define the boundary condition, see \eqref{eq:b_v_problem_homogeneous}.
    On the interior we then have 
    \begin{equation}
     Lu = f \quad \text{ in }\OO, \label{eq:neumann_on_interior}
    \end{equation} 
-   which is the first condition in (\ref{eq:neuman_condition_boundary}).
+   which is the first condition in \eqref{eq:neuman_condition_boundary}.
    We now examine the boundary, and we assume $v\in H^1(\OO)$.
    In the proof of Theorem~\ref{thm:minimal_property}, we used Green's formula,
     \begin{equation} %? Skal dette slettes?
@@ -47,19 +47,19 @@
      [ \sum_{i,k}  \mathbf{n}_i a_{ik} \partial_k u-g]v ds.
      \label{eq:existence_neumann_last_eq}
    \end{equation}
-   Using (\ref{eq:neumann_lax}) and (\ref{eq:neumann_on_interior}),
-   the last integral in (\ref{eq:existence_neumann_last_eq}) must be $0$.
+   Using \eqref{eq:neumann_lax} and \eqref{eq:neumann_on_interior},
+   the last integral in \eqref{eq:existence_neumann_last_eq} must be $0$.
 
    Suppose that for some $i$ and $k$ the function $v_0 = \mathbf{n}_i a_{ik} \partial_k u -g$ does 
    not vanish. Then $\int_{\partial\OO}v_0^2ds>0$, and by the density of 
    $C^1(\bar{\OO})$ in $C^0(\bar{\OO})$, there exists a $v\in C^1(\bar{\OO})$
    such that  $\int_{\partial\OO}v_0\cdot vds>0$, which cannot happen, due that 
-   what we found using (\ref{eq:existence_neumann_last_eq}). 
-   We therefore have the second condition in (\ref{eq:neuman_condition_boundary}),
+   what we found using \eqref{eq:existence_neumann_last_eq}. 
+   We therefore have the second condition in \eqref{eq:neuman_condition_boundary},
    and $u$ is a classical solution of this boundary problem.
 
-   On the other hand, assuming $u$ is a classical solution and satisfy (\ref{eq:neuman_condition_boundary}),
-   we see from (\ref{eq:existence_neumann_last_eq}) that $u$ also satisfy 
-   (\ref{eq:neumann_lax}), and is therefore a solution to the variational 
+   On the other hand, assuming $u$ is a classical solution and satisfy \eqref{eq:neuman_condition_boundary},
+   we see from \eqref{eq:existence_neumann_last_eq} that $u$ also satisfy 
+   \eqref{eq:neumann_lax}, and is therefore a solution to the variational 
    problem, and by Theorem~\ref{thm:lax_milgram} unique.
 \end{bev}

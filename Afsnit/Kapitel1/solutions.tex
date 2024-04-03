@@ -1,4 +1,3 @@
-\section{Variational Problems and Solutions}
 The goal of this section is to start developing the mathematical 
 precision to know of the existence of solutions to a PDE with boundary conditions, and how to find 
 them. 
@@ -35,16 +34,46 @@ From this point forward $a$ will be referring to the bilinear form, given by
 \end{equation}
 unless otherwise stated.
 
+\input{Afsnit/Kapitel1/Cone_condition.tex}
+\input{Afsnit/Kapitel1/sætninger/Trace_Theorem.tex}
+
+\section{Homogeneous Dirichlet Conditions}
+Since we are trying to solve the PDE over some space $\Omega$, we write
+\begin{align}
+\begin{split}
+    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
+    u &= g \quad \text{on } \partial \Omega.
+\end{split}
+\end{align}
+A boundary condition on the form~\eqref{eq:b_v_problem} is called a 
+Dirichlet condition, which is when $u$ itself is specified on the boundary. 
+If $u=0$ on the boundary we have homogeneous boundary conditions, which we usually assume 
+to make things easier. If that is not the case, we can
+transform the problem. To do this, we assume there exists a function 
+$\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
+$w = u - \tilde{u}$ and $\tilde{f}=f-L\tilde{u}$ and we get that
+\begin{align}
+\begin{split}
+    Lw &= \tilde{f} \quad \text{in } \Omega \label{eq:b_v_problem_homogeneous} \\
+    w &= 0 \quad \text{on } \partial \Omega. 
+\end{split}
+\end{align}
+To make these explicit demands for $u$ on $\partial \OO$ can 
+be rather restrictive.
+Instead we can make implicit restrictions, by constraining 
+$\partial _i u$ on $\partial \OO$.
+This will be dealt with later.
+%! Rettelser mht det forrige
+
 We now use Theorem~\ref{thm:charac_theorem} to show a link between classical 
 solutions and solutions of appropriate variational problems.
 %! Anton ellipticitet rettelser mht a
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
-The same kind of proof can be used to show that a solution $u$ to 
-(\ref{eq:min_prop_variational_problem}) which fulfills 
+The same kind of proof can be used to show that a solution $u$ to~\eqref{eq:min_prop_variational_problem} which fulfills 
 $u\in C^2(\OO) \cap C^0(\OO)$ is also a classical solution. 
 This gives a connection between classical solutions and solutions of 
 variational problems. We now proceed to examine the existence of a 
-solution of the variational problem shown in Theorem \ref*{thm:minimal_property}.
+solution of the variational problem shown in Theorem \ref{thm:minimal_property}.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Thm.tex}
 The Hilbert spaces we are going to be working with are all going to be 
 vector spaces, and thus convex by definition. 
@@ -72,27 +101,28 @@ sufficiently well-defined solutions.
 %! Bedre overgang
 \begin{defn}{\quad}
     The Dirichlet problem with homogeneous boundary conditions,
-     (\ref{eq:b_v_problem_homogeneous}), has a weak solution $u\in H_0^1(\OO)$
+    \eqref{eq:b_v_problem_homogeneous}, has a weak solution $u\in H_0^1(\OO)$
      if 
      \begin{equation*}
         a(u,v) = {(\tilde{f},v)}_0 \quad \forall v \in H_0^1(\OO).
      \end{equation*}
-     Here $a(u,v)$ is the bilinear from from (\ref{eq:a(u,v)}), 
-     and ${(\tilde{f},v)}_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in (\ref{eq:l(v)}).
+     Here $a(u,v)$ is the bilinear from from \eqref{eq:a(u,v)}, 
+     and ${(\tilde{f},v)}_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in~\eqref{eq:l(v)}.
 \end{defn}
 
 
 \input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
 %! Sætning 1.9 til sætning 1.13 skal fortællingen tydeliggøres - hvad gør hvad sætning for os (i ord), og hvorfor gør vi det
 
+\section{Inhomogeneous Dirichlet Conditions}
 We can use Theorem~\ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
-see (\ref{eq:b_v_problem}). From (\ref{eq:b_v_problem_homogeneous}), let 
+see \eqref{eq:b_v_problem}. From \eqref{eq:b_v_problem_homogeneous}, let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
 \begin{equation*}
    \tilde{u} = g \quad \text{on } \partial \OO.
 \end{equation*}
 To find a weak solution $w \in H_0^1(\OO)$, we use Theorem~\ref{thm:existence_hom_dirichlet} and the 
-fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve (\ref{eq:b_v_problem}), and
+fact that $(L\tilde{u},v) = a(\tilde{u},v)$, to solve \eqref{eq:b_v_problem}, and
 we find $u \in H^1(\OO)$ such that 
 \begin{align*}
    a(u,v) = {(f,v)}_0 \quad \forall v &\in H_0^1(\OO) \\
