@@ -61,20 +61,25 @@ This result can be generalized to $n$ order.
 \end{kor}
 \begin{bev}
 We will prove this using induction, where the base case is Theorem~\ref{thm:friedrich}.
-We then take the basic step
+We then take the induction hypothesis;
+%! Tjek nedenstående ligning, om den giver mening
 \begin{equation*}
     \|u\|_{ H^k (\Omega)} \leq C_k |u|_k \quad \forall u \in H_0^k (\Omega).
 \end{equation*}
 
-Now the induction step. For $u\in C^{\infty}_0(\Omega)\in H^{k+1}(\Omega)\subset H^k(\Omega)$, we have
+%! Til nedenunder: Vi kigger på C^{\infinity}, på grund af det tidligere nævnte denistets argument
+We now proceed to the induction step. For $u\in C^{\infty}_0(\Omega)\in H^{k+1}(\Omega)\subset H^k(\Omega)$, we have
 \begin{equation}
     |u|^2_k = \sum_{|\alpha| = k} \|\partial^\alpha u\|_{L_2(\Omega)}^2
 \end{equation}
+%! Uddyb. Fordi u \in C^{\infinity} => \partial^k \in C^{infinity} og i forlængelse også i H^1_0
 Thus $\partial^\alpha u \in H^1_0(\Omega)$. Then by the base case, we have
 \begin{equation}
     \begin{split}
-        \sum_{|\alpha|=k} \|\partial^\alpha u\|^2_{L_2(\Omega)} &\leq C_1^2 |\partial^\alpha u|_1^2 \quad \forall \alpha : |\alpha|=k \\
-        &= C^2_1 \sum_{|\alpha|=k+1} |\partial^{\tilde{\alpha}} u |^2_0 = C_1^2 |u|_{k+1}
+        %! Summer skal fjernes og der skal indsættes en ny ulighed
+        \sum_{|\alpha|=k} \|\partial^\alpha u\|^2_{L_2(\Omega)} &\leq \sum_{|\alpha|=k} C_1^2 |\partial^\alpha u|_1^2 \quad \forall \alpha : |\alpha|=k \\
+        &=  C^2_1 \sum_{|\tilde{\alpha}|=k+1} |\partial^{\tilde{\alpha}} u |^2_0 \\
+        &= C_1^2 |u|_{k+1}.
     \end{split}
 \end{equation}  
 We now write
