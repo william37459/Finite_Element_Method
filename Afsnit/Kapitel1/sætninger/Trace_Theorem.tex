@@ -20,11 +20,11 @@
     \end{equation}
     where $0 \leq t \leq r$. By evaluating the integral we obtain
     \begin{equation}
-        r v(\phi(y), y) = \int_0^r \partial_1 v(\phi(y) + t, y) ds - \int_0^r \partial_1 v(\phi(y) + t, y)(r-t) ds
+        r v(\phi(y), y) = \int_0^r v(\phi(y) + t, y) dt - \int_0^r \partial_1 v(\phi(y) + t, y)(r-t) dt
     \end{equation}
     By squaring the former equation, using a form of Young's inequality ${(a+b)}^2 \leq 2a^2 + 2b^2$, and appply the Cauchy-Schwarz inequality to the squares of the integrals results in
     \begin{equation}
-        r^2 v^2(\phi(y), y) \leq 2 \int_0^r 1 dt \int_0^r \partial_1 v^2(\phi(y) + t, y) \, dt +  2\int_0^r t^2 \int_0^r | \partial_1  v(\phi(y) + t, y) |^2 dt
+        r^2 v^2(\phi(y), y) \leq 2 \int_0^r 1 dt \int_0^r v^2(\phi(y) + t, y) \, dt +  2\int_0^r t^2 \int_0^r | \partial_1  v(\phi(y) + t, y) |^2 dt
     \end{equation}
     By subsituting $\int 1 dt = r$ and $\int t^2 dt = \frac{r^3}{3}$, dividing by $r^2$ and integrating over $y$, we obtain
     \begin{equation}
@@ -38,5 +38,5 @@
     \begin{equation}
         \| v \|_{0,\partial\Omega} \leq c \| v \|_{1,\Omega}.
     \end{equation}
-    Thus, the restriction $\gamma : H^1(\Omega) \cap C^1(\bar{\Omega}) \to L_2(\partial \Omega)$ is a bounded mapping on a dense set. Because of the completness of $L_2(\partial \Omega)$, it can be extended to all of $H^1(\Omega)$ without enlarging the bound.
+    Thus, the restriction $\gamma : H^1(\Omega) \cap C^1(\bar{\Omega}) \to L_2(\partial \Omega)$ is a bounded linear mapping on a dense subset of $H^1(\OO)$. Because of the completness of $L_2(\partial \Omega)$, it can be extended to all of $H^1(\Omega)$ without enlarging the bound.
 \end{bev}

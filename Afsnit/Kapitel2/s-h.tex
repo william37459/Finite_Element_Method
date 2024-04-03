@@ -8,19 +8,19 @@ earlier theory, we know that the solution is given by
 \begin{equation*}
     a(u_h,v) = \ell(v) \quad \forall v \in S_h.
 \end{equation*}
-Since we assumed $S_h$ to be finite, we can let $ \{ \psi_1, \psi_2, \ldots, \psi_N \}$ 
-be a basis for $S_h$. Since $\ell$ is a linear functional, 
+Since we assumed $S_h$ to be finite dimensional, we can let $ \{ \psi_1, \psi_2, \ldots, \psi_N \}$ 
+be a basis for $S_h$. Since $\ell$ is a linear functional and $a$ is bilinear, 
 $u_h$ can be found using the following weak formulation:
 \begin{equation*}
     a(u_h, \psi_i) = \ell(\psi_i) \quad i = 1, 2, \ldots, N.
 \end{equation*}
-As $u_h \in S_h$, $u_h$ can be found to be a linear combination of the basis, with 
+As $u_h \in S_h$, $u_h$ can be found to be a linear combination of the basis-fuctions, with 
 coefficients $z_i$, $i=1, 2, \ldots, N$. As $a$ is bilinear, we get the system of 
 equations
 \begin{equation*}
     \sum_{k=1}^N z_k a(\psi_k,\psi_i) = \ell(\psi_i) \quad i = 1,2,\ldots,N.
 \end{equation*}
-Letting $a(\psi_i,\psi_j)$ be the $i,j$-entries in a matrix $A$, $z_i$ and $\ell(\psi_i)$ 
+Letting $a(\psi_i,\psi_j)$ be the $j,i$-entries in a matrix $A$, $z_i$ and $\ell(\psi_i)$ 
 be the entries the vectors $z$ and $b$ respectively, this can be written in matrix form 
 \begin{equation*}
     Az = b.
