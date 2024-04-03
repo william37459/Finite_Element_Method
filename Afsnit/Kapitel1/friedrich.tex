@@ -49,3 +49,44 @@ since $s^2$ is independent of $k$, we can write
 By (\ref*{eq:friedrich_cauchy_limit}), both of the last terms in the 
 previous equation must tend to $0$ as $k \to \infty$, and we have the proof.
 \end{bev}
+
+This result can be generalized to $n$ order. 
+
+\begin{kor}{Friedrichs' Inequality, $n$-order}
+    Let $\Omega$ be contained in a hypercube with sidelength $s$. Then 
+\begin{equation*}
+    \| v \|_{k} \leq s |v|_{k+1} \quad \quad \forall v \in H_0^{k+1}(\Omega).
+\end{equation*}\label{cor:friedrich_n}
+\vspace{-8mm}
+\end{kor}
+\begin{bev}
+We will prove this using induction, where the base case is Theorem~\ref*{thm:friedrich}.
+We then take the basic step
+\begin{equation*}
+    \|u\|_{ H^k (\Omega)} \leq C_k |u|_k \quad \forall u \in H_0^k (\Omega).
+\end{equation*}
+
+Now the induction step. For $u\in C^{\infty}_0(\Omega)\in H^{k+1}(\Omega)\subset H^k(\Omega)$, we have
+\begin{equation}
+    |u|^2_k = \sum_{|\alpha| = k} \|\partial^\alpha u\|_{L_2(\Omega)}^2
+\end{equation}
+Thus $\partial^\alpha u \in H^1_0(\Omega)$. Then by the base case, we have
+\begin{equation}
+    \begin{split}
+        \sum_{|\alpha|=k} \|\partial^\alpha u\|^2_{L_2(\Omega)} &\leq C_1^2 |\partial^\alpha u|_1^2 \quad \forall \alpha : |\alpha|=k \\
+        &= C^2_1 \sum_{|\alpha|=k+1} |\partial^{\tilde{\alpha}} u |^2_0 = C_1^2 |u|_{k+1}
+    \end{split}
+\end{equation}  
+We now write
+\begin{equation}
+    \|u\|^2_{H^{k+1}} \leq \tilde{C}^2 |u|^2_{k+1}.
+\end{equation}
+Thus
+\begin{align*}
+    \|u\|^2_{H^{k+1}} &=\|u\|^2_{H^k} + |u|^2_{k+1} \\
+    &\leq \tilde{C}^2|u|^2_{k+1} + |u|^2_{k+1} \\
+    &\leq (\tilde{C}^2 + 1)|u|^2_{k+1} \\
+    &\leq C_{k+1}^2 |u|^2_{k+1}
+\end{align*}
+and the induction step is complete, finishing the proof.
+\end{bev}
