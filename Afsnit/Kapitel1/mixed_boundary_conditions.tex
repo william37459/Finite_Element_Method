@@ -1,5 +1,13 @@
-%! Renskriv til eksemepl
+%! Genlæs eksempel
 \begin{exmp}{Mixed conditions}
+Consider the following problem:
+In a room with two open windows, and a vacuum cleaner placed in the middle of the room poiting at a fixed point. The wind flowing through the windows can be described using a Neumann boundary condition, while the flow around the vacuum cleaner would result in a Dirichlet boundary condition.
+
+These kind of problems lead to looking for a solution in a space $V$ such that 
+$H^1_0(\OO) \subset V \subset H^1(\OO)$, with any other conditions used such 
+that $V$ is an appropriate space.
+
+\iffalse
 A word on Dirichlet boundary conditions and Neumann boundary 
 conditions-these conditions are not mutually exclusive.
 It is possible to have a problem where on some parts of the boundary, 
@@ -12,8 +20,6 @@ Assume you have a (very powerful) vacuum cleaner,
 We know the constant flow of air around the mouth of the vacuum cleaner, which 
 gives us a Dirichlet condition there, but the flow of air through the 
 windows is not constant, and are better described using Neumann conditions.
+\fi
 
-These kind of problems lead to looking for a solution in a space $V$ such that 
-$H^1_0(\OO) \subset V \subset H^1(\OO)$, with any other conditions used such 
-that $V$ is an appropriate space.
 \end{exmp}
