@@ -3,21 +3,20 @@ Theorem~\ref{thm:friedrich} and Corollary~\ref{cor:friedrich_n} both deal with
 functions which are zero on the boundary. 
 This is restrictive, and we would like to be able to examine 
 functions which are not zero on the boundary.
-To remedy this, we introduce the Trace Theorem, and to 
-do that, we introduce the cone condition.
+To remedy this, we introduce the Trace Theorem, which requires the cone condition, which we now define.
 \input{Afsnit/Kapitel1/Cone_condition.tex}
 With Definition~\ref{def:cone_condition}, we can proceed to the Trace Theorem.
 \input{Afsnit/Kapitel1/sætninger/Trace_Theorem.tex}
 Theorem~\ref{thm:trace} guarantees that functions which are not 
-zero on the boundary are at least an $L_2$ function, and as such are bounded.
+zero on the boundary are at least an $L_2$ function, and as such are bounded. %TODO Kig efter Anton rettelser
 \subsection{Attributes of Solutions}
 By rephrasing the problems to the form shown in the 
 following theorem,
 the equality in the theorem can be used to find solutions. %TODO Kig igen, når Antons svar er rettet
 \input{Afsnit/Kapitel1/sætninger/Charac_Theorem.tex}
-Theorem~\ref{thm:charac_theorem} does not guarantee the existence 
-of solutions, it only characterizes them. In Theorem~\ref{thm:charac_theorem} we 
-also only make assumptions on the linearity of the space. 
+To use Theorem~\ref{thm:charac_theorem}, we
+only make assumptions on the linearity of the space, however we
+do not guarantee the existence  of solutions, only their characterization.
 It is possible to set up a variational problem such that $J$ does 
 not attain its minimum.
 To engage with the existence of solutions, we make more assumptions on 
@@ -35,12 +34,12 @@ We start by specifying the bilinear form in Theorem~\ref{thm:charac_theorem}.
    \end{equation*}
    $a$ is called elliptic.\label{def:elliptic}
  \end{defn}
-From this point forward $a$ will be referring to the bilinear form, given by
+From this point forward $a$ will be referring to the bilinear form given by
 \begin{equation}
    a(u,v) = \int_\Omega \left[\sum_{i,k} a_{ik}\partial_i u\partial_k v+a_0uv\right]dx,
 \end{equation}
 unless otherwise stated.
-
+%TODO Beskriv hvorfor en elliptic diff operator giver en elliptic a
 
 \section{Homogeneous Dirichlet Conditions}
 Since we are trying to solve the PDE over some space $\Omega$, we write
@@ -76,17 +75,18 @@ solutions and solutions of appropriate variational problems.
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
 The same kind of proof can be used to show that a solution $u$ to~\eqref{eq:min_prop_variational_problem} which fulfills 
 $u\in C^2(\OO) \cap C^0(\OO)$ is also a classical solution. 
-This gives a connection between classical solutions and solutions of 
-variational problems. We now proceed to examine the existence of a 
-solution of the variational problem shown in Theorem \ref{thm:minimal_property}.
+When $u\in C^2(\OO) \cap C^0(\OO)$ the variational problem and 
+homogeneous boundary value problem are thusly equivalent.
+We can therefore use the variational problem to find solutions, making the
+ the following theorem useful.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Thm.tex}
 As all Hilbert spaces are vector spaces, they will be convex by definition.
-As such, subsets of Hilbert spaces we are going to be working will be as well
-We can therefore use Theorem~\ref{thm:lax_milgram} without further considerations 
-on our spaces.
+As such, subsets of Hilbert spaces we are going to be working will be as well,
+and we can use the following corollary.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
 %TODO Efterfølgende tekst mht variational problem skal flytttes op til lige før sætning 1.9
+%TODO Lidt forkert, se Anton rettelser
 When working with PDE's the equation shown in Corollary~\ref{cor:lax_milgram} 
 is called the variational formulation of a boundary condition problem. 
 The general gist is to find some trial function $u$ and examine whether this 
@@ -103,7 +103,8 @@ space in which we look for solutions.
 After proving these statements on qualities of a solution, we can now move 
 on to discussing the existence of these solutions. We start by looking at 
 sufficiently well-defined solutions. 
-%TODO Bedre overgang
+%TODO Bedre overgang, we begynder med svage løsninger, og det er smart FORDI????????
+
 \begin{defn}{\quad}
     A function $u\in H_0^1(\OO)$ is called a weak solution of 
     the Dirichlet problem with homogeneous boundary conditions,
@@ -114,12 +115,13 @@ sufficiently well-defined solutions.
      Here $a(u,v)$ is the bilinear from from \eqref{eq:a(u,v)}, 
      and ${(\tilde{f},v)}_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in~\eqref{eq:l(v)}.
 \end{defn}
-
-
+With this definition of a solution, we can show its existence. %TODO Ret med tidligere
 \input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
-%TODO Sætning 1.9 til sætning 1.13 skal fortællingen tydeliggøres - hvad gør hvad sætning for os (i ord), og hvorfor gør vi det
+
+%TODO Skriv eksempel der kan udvides til inhomogen, og tilhørende tekst
 
 \section{Inhomogeneous Dirichlet Conditions}
+%TODO Indledning
 We can use Theorem~\ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
 see \eqref{eq:b_v_problem}. From \eqref{eq:b_v_problem_homogeneous}, let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
