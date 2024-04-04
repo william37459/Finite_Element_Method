@@ -1,7 +1,7 @@
 %! Ryk til tidligere
 
 \begin{defn}{Trace Theorem}~\label{defn:trace}
-    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\omega$ satisfies the cone condition. Then there exists a bounded linear mapping
+    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\Omega$ satisfies Defintion~\ref{def:cone_condition}. Then there exists a bounded linear mapping %! Var lille omega før? Er det her nok?
     \begin{equation*}
         \gamma : H^1(\Omega) \to L_2(\partial \Omega)
     \end{equation*}
@@ -12,7 +12,7 @@
     \begin{enumerate}
         \item For some function $\phi = \phi_i \in C^1[y_1, y_2]$, we have
             \[ \Gamma_i = \{ (x,y) \in \RR^2 \quad | \quad x = \phi(y), y_1 \leq y \leq y_2 \}. \]
-        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$.
+        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$.
     \end{enumerate}
     Firstly a function $v \in C^1(\bar{\Omega})$ and a point $(x,y) \in \partial \Omega$ can be written as
     \begin{equation}
