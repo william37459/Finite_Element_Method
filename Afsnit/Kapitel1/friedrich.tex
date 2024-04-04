@@ -55,43 +55,50 @@ This result can be generalized to $n$ order.
 \begin{kor}{Friedrichs' Inequality, $n$-order}
     Let $\Omega$ be contained in a hypercube with sidelength $s$. Then 
 \begin{equation*}
-    \| v \|_{k} \leq s |v|_{k+1} \quad \quad \forall v \in H_0^{k+1}(\Omega).
-\end{equation*}\label{cor:friedrich_n}
-\vspace{-8mm}
+    \| v \|_{k} \leq C |v|_{k+1} \quad \quad \forall v \in H_0^{k+1}(\Omega),
+\end{equation*}
+where $C\in \RR$.~\label{cor:friedrich_n}
+%\vspace{-8mm}
 \end{kor}
 \begin{bev}
 We will prove this using induction, where the base case is Theorem~\ref{thm:friedrich}.
-We then take the induction hypothesis;
-%! Tjek nedenstående ligning, om den giver mening
+By the definition of these norms, the following equation is true.
 \begin{equation*}
-    \|u\|_{ H^k (\Omega)} \leq C_k |u|_k \quad \forall u \in H_0^k (\Omega).
+    \|u\|_{k } \leq C_k |u|_k \quad \forall u \in H_0^k (\Omega). 
 \end{equation*}
-
-%! Til nedenunder: Vi kigger på C^{\infinity}, på grund af det tidligere nævnte denistets argument
-We now proceed to the induction step. For $u\in C^{\infty}_0(\Omega)\in H^{k+1}(\Omega)\subset H^k(\Omega)$, we have
-\begin{equation}
-    |u|^2_k = \sum_{|\alpha| = k} \|\partial^\alpha u\|_{L_2(\Omega)}^2
-\end{equation}
-%! Uddyb. Fordi u \in C^{\infinity} => \partial^k \in C^{infinity} og i forlængelse også i H^1_0
-Thus $\partial^\alpha u \in H^1_0(\Omega)$. Then by the base case, we have
+As in Theorem~\ref{thm:friedrich}, we assume $u \in C^\infty_0(\OO)$, and use completeness later.
+As $u\in C^{\infty}_0(\Omega)\implies u \in H^{k+1}(\Omega)\subset H^k(\Omega)$. 
+%, and we know 
+%\begin{equation}
+%    |u|^2_k = \sum_{|\alpha| = k} \|\partial^\alpha u\|_{L_2(\Omega)}^2.
+%\end{equation}
+Since $u \in C^{\infty} \implies \partial^k u\in C^{\infty}$, 
+and thus $\partial^\alpha u \in H^1_0(\Omega)$. Then by the base case, we have
+\begin{equation*}
+    \|\partial^\alpha u\|^2_{L_2(\Omega)} \leq C^2 |\partial^\alpha u|_1^2 \quad\quad \forall \alpha : |\alpha|=k.
+\end{equation*}
+Summing over all $\alpha$ such that $|\alpha| = k$ and letting $C_\alpha$ be the $C$ corresponding to each inequality, we get
 \begin{equation}
     \begin{split}
-        %! Summer skal fjernes og der skal indsættes en ny ulighed
-        \sum_{|\alpha|=k} \|\partial^\alpha u\|^2_{L_2(\Omega)} &\leq \sum_{|\alpha|=k} C_1^2 |\partial^\alpha u|_1^2 \quad \forall \alpha : |\alpha|=k \\
-        &=  C^2_1 \sum_{|\tilde{\alpha}|=k+1} |\partial^{\tilde{\alpha}} u |^2_0 \\
-        &= C_1^2 |u|_{k+1}.
+        \sum_{|\alpha|=k} \|\partial^\alpha u\|^2_{L_2(\Omega)} &\leq \sum_{|\alpha|=k} C_\alpha^2 |\partial^\alpha u|_1^2 \\
+        &\leq  \tilde{C}^2 \sum_{|\tilde{\alpha}|=k+1} |\partial^{\tilde{\alpha}} u |^2_0 \\
+        &= \tilde{C}^2 |u|_{k+1},
     \end{split}
 \end{equation}  
-We now write
+where $\tilde{C} = \max\{C_\alpha \,:\, |\alpha| = k\}$.
+We thus get
 \begin{equation}
-    \|u\|^2_{H^{k+1}} \leq \tilde{C}^2 |u|^2_{k+1}.
+    \|u\|^2_{k+1} \leq \tilde{C}^2 |u|^2_{k+1},
 \end{equation}
-Thus
-\begin{align*}
-    \|u\|^2_{H^{k+1}} &=\|u\|^2_{H^k} + |u|^2_{k+1} \\
-    &\leq \tilde{C}^2|u|^2_{k+1} + |u|^2_{k+1} \\
-    &\leq (\tilde{C}^2 + 1)|u|^2_{k+1} \\
-    &\leq C_{k+1}^2 |u|^2_{k+1}
-\end{align*}
-and the induction step is complete, finishing the proof.
+proving the corollary.
 \end{bev}
+Furthermore, Friedrichs' Inequality can be used to show $|\cdot|_m$ and $\| \cdot\|_m$ are equivalent on a bounded 
+$\OO$. 
+This can be shown thusly:
+\begin{align*}
+    \|u\|^2_{k+1} &=\|u\|^2_{k} + |u|^2_{k+1} \\
+    &\leq C^2|u|^2_{k+1} + |u|^2_{k+1} \\
+    &= (C^2 + 1)|u|^2_{k+1} \\
+    &\leq \tilde{C}^2 |u|^2_{k+1},
+\end{align*}
+where we used Corollary~\ref{cor:friedrich_n} in the second line.

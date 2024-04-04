@@ -1,12 +1,19 @@
-The goal of this section is to start developing the mathematical 
-precision to know of the existence of solutions to a PDE with boundary conditions, and how to find 
-them. 
-To do this, we start with a general abstract theorem on how solutions 
-behave in certain problems, then we look at a connection between 
-classical solutions and solutions of variational problems, a 
-theorem regarding uniqueness of solutions, and existence of 
-weak solutions.
-
+\input{Afsnit/Kapitel1/friedrich.tex}
+Theorem~\ref{thm:friedrich} and Corollary~\ref{cor:friedrich_n} both deal with 
+functions which are zero on the boundary. 
+This is restrictive, and we would like to be able to examine 
+functions which are not zero on the boundary.
+To remedy this, we introduce the Trace Theorem, and to 
+do that, we introduce the cone condition.
+\input{Afsnit/Kapitel1/Cone_condition.tex}
+With Definition~\ref{def:cone_condition}, we can proceed to the Trace Theorem.
+\input{Afsnit/Kapitel1/sætninger/Trace_Theorem.tex}
+Theorem~\ref{thm:trace} guarantees that functions which are not 
+zero on the boundary are at least an $L_2$ function, and as such are bounded.
+\subsection{Attributes of Solutions}
+By rephrasing the problems to the form shown in the 
+following theorem,
+the equality in the theorem can be used to find solutions. %TODO Kig igen, når Antons svar er rettet
 \input{Afsnit/Kapitel1/sætninger/Charac_Theorem.tex}
 Theorem~\ref{thm:charac_theorem} does not guarantee the existence 
 of solutions, it only characterizes them. In Theorem~\ref{thm:charac_theorem} we 
@@ -14,7 +21,7 @@ also only make assumptions on the linearity of the space.
 It is possible to set up a variational problem such that $J$ does 
 not attain its minimum.
 To engage with the existence of solutions, we make more assumptions on 
-the space in which we work. To do this, we work with Hilbert spaces. 
+the space in which we work. To do this, we work with Hilbert spaces. %TODO Omskriv, Hilbert rum er bare komplet
 We start by specifying the bilinear form in Theorem~\ref{thm:charac_theorem}.
 \begin{defn}{\quad}
    Let $H$ be a Hilbert space. A bilinear form $a : H \times H \to \RR$ is 
@@ -34,8 +41,6 @@ From this point forward $a$ will be referring to the bilinear form, given by
 \end{equation}
 unless otherwise stated.
 
-\input{Afsnit/Kapitel1/Cone_condition.tex}
-\input{Afsnit/Kapitel1/sætninger/Trace_Theorem.tex}
 
 \section{Homogeneous Dirichlet Conditions}
 Since we are trying to solve the PDE over some space $\Omega$, we write
@@ -63,11 +68,11 @@ be rather restrictive.
 Instead we can make implicit restrictions, by constraining 
 $\partial _i u$ on $\partial \OO$.
 This will be dealt with later.
-%! Rettelser mht det forrige
+%TODO Rettelser mht det forrige
 
 We now use Theorem~\ref{thm:charac_theorem} to show a link between classical 
 solutions and solutions of appropriate variational problems.
-%! Anton ellipticitet rettelser mht a
+%TODO Anton ellipticitet rettelser mht a
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
 The same kind of proof can be used to show that a solution $u$ to~\eqref{eq:min_prop_variational_problem} which fulfills 
 $u\in C^2(\OO) \cap C^0(\OO)$ is also a classical solution. 
@@ -81,7 +86,7 @@ We can therefore use Theorem~\ref{thm:lax_milgram} without further consideration
 on our spaces.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
-%! Efterfølgende tekst mht variational problem skal flytttes op til lige før sætning 1.9
+%TODO Efterfølgende tekst mht variational problem skal flytttes op til lige før sætning 1.9
 When working with PDE's the equation shown in Corollary~\ref{cor:lax_milgram} 
 is called the variational formulation of a boundary condition problem. 
 The general gist is to find some trial function $u$ and examine whether this 
@@ -98,7 +103,7 @@ space in which we look for solutions.
 After proving these statements on qualities of a solution, we can now move 
 on to discussing the existence of these solutions. We start by looking at 
 sufficiently well-defined solutions. 
-%! Bedre overgang
+%TODO Bedre overgang
 \begin{defn}{\quad}
     The Dirichlet problem with homogeneous boundary conditions,
     \eqref{eq:b_v_problem_homogeneous}, has a weak solution $u\in H_0^1(\OO)$
@@ -112,7 +117,7 @@ sufficiently well-defined solutions.
 
 
 \input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
-%! Sætning 1.9 til sætning 1.13 skal fortællingen tydeliggøres - hvad gør hvad sætning for os (i ord), og hvorfor gør vi det
+%TODO Sætning 1.9 til sætning 1.13 skal fortællingen tydeliggøres - hvad gør hvad sætning for os (i ord), og hvorfor gør vi det
 
 \section{Inhomogeneous Dirichlet Conditions}
 We can use Theorem~\ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem, 
@@ -141,4 +146,4 @@ This gives us the lower bound on $a$ as
 \end{equation*}
 We can therefore assume from this point on that $a$ is $H^1$ elliptic.
 
-%! Skridtet fra svage løsninger til at overgå til Neumann
+%TODO Skridtet fra svage løsninger til at overgå til Neumann

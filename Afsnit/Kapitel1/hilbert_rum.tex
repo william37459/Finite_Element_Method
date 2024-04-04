@@ -1,7 +1,9 @@
-\section{Function spaces}
-When working with variational problems and FEM,
- the end goal is to arrive at some function which we call the solution.
-The setup in which we work is therefore spaces of functions. 
+\section{Spaces of functions}
+%When working with variational problems and FEM, %TODO Skal flyttes til indledning, når det skrives.
+%the end point is to find a function which satisfies the requirement of our problem.
+%The setup in which we work is therefore spaces of functions. 
+The goal in this section is to develop some 
+fundamental knowledge of the spaces in which we work.
 It is often the case that a classical solution to a given PDE can 
 not be found, 
 so we define a `weak derivative' using Lebesgue integrals, meaning 
@@ -30,7 +32,7 @@ If the derivative must be the classical, or strong, derivative, we will
 specify so explicitly. 
 We use Definition~\ref{def:weak_derivative} and $L_2(\Omega)$ to 
 define the Hilbert space we are going to be working with. 
-%! Giv funktion som modeksempel, sådan hvorfor rummene giver mening
+%TODO Giv funktion som modeksempel, sådan hvorfor rummene giver mening
 \begin{defn}{Sobolev Space}
    Let $m \geq 0$ be an integer. Then $H^m(\Omega)$ is 
    \begin{equation*}
@@ -64,6 +66,6 @@ sense, obviously $H^{n+1}(\OO) \subset H^n(\OO)$.
 We now move on to discussing the norms on these spaces, 
 which is the first step in figuring out how to `get closer' to 
 the solution.
-%! Skrive om dette kan generaliseres til H^m
-%! Hvorfor gælder det også i H^1 og ikke bare H^1_0
-%! Hvordan hjælper Friedrich os, og overgang til næste afsnit
+%TODO Skrive om dette kan generaliseres til H^m
+%TODO Hvorfor gælder det også i H^1 og ikke bare H^1_0
+%TODO Hvordan hjælper Friedrich os, og overgang til næste afsnit
