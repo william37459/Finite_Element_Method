@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+	\path[draw=black, line width =1pt, line join=round]  (0,0) .. controls (-0.2,1.5) .. (1,1)
+		-- (1.5,1) .. controls (1,0) .. (1.2,-0.2)
+		.. controls (1.5,-1.5) .. (-0.25,-1)
+		.. controls (-0.5, -0.5) .. cycle;
+  \node [isosceles triangle,
+         isosceles triangle apex angle=20,
+         rotate = 30,
+         fill=gray!25,
+         anchor=apex,
+         minimum width=2pt] (t) at (1.5,1) {};    
+\end{tikzpicture}
