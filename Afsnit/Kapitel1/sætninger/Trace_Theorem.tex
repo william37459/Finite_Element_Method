@@ -1,5 +1,5 @@
 \begin{thmx}{Trace Theorem}~\label{thm:trace}
-    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\Omega$ satisfies the cone condition. Then there exists a bounded linear mapping %TODO Spørg Anton skal det være Omega eller en anden version af det 
+    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\Omega$ satisfies the cone condition. Then there exists a bounded linear mapping 
     \begin{equation*}
         \gamma : H^1(\Omega) \to L_2(\partial \Omega)
     \end{equation*}
@@ -10,7 +10,7 @@
     \begin{enumerate}
         \item For some function $\phi = \phi_i \in C^1[y_1, y_2]$, we have
             \[ \Gamma_i = \{ (x,y) \in \RR^2 \quad | \quad x = \phi(y), y_1 \leq y \leq y_2 \}. \]
-        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$. %TODO Spørg Anton om det skal omskrives, eller måske uddybes at det skal være et passende r > 0
+        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$. 
     \end{enumerate}
     Firstly a function $v \in C^1(\bar{\Omega})$ and a point $(x,y) \in \partial \Omega$ can be written as
     \begin{equation}
@@ -30,7 +30,7 @@
     By subsituting $\int 1 dt = r$ and $\int t^2 dt = \frac{r^3}{3}$, dividing by $r^2$ and integrating over $y$, we obtain
     \begin{equation}
         \int_{y_1}^{y_2} v^2(\phi(y), y) dy \leq  2r^{-1} \int_{\Omega_i} v^2 dx dy + r \int_{\Omega_i} | \partial_1 v |^2 dx dy
-    \end{equation} %TODO Spørg Anton i forhold til hvor brøken forsvinder hen
+    \end{equation} 
     On $\partial\Omega$ the arc length differential is given by $ds = \sqrt{1 + \phi'{(y)}^2} dy$. Thus, we have
     \begin{equation}
         \int_{\partial\Omega} v^2 ds \leq c_i \left[ 2r^{-1} \| v \|_0^2 + r | v |^2_1 \right],
