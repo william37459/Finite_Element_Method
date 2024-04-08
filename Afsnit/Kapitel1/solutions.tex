@@ -80,7 +80,7 @@ homogeneous boundary value problem are thusly equivalent.
 We can therefore use the variational problem to find solutions, making the
  the following theorem useful.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Thm.tex}
-As all Hilbert spaces are vector spaces, they will be convex by definition.
+As all Hilbert spaces are vector spaces, they will be convex by definition in addition we will limit ourselves to complete Hilbert spaces.
 As such, subsets of Hilbert spaces we are going to be working will be as well,
 and we can use the following corollary.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
@@ -135,7 +135,7 @@ we get
 \begin{alignat*}{2}
       a(w,v) &= {(\tilde{f},v)}_0 \quad &&\forall v \in H_0^1(\OO) \\
       a(u-\tilde{u},v) &= {(f-L\tilde{u},v)}_0 &&\\
-      a(u,v) - a(\tilde{u},v) &= {(f,v)}_0 - (L\tilde{u},v)_0 \quad && \\
+      a(u,v) - a(\tilde{u},v) &= {(f,v)}_0 - {(L\tilde{u},v)}_0 \quad && \\
       a(u,v) &= {(f,v)}_0. &&
 \end{alignat*}
 We stil have the condition $u-\tilde{u}=w\in H_0^1(\OO)$, and the weak formulation 

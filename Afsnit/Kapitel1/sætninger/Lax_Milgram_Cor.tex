@@ -1,19 +1,14 @@
 The following corollary can be used to unify our approach.
 \begin{kor}{\quad}
-   Assume the same as in Theorem~\ref{thm:lax_milgram}, except $V=H$. Then 
-   the solution $u$ is given by~\label{cor:lax_milgram}
+    Let $H$ be a complete Hilbert space, and let $V$ be a closed, linear subspace of $H$. The variational problem from Theorem~\ref{thm:lax_milgram} has a unique solution in $V$ given by\label{cor:lax_milgram}
    \begin{equation*}
-    a(u,v) = \ell(v) \quad \forall v \in H.
+    a(u,v) = \ell(v) \quad \forall v \in V.
    \end{equation*}
    \vspace{-8mm}
 \end{kor}
 \begin{bev}
-    The proof follows closely the proof for Theorem~\ref{thm:lax_milgram}. 
-    Simply replace $V$ with $H$, to find the existence and uniqueness of the 
-    solution, and use Theorem~\ref{thm:charac_theorem} to find the form, as 
-    shown in the corollary.
+    From the assumptions we know $H$ is closed and convex. Since $0 \in H$, $H$ is also non-empty. Then we can use Theorem~\ref{thm:charac_theorem} to find the form in the corollary.
 \end{bev}
-Theorem \ref{thm:minimal_property}, Theorem~\ref{thm:lax_milgram} and Corollary 
-\ref{cor:lax_milgram} together shows that solving a Dirichlet problem is 
+Theorem~\ref{thm:minimal_property}, Theorem~\ref{thm:lax_milgram} and Corollary~\ref{cor:lax_milgram} together shows that solving a Dirichlet problem is 
 the same as finding the minimum of the corresponding variational problem. 
 We can use this in our approach both theoretically and computationally.

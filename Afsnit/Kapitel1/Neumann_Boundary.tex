@@ -9,7 +9,7 @@ This gives us the lower bound on $a$ as
 \begin{equation*}
    a(v,v)  \geq \alpha |v|^2_1 + \alpha \|v\|^2_0 = \alpha \|v\|^2_1 \quad \forall v \in H^1(\OO).
 \end{equation*}
-We can therefore assume from this point on that $a$ is $H^1$ elliptic.
+We can therefore assume from this point on that $a$ is $H^1$ elliptic. %TODO Spørg Anton hvad han mener med "until then"
 
 \begin{defn}{Neumann Boundary condition}
     Let $\frac{\partial u}{\partial \mathbf{n}}= \mathbf{n}\cdot \nabla u$ be the normal derivative. Then the Neumann boundary condition is given by
@@ -17,6 +17,8 @@ We can therefore assume from this point on that $a$ is $H^1$ elliptic.
         \frac{\partial u}{\partial \mathbf{n}}  = g.
     \end{equation}
 \end{defn}
+With this definition, we can start looking at the existence of solutions to problems which are defined using this type of condition.
+\input{Afsnit/Kapitel1/sætninger/neumann_bc_løsning_eksistens.tex}
 Using this definition, we can look at the Poisson equation with Neumann boundary conditions. Thus
 \begin{align}
 \label{eq:Neumann_Poisson}
@@ -31,10 +33,10 @@ Thus if $u$ satisfies~\eqref{eq:Neumann_Poisson}, then $u + c$ also satisfies~\e
 This means that the solution to~\eqref{eq:Neumann_Poisson} is only unique up to a constant,
  which extends to other equations with Neumann boundary conditions.
 
-It turns out that we can formulate the weak form of this problem by restricting to the subspace $V=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}.$
+It turns out that we can formulate the weak form of this problem by restricting to the subspace $V=\{v\in H^1(\Omega):\int_{\Omega}vdx=0\}$.
 Define $a(u,v) = \int_\OO \nabla u \cdot \nabla v dx$. Examining a version of 
 the Friedrich inequality, Theorem~\ref{thm:friedrich}, which can be found on 
-page 46 of \cite{Braess}, $a$ can be found to be $V$-elliptic.
+page 46 of~\cite{Braess}, $a$ can be found to be $V$-elliptic.
 We now want to assert that every classical solution to the variational problem satisfies~\eqref{eq:Neumann_Poisson}.
 To do this, we let $w=\nabla u$. Thus~\eqref{eq:Neumann_Poisson} can be written as
 \begin{align}\label{eq:Neumann_Poisson_weak}
