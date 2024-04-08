@@ -1,5 +1,5 @@
 \begin{thmx}{Trace Theorem}~\label{thm:trace}
-    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\omega$ satisfies the cone condition. Then there exists a bounded linear mapping
+    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\Omega$ satisfies the cone condition. Then there exists a bounded linear mapping %TODO Spørg Anton skal det være Omega eller en anden version af det 
     \begin{equation*}
         \gamma : H^1(\Omega) \to L_2(\partial \Omega)
     \end{equation*}
@@ -10,16 +10,19 @@
     \begin{enumerate}
         \item For some function $\phi = \phi_i \in C^1[y_1, y_2]$, we have
             \[ \Gamma_i = \{ (x,y) \in \RR^2 \quad | \quad x = \phi(y), y_1 \leq y \leq y_2 \}. \]
-        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$.
+        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$. %TODO Spørg Anton om det skal omskrives, eller måske uddybes at det skal være et passende r > 0
     \end{enumerate}
     Firstly a function $v \in C^1(\bar{\Omega})$ and a point $(x,y) \in \partial \Omega$ can be written as
     \begin{equation}
-        v(\phi(y), y) = v(\phi(y) + t, y) - \int_0^t \partial_1 v(\phi(y) + s, y) \, ds,
+            v(\phi(y), y) = v(\phi(y) + t, y) - \int_0^t \partial_1 v(\phi(y) + s, y) \, ds~\label{eq:trace_integral}
     \end{equation}
-    where $0 \leq t \leq r$. By evaluating the integral we obtain
-    \begin{equation}
-        r v(\phi(y), y) = \int_0^r v(\phi(y) + t, y) dt - \int_0^r \partial_1 v(\phi(y) + t, y)(r-t) dt
-    \end{equation}
+    where $0 \leq t \leq r$. By integrating~\eqref{eq:trace_integral} and switching the integration order we obtain 
+    \begin{align*}
+        \int_0^r v(\phi(y), y) dt &= \int_0^r \left(   v(\phi(y) + t, y) - \int_0^t \partial_1 v(\phi(y) + s, y) \, ds \right) dt \\
+        r v(\phi(y), y) dt &= \int_0^r   v(\phi(y) + t, y) dt - \int_0^r \int_0^t \partial_1 v(\phi(y) + s, y) \, ds dt \\
+        r v(\phi(y), y) dt &= \int_0^r   v(\phi(y) + t, y) dt - \int_0^r \int_s^r \partial_1 v(\phi(y) + s, y) \, dt ds \\
+        r v(\phi(y), y) dt &= \int_0^r v(\phi(y) + t, y) dt - \int_0^r \partial_1 v(\phi(y) + t, y)(r-t) dt.
+    \end{align*}
     By squaring the former equation, using a form of Young's inequality ${(a+b)}^2 \leq 2a^2 + 2b^2$, and appply the Cauchy-Schwarz inequality to the squares of the integrals results in
     \begin{equation}
         r^2 v^2(\phi(y), y) \leq 2 \int_0^r 1 dt \int_0^r v^2(\phi(y) + t, y) \, dt +  2\int_0^r t^2 \int_0^r | \partial_1  v(\phi(y) + t, y) |^2 dt
@@ -27,7 +30,7 @@
     By subsituting $\int 1 dt = r$ and $\int t^2 dt = \frac{r^3}{3}$, dividing by $r^2$ and integrating over $y$, we obtain
     \begin{equation}
         \int_{y_1}^{y_2} v^2(\phi(y), y) dy \leq  2r^{-1} \int_{\Omega_i} v^2 dx dy + r \int_{\Omega_i} | \partial_1 v |^2 dx dy
-    \end{equation}
+    \end{equation} %TODO Spørg Anton i forhold til hvor brøken forsvinder hen
     On $\partial\Omega$ the arc length differential is given by $ds = \sqrt{1 + \phi'{(y)}^2} dy$. Thus, we have
     \begin{equation}
         \int_{\partial\Omega} v^2 ds \leq c_i \left[ 2r^{-1} \| v \|_0^2 + r | v |^2_1 \right],

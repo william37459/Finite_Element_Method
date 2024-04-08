@@ -37,7 +37,7 @@ It turns out that we can formulate the weak form of this problem by restricting 
 Define $a(u,v) = \int_\OO \nabla u \cdot \nabla v dx$. Examining a version of 
 the Friedrich inequality, Theorem~\ref{thm:friedrich}, which can be found on 
 page 46 of~\cite{Braess}, $a$ can be found to be $V$-elliptic.
-We now want to assert that every classical solution to the variational problem satisfies~\eqref{eq:Neumann_Poisson}.
+We now want to assert that every classical solution to the variational problem in Theorem~\ref{thm:neumann_solution_existence} satisfies~\eqref{eq:Neumann_Poisson}.
 To do this, we let $w=\nabla u$. Thus~\eqref{eq:Neumann_Poisson} can be written as
 \begin{align}\label{eq:Neumann_Poisson_weak}
 \begin{split}
@@ -54,7 +54,10 @@ Then from~\eqref{eq:Neumann_Poisson_weak} we get
 \int_{\Omega} -f dx &= \int_{\partial \OO} g ds.
 \end{split}
 \end{align}
-We now use Corollary \ref{cor:lax_milgram}, and get $u\in V$, where
+Since $V$ by construction is a closed and linear subspace of a Hilbert space, 
+V is complete with respect to the norm, and is therefore also a Hilbert space. 
+We can then use Corollary~\ref{cor:lax_milgram} 
+ and get $u\in V$, where %TODO skal vi uddybe hvorfor $V$ er closed (kig på Cauchy følger) & Linear
 \begin{equation}\label{eq:Lax-Milgram_Neumann}
   a(u,v) = {(f,v)}_{0,\Omega} + {(g,v)}_{0,\partial \OO} \quad \forall v\in V.  
 \end{equation}
