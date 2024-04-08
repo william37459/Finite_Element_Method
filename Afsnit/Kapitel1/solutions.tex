@@ -85,31 +85,27 @@ As such, subsets of Hilbert spaces we are going to be working will be as well,
 and we can use the following corollary.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
-%TODO Efterfølgende tekst mht variational problem skal flytttes op til lige før sætning 1.9
-%TODO Lidt forkert, se Anton rettelser
 When working with PDE's the equation shown in Corollary~\ref{cor:lax_milgram} 
 is called the variational formulation of a boundary condition problem. 
-To find the solution $u$, we  %CHECK HER: Til linje 100
-split $H$, a Hilbert space of functions, 
+To find the solution $u$, we split a Hilbert space of functions, $H$, 
 into finite dimensional subspaces, and use these to approximate $u$. 
 We test this approximatation using test functions, typically from the same subspace,
  using the equality in Corollary~\ref{cor:lax_milgram}, which must be true for all test functions.
 This widens the 
 space in which we look for solutions.
 For example, by using the variational formulation, we can define a weak solution 
-which no longer require $u \in C^2(\OO)$.
+which no longer requires $u \in C^2(\OO)$.
 \begin{defn}{\quad}
     A function $u\in H_0^1(\OO)$ is called a weak solution of 
-    the Dirichlet problem with homogeneous boundary conditions,
-    \eqref{eq:b_v_problem_homogeneous}, if 
+    the Dirichlet problem with homogeneous boundary conditions,~\eqref{eq:b_v_problem_homogeneous}, if 
      \begin{equation*}
         a(u,v) = {(\tilde{f},v)}_0 \quad \forall v \in H_0^1(\OO).
      \end{equation*}
-     Here $a(u,v)$ is the bilinear from from \eqref{eq:a(u,v)}, 
+     Here $a(u,v)$ is the bilinear from from~\eqref{eq:a(u,v)}, 
      and ${(\tilde{f},v)}_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in~\eqref{eq:l(v)}.
 \end{defn}
-A weak solution only requires $u\in H_0^1(\OO)$, and is therefore less strict. %CHECK HER: Giver denne overgang mening?
-There is therefore a higher chance of a solution existing for any given problem, 
+A weak solution only requires $u\in H_0^1(\OO)$, and is clearly less strict. 
+Thus there is a higher chance of a solution existing for any given problem, 
 and is therefore desirable. So we now look at the existence of weak solutions.
 \input{Afsnit/Kapitel1/sætninger/existence_theorem.tex}
 
@@ -118,14 +114,14 @@ and is therefore desirable. So we now look at the existence of weak solutions.
 \section{Inhomogeneous Dirichlet Conditions}
 %TODO Indledning
 We can use Theorem~\ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem.
-We have looked at, how a inhomogeneous 
+We have looked at how a inhomogeneous 
 Dirichlet problem could be turned into a homogeneous one, and we will use 
-a similar construction here. So, from \eqref{eq:b_v_problem}, let 
+a similar construction here. Recall the inhomogeneous Dirichlet problem, Equation~\eqref{eq:b_v_problem}, and let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
 \begin{equation*}
-   \tilde{u} = g \quad \text{on } \partial \OO.
+   \tilde{u} = g \quad \text{on } \partial \OO,
 \end{equation*}
-Let $w = u-\tilde{u}$ and $\tilde{f} = f-L\tilde{u}$. We now have the homogeneous 
+and $w = u-\tilde{u}$ and $\tilde{f} = f-L\tilde{u}$. We now have the homogeneous 
 Dirichlet problem 
 \begin{align}
 \begin{split}
@@ -134,13 +130,13 @@ Dirichlet problem
 \end{split}
 \end{align}
 By Theorem~\ref{thm:existence_hom_dirichlet},
- a weak solution $w \in H_0^1(\OO)$ exists. As $(L\tilde{u},v) = a(\tilde{u},v)$, %Hvilken norm med L?
-we get:
+ a weak solution $w \in H_0^1(\OO)$ exists. As ${(L\tilde{u},v)}_0 = a(\tilde{u},v)$,
+we get
 \begin{alignat*}{2}
       a(w,v) &= {(\tilde{f},v)}_0 \quad &&\forall v \in H_0^1(\OO) \\
-      a(u-\tilde{u},v) &= (f-L\tilde{u},v)_0 &&\\
-      a(u,v) - a(\tilde{u},v) &= (f,v)_0 - (L\tilde{u},v)_0 \quad && \\
-      a(u,v) &= (f,v)_0. &&
+      a(u-\tilde{u},v) &= {(f-L\tilde{u},v)}_0 &&\\
+      a(u,v) - a(\tilde{u},v) &= {(f,v)}_0 - (L\tilde{u},v)_0 \quad && \\
+      a(u,v) &= {(f,v)}_0. &&
 \end{alignat*}
 We stil have the condition $u-\tilde{u}=w\in H_0^1(\OO)$, and the weak formulation 
 of the inhomogeneous Dirichlet boundary condition can then be written as
@@ -151,8 +147,6 @@ of the inhomogeneous Dirichlet boundary condition can then be written as
 By Theorem~\ref{thm:c_dense_in_h}, $C^2(\OO)\cap H^1(\OO)$ is dense in $H^1(\OO)$, 
 and $C^0(\bar{\OO})\cap H^1_0(\OO)$ 
 is dense in $H^1_0(\OO) \subset H^1(\OO)$. Following the same density arguments 
-as have been several times before, it suffices to look at $\tilde{u}\in H^1(\OO)$.
-This is not always possible. %CHECK HER: Skal denne linje med?
-%TODO Hvorfor u i H^1? Density assumptions?  #CHECK HER: Pointen med inhomogen er, at den ikke er 0 på kanten, så det er derfor den ikke er inden vi trækker \tilde{u} fra.
+as have been done several times before, it suffices to look at $\tilde{u}\in H^1(\OO)$, however it is not always possible to find an admissible $\tilde{u}$.
 
 %TODO Skridtet fra svage løsninger til at overgå til Neumann
