@@ -1,0 +1,86 @@
+\subsection{Continuity of Finite Elements}
+When looking for a solution a problem, 
+ different requirements on the solution 
+will impact how the finite elments used to solve an 
+variational problem are constructed.
+
+If we require the solution to be continuous, each part of the 
+solution must "match up", coming from each element. 
+See the following example.
+
+\begin{exmp}{\quad\label{exmp:c0_triangle_con}}
+For some $\OO$, let $\mathcal{T}$ be an admissible partition into 
+triangles. 
+Let $t >0$, and for each finite element, let $\Pi = \mathcal{P}_t$.
+In each $T_i$ place
+$s = (t+1)(t+2)/2$ points such that:
+\begin{itemize}
+    \item The points create a grid
+    \item There are $t+1$ points on each edge of $T_i$
+    \item Every point not on an edge is on an orthogonal intersection of lines drawn between points on the edges 
+\end{itemize} %Figur her?
+By choosing values for each point, every polynomial on each $T_i$ 
+is uniquely determined (the proof of uniqueness can be found in 
+\cite{Braess}, page 64).
+By restricting the polynomials to an edge, they become polynomials of 
+one variable, and are uniquely determined by the values at the $t+1$ points 
+on that edge.
+
+Since the values and the points at each edge is the same, polynomials from 
+neighbouring elements reduce to the same polynomial, and we get global 
+continuity.
+\end{exmp}
+Example~\ref{exmp:c0_triangle_con} demonstrates, that global continuity are 
+somewhat easy to obtain, and constructing finite elements using polynomials 
+of any degree grants this property. Letting $t=1$ results in finite elements 
+where $\dim(\Pi_i)=3$, and finding the solution becomes computationally 
+easy.
+
+
+
+If, however, we search for solutions which 
+are $C^1(\OO)$, difficulty increases. Along each edge the functions 
+themselves must match up, but the first derivatives must now also match. 
+We express this using the normal derivative. 
+See the following for an example.
+\begin{exmp}{\quad\label{exmp:c1_triangle_con}}
+   As in Example \ref{exmp:c0_triangle_con}, 
+    for some $\OO$, let $\mathcal{T}$ be an admissible partition into 
+    triangles, and let $\Pi_i = \mathcal{P}_5$ for each finite element.
+    Remember that $\dim(\mathcal{P}_5) = 21$.
+    Let the values of the derivatives at each vertice be given up 
+    to the $2$nd order, as well as the value of the normal derivative at the 
+    midpoint of each element.
+    
+    To ensure a solution in $C^1(\OO)$, 
+    we now check three things: The solution inside each element, 
+    on the vertices, and on the edge.
+
+    Inside each element, the solution is $5$th degree polynomial, 
+    and therefore also $C^1(T_i)$.
+
+    At each vertice there is $6$ derivatives up to order $2$, which 
+    determines a $5$th degree polynomial uniquely, and grants first 
+    degree differentiablity.
+
+    Along the edge, the polynomials reduce to $1$ variable, and the 
+    normal derivative is a $4$th degree polynomial. Since it follows 
+    the derivatives up to the first order at each end of the edge, and 
+    the value is given at the midpoint, the normal derivative is uniquely 
+    determined as well.
+
+    Thus the normal derivative is continuous everywhere, resulting in a 
+    solution in $C^1(\OO)$. This element is well known, and called 
+    Argyris element.
+\end{exmp}
+As we can see from Example \ref{exmp:c1_triangle_con}, by requiring a 
+solution be differentiable, construction of finite elements and computation 
+becomes harder. 
+
+Many different types of finite elements exists, and can differ wildly in how they 
+are constructed. In Example \ref{exmp:c0_triangle_con} and \ref{exmp:c1_triangle_con} 
+the finite elements are constructed using a nodal system - specifying all elements of $\Pi$ 
+uniquely through values at a number of points. However something like Hsieh–Clough–Tocher element 
+is constructed by subdividing triangles further.
+
+%SOMETHING SOMETHING PARALELLOGRAM BAD HERE S. 68
