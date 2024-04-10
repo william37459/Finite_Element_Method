@@ -8,11 +8,11 @@ To remedy this, we introduce the Trace Theorem, which requires the cone conditio
 With Definition~\ref{def:cone_condition}, we can proceed to the Trace Theorem.
 \input{Afsnit/Kapitel1/sætninger/Trace_Theorem.tex}
 Theorem~\ref{thm:trace} guarantees that functions which are not 
-zero on the boundary are at least an $L_2$ function, and as such are bounded. %FIXME Kig efter Anton rettelser
+zero on the boundary are at least an $L_2$ function, and as such are bounded. 
 \subsection{Attributes of Solutions}
-By rephrasing the problems to the form shown in the 
-following theorem,
-the equality in the theorem can be used to find solutions. %FIXME Kig igen, når Antons svar er rettet
+In this section we examine certain qualities of solutions, and the first step is 
+the ability to characterize solutions to certain problems.
+To do that, we introduce the following theorem.
 \input{Afsnit/Kapitel1/sætninger/Charac_Theorem.tex}
 To use Theorem~\ref{thm:charac_theorem}, we
 only make assumptions on the linearity of the space, however we
@@ -67,11 +67,9 @@ be rather restrictive.
 Instead we can make implicit restrictions, by constraining 
 $\partial _i u$ on $\partial \OO$.
 This will be dealt with later.
-%TODO Rettelser mht det forrige
 
 We now use Theorem~\ref{thm:charac_theorem} to show a link between classical 
 solutions and solutions of appropriate variational problems.
-%TODO Anton ellipticitet rettelser mht a
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
 The same kind of proof can be used to show that a solution $u$ to~\eqref{eq:min_prop_variational_problem} which fulfills 
 $u\in C^2(\OO) \cap C^0(\OO)$ is also a classical solution. 
@@ -112,11 +110,11 @@ and is therefore desirable. So we now look at the existence of weak solutions.
 %TODO Skriv eksempel der kan udvides til inhomogen, og tilhørende tekst
 
 \section{Inhomogeneous Dirichlet Conditions}
-%TODO Indledning
-We can use Theorem~\ref{thm:existence_hom_dirichlet} to examine the inhomogeneous Dirichlet problem.
-We have looked at how a inhomogeneous 
-Dirichlet problem could be turned into a homogeneous one, and we will use 
-a similar construction here. Recall the inhomogeneous Dirichlet problem, Equation~\eqref{eq:b_v_problem}, and let 
+The theory in the previous section have been regarding homogeneous 
+Dirichlet problems. However, as mentioned before, inhomogeneous
+Dirichlet problems can be turned into homogeneous Dirichlet problems 
+using Theorem~\ref{thm:existence_hom_dirichlet}. 
+Recall the inhomogeneous Dirichlet problem, Equation~\eqref{eq:b_v_problem}, and let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
 \begin{equation*}
    \tilde{u} = g \quad \text{on } \partial \OO,
@@ -149,4 +147,9 @@ and $C^0(\bar{\OO})\cap H^1_0(\OO)$
 is dense in $H^1_0(\OO) \subset H^1(\OO)$. Following the same density arguments 
 as have been done several times before, it suffices to look at $\tilde{u}\in H^1(\OO)$, however it is not always possible to find an admissible $\tilde{u}$.
 
-%FIXME Skridtet fra svage løsninger til at overgå til Neumann
+As seen in the two previous sections, a Dirichlet condition on the boundary 
+directly prescribe the solution. We cannot always guarantee  
+the behaviour of the function on the boundary and thus the Dirichlet condition 
+can be too restrictive.
+A less restrictive requirement deals with the derivatives on the boundary, 
+which the next section will deal with.
