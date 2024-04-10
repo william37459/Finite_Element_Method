@@ -1,0 +1,24 @@
+
+\begin{thmx}
+    Let $k\geq1$ and suppose $\Omega$ is bounded. Then a piecewise infinitely differentiable function $v:\bar{\Omega}\rightarrow \mathbb{R}$
+    belongs to $H^k(\Omega)$ if and only if $v\in C^{k-1}(\bar{\Omega})$.
+\end{thmx}
+
+\begin{proof}
+    For simplicity we restrict ourselves to domains in $\mathbb{R}^2$, and we only prove for $k=1$. The general case follows by induction.\\ %FIXIT: Er det induktion?
+
+    To prove one way of the theorem, assume $v\in C(\bar\Omega)$ and let $\mathcal{T}={\{T_j\}}^M_{j=1}$ be a partition of $\Omega$
+    Then we can define the piecewise functions $w_i:\Omega\rightarrow \mathbb{R}$ for $i=1,2$ as $w_i(x)=\partial_i v(x)$ for $x\in\Omega$, where we can take either of the two limiting values on the edges. %FIXIT: Måske uddyb det her lidt mere (Anton svar)
+    \\
+    Now let $\phi\in C^{\infty}_0 (\Omega)$. Then using Green's identity on every element $T_j$ we get
+    \begin{align}
+    \begin{split}
+        \int_\Omega \phi w_i dxdy &= \sum_j\int_{T_j} \phi \partial_i dx dy \\
+        &= \sum_j \left( -\int_{T_j} \partial_i \phi v dxdy + \int_{\partial T_j} \phi v \mathcal{v}_i ds\right).
+    \end{split}
+    \end{align}
+    We assumed $v$ continious, therefore the integrals over the interior edges cancel, and $\phi$ has a compact support it vanishes on $\partial \Omega$. We are then left with
+    \begin{equation}
+        -\int_\Omega \partial_i \phi v dxdy.
+    \end{equation}
+\end{proof}
