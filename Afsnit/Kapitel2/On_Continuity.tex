@@ -1,13 +1,15 @@
 \subsection{Continuity of Finite Elements}
-When looking for a solution a problem, 
- different requirements on the solution 
-will impact how the finite elments used to solve an 
-variational problem are constructed.
-
-If we require the solution to be continuous, each part of the 
-solution must "match up", coming from each element. 
-See the following example.
-
+When designing finite elements, it can be easy to be seduced by the 
+locality of each finite element, and forget to keep the original 
+problem in mind. In this section we examine how different requirements 
+on the solution can affect how the finite elements are constructed 
+using different examples.
+Say, to start, we only require the solution to be continuous, 
+everywhere on $\OO$.
+To do so, when the solution transitions from element to element, 
+the solution must "match up", coming from each element. 
+One way to include this in the construction can be seen in the 
+following example.
 \begin{exmp}{\quad\label{exmp:c0_triangle_con}}
 For some $\OO$, let $\mathcal{T}$ be an admissible partition into 
 triangles. 
@@ -18,7 +20,9 @@ $s = (t+1)(t+2)/2$ points such that:
     \item The points create a grid
     \item There are $t+1$ points on each edge of $T_i$
     \item Every point not on an edge is on an orthogonal intersection of lines drawn between points on the edges 
-\end{itemize} %Figur her?
+\end{itemize} 
+An illustration of this can be seen in Figure~\ref{fig:triangle_nodal}, for 
+$t=5$.
 By choosing values for each point, every polynomial on each $T_i$ 
 is uniquely determined (the proof of uniqueness can be found in 
 \cite{Braess}, page 64).
@@ -30,19 +34,23 @@ Since the values and the points at each edge is the same, polynomials from
 neighbouring elements reduce to the same polynomial, and we get global 
 continuity.
 \end{exmp}
+\begin{figure}[h]
+    \centering
+    \input{Afsnit/Kapitel2/fig/triangle_element.tex}
+    \caption{Triangle element, with nodes for $t=5$}
+    \label{fig:triangle_nodal}
+\end{figure}
 Example~\ref{exmp:c0_triangle_con} demonstrates, that global continuity are 
 somewhat easy to obtain, and constructing finite elements using polynomials 
 of any degree grants this property. Letting $t=1$ results in finite elements 
 where $\dim(\Pi_i)=3$, and finding the solution becomes computationally 
 easy.
 
-
-
 If, however, we search for solutions which 
 are $C^1(\OO)$, difficulty increases. Along each edge the functions 
 themselves must match up, but the first derivatives must now also match. 
-We express this using the normal derivative. 
-See the following for an example.
+We express this using the normal derivative, and showcase this in the 
+following example. 
 \begin{exmp}{\quad\label{exmp:c1_triangle_con}}
    As in Example \ref{exmp:c0_triangle_con}, 
     for some $\OO$, let $\mathcal{T}$ be an admissible partition into 
@@ -53,17 +61,20 @@ See the following for an example.
     midpoint of each element.
     
     To ensure a solution in $C^1(\OO)$, 
-    we now check three things: The solution inside each element, 
-    on the vertices, and on the edge.
-
-    Inside each element, the solution is $5$th degree polynomial, 
+    we now check the solution three ways:
+    \begin{enumerate}
+        \item Inside each element
+        \item On the vertices
+        \item On the edges
+    \end{enumerate} 
+    \textbf{1:} Inside each element, the solution is $5$th degree polynomial, 
     and therefore also $C^1(T_i)$.
 
-    At each vertice there is $6$ derivatives up to order $2$, which 
+    \textbf{2:} At each vertice there is $6$ derivatives up to order $2$, which 
     determines a $5$th degree polynomial uniquely, and grants first 
     degree differentiablity.
 
-    Along the edge, the polynomials reduce to $1$ variable, and the 
+    \textbf{3:} Along the edge, the polynomials reduce to $1$ variable, and the 
     normal derivative is a $4$th degree polynomial. Since it follows 
     the derivatives up to the first order at each end of the edge, and 
     the value is given at the midpoint, the normal derivative is uniquely 
@@ -81,6 +92,49 @@ Many different types of finite elements exists, and can differ wildly in how the
 are constructed. In Example \ref{exmp:c0_triangle_con} and \ref{exmp:c1_triangle_con} 
 the finite elements are constructed using a nodal system - specifying all elements of $\Pi$ 
 uniquely through values at a number of points. However something like Hsieh–Clough–Tocher element 
-is constructed by subdividing triangles further.
+is constructed by subdividing triangles into further triangles and using 
+cubic polynomials.
 
 %SOMETHING SOMETHING PARALELLOGRAM BAD HERE S. 68
+
+These previous examples show how to construct finite elements "well" - as 
+the solution we find obeys the requirement, namely either being $C^0(\OO)$ or 
+$C^1(\OO)$. However elements can also be constructed badly, as we will 
+show here. In rectangular elements we use a polynomial family with 
+tensor products:
+\begin{equation*}
+    \mathcal{Q}_t = \{ f(x,y)= \sum_{0\leq i,k \leq t} c_{ik}x^iy^k \}.
+\end{equation*}
+In the following example we will show how constructing finite elements 
+can go wrong.
+\begin{exmp}{\quad\label{exmp:c0_square_bad}}
+   For some $\OO$, let $\mathcal{T}$ be an admissible partition into 
+   rectangles, and for every $T_i$ let $\Pi_i = \mathcal{Q}_1$. 
+   Every function in $\Pi_i$ then has the form 
+   \begin{equation*}
+    f(x,y) = a + bx + cy + dxy.
+   \end{equation*}
+   By specifying the values at every vertice of the element, every 
+   function in $\Pi_i$ is uniquely determined. 
+   As neighbouring elements share two vertices and values, and every $f\in\Pi_i$
+   restricted to an edge is a linear function, we are guaranteed global 
+   continuity. However, if the grid created by the elements, also known as 
+   the mesh, does not run parallel to the axis, we might be in trouble.
+
+   As seen in Figure~\ref{fig:quad_element_bad}, if the element is rotated 
+   at $45^\circ$, the term $dxy$ disappears and global continuity are longer 
+   guaranteed.
+
+   This can of course be remedied by either choosing elements differently, 
+   or an appropiate transformation of variables.
+\end{exmp}
+\begin{figure}[h]
+    \centering
+    \input{Afsnit/Kapitel2/fig/square_element_rotated.tex}
+    \caption{A quadrilateral element at $45^\circ$ from the axis}
+    \label{fig:quad_element_bad}
+\end{figure}
+As can be seen in Examples \ref{exmp:c0_triangle_con}, \ref{exmp:c1_triangle_con}, 
+and \ref{exmp:c0_square_bad}, there are many different ways to construct 
+finite elements, and doind so is not an exercise divorced from $\OO$ or 
+the requirements on the solution.
