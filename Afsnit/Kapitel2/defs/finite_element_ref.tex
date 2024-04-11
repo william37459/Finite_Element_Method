@@ -1,9 +1,31 @@
-\begin{defn}{Affine Family}
+\iffalse \begin{defn}{Affine Family}
     A family of finite element spaces $S_h$ for partitions $\mathcal{T}_h$ of 
     $\OO\subset \RR^d$ is called an affine family if there exists a finite reference
     element $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma)$, such that, beside the 
     usual properties of a finite element, there exists some affine mappings 
     $F_j:T_{\text{ref}}\to T_j$ such that
+    \begin{equation*}
+        \forall v \in S_h \,\,\land \,\, \forall x \in T_j:\,\, v(x) = p(F^{-1}_j(x)) \quad 
+        p \in \Pi_{\text{ref}}.
+    \end{equation*}
+    Meaning, when restricting $v\in S_h$ to some $T_j$, we can fully describe 
+    $v$ using some affine mapping and an element in $\Pi_{\text{ref}}$.
+\end{defn}
+\fi
+\begin{defn}{Affine Family}
+    Let $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ a finite element 
+    with $T_{\text{ref}}\in \mathcal{T}$ for som admissable partition of 
+    $\OO$, and 
+    $F$ an affine linear transformation. 
+    Assume that for $T_i\in\mathcal{T}$ the following 
+    is true for the corresponding finite elements $(T_i, \Pi_i,\Sigma_i)$:
+    \begin{itemize}
+        \item $F(T_{\text{ref}}) = T_i$
+        \item $\{ f\circ F \,|\,  f \in \Pi_i \} =\Pi_{\text{ref}}  $
+        \item $\{ s(f\circ F) \,|\, f \in \Pi_i, s \in \Sigma_{\text{ref}} \} = \Sigma_i$
+    \end{itemize}
+
+
     \begin{equation*}
         \forall v \in S_h \,\,\land \,\, \forall x \in T_j:\,\, v(x) = p(F^{-1}_j(x)) \quad 
         p \in \Pi_{\text{ref}}.
