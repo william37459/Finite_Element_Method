@@ -14,3 +14,12 @@ The vernacular can be extended as follows:
     \item A set of functions in $\Pi$ which form a basis are called shape functions 
     \item $s$ is the number of local degrees of freedom or local dimension
 \end{itemize}
+In the following text we will use the set of polynomials of two variables 
+with degree $t$, which are defined as 
+\begin{equation*}
+\mathcal{P}_t = \{ f(x,y) = \sum_{\substack{i+k \leq t\\ 0\leq i,k}} c_{ik}x^i y^k \}.
+\end{equation*}
+If a finite element $(T, \Pi_i,\Sigma_i)$ fulfills 
+    $\mathcal{P}_t \subset \Pi_i$,
+we call it a finite element with complete polynomials (of degree $t$, if 
+it is not clear).
