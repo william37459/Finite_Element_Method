@@ -1,4 +1,4 @@
-\begin{defn}{Affine Family}
+\iffalse \begin{defn}{Affine Family}
     A family of finite element spaces $S_h$ for partitions $\mathcal{T}_h$ of 
     $\OO\subset \RR^d$ is called an affine family if there exists a finite reference
     element $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma)$, such that, beside the 
@@ -11,3 +11,30 @@
     Meaning, when restricting $v\in S_h$ to some $T_j$, we can fully describe 
     $v$ using some affine mapping and an element in $\Pi_{\text{ref}}$.
 \end{defn}
+\fi
+\begin{defn}{Affine Family} 
+    Let $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ be a finite element 
+    with $T_{\text{ref}}\in \mathcal{T}$ for som admissable partition of 
+    $\OO$, and 
+    $F$ an affine linear transformation. 
+    Assume that for $T_i\in\mathcal{T}$ the following 
+    is true for the corresponding finite element $(T_i, \Pi_i,\Sigma_i)$:
+    \begin{itemize}
+        \item $F(T_{\text{ref}}) = T_i$
+        \item $\{ f\circ F \,|\,  f \in \Pi_i \} =\Pi_{\text{ref}}  $
+        \item $\{ s(f\circ F) \,|\, f \in \Pi_i, s \in \Sigma_{\text{ref}} \} = \Sigma_i$
+    \end{itemize}
+    If the previous equalities are true for all $T_i\in \mathcal{T}$ we call 
+    $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ the finite reference 
+    element.
+\end{defn}
+The previous definition might be a bit dense, and so we will expand a bit 
+further here. The first equality in the definition requires that the 
+different cells are "similar enough". The second equality makes sure 
+that the functions in the $i$'th finite element corresponds 
+to using the same  
+functions on the transformed reference cell - and that these are the 
+same functions used in the reference finite element.
+The final equality ensures that the points in the reference cell that 
+uniquely identify the functions in the reference finite elements, 
+remain in the transformed cell.
