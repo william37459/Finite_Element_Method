@@ -1,0 +1,12 @@
+We have, so far, used the norms $|\cdot|$ and $\|\cdot\|$ defined over $\OO$. 
+This becomes too restrictive, as in approximating the solution we examine a 
+reference element. The norms will therefore change depending on the constructed 
+mesh. We do so using the following definition.
+\begin{defn}{\quad}
+    Let $\mathcal{T}_h = \{ T_1,T_2,\ldots,T_M\}$ be a partition of $\OO$, and 
+    let $m\geq 1$. Then define 
+    \begin{equation*}
+        \|v\|_{m,h} = \sqrt{\sum_{T_j\in \mathcal{T}_h}\|v\|^2_{m,T_j}}
+    \end{equation*}
+\end{defn}
+To note, for $v\in H^m(\OO)$ will $\|v\|_{m,h}=\|v\|_{m,\OO}$.
