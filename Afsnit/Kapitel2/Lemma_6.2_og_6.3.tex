@@ -1,0 +1,42 @@
+
+\begin{lem}{\quad}
+Let $\Omega$ be a domain with Lipschitz continous boundary which satisfies a cone condition. Furthermore, let $t\geq 2$, and suppose $z_1,z_2,\ldots z_s$ are
+$s = t(t+1)/2$ prescribed points in $\bar{\Omega}$ such that the interpolation operator $I:H^t \rightarrow \mathcal{P}_{t-1}$ is well defined
+for polynomials of degree $t-1$ or less. Then there exists a constant $c=c(\omega,z_1,\ldots,z_s)$ such that
+\begin{equation}
+    \|u-Iu\|_t\leq c\|u\|_t\quad \forall u\in H^t(\Omega).
+    \label{eq:lem_6.2}
+\end{equation}
+\label{lem:6.2}
+\end{lem}
+
+\begin{bev}
+    We endow $H^t(\Omega)$ with the norm 
+    \begin{equation*}
+        \||v\|| = |v|_t + \sum_{i=1}^s |v(z_i)|.
+    \end{equation*}
+it an then be shown that the norms $\||\cdot\||$ and $\|\cdot\|_t$ are equivalent on $H^t(\Omega)$. Thus
+\begin{align*}
+    \|u-Iu\|_t&\leq c\||u-Iu\||\\
+    &= c(|u-Iu|_t + \sum_{i=1}^s|(u-Iu)(z_i)|)\\
+    &= c|u-Iu|_t \\
+    &= c|u|_t.
+\end{align*}
+
+\end{bev}
+
+\begin{lem}{Bramble-Hilbert Lemma}
+    Let $\Omega$ be a domain with Lipschitz continous boundary. Suppose $t\geq 2$ and that $L$ is a bounded linear mapping of $H^t(\Omega)$ into a normed linear space $Y$.
+    If $\mathcal{P}_{t-1}\subset \ker L$, then there exists a constant $c=c(\Omega)\|L\|\geq 0$ such that
+    \begin{equation}
+        \|Lv\|\leq c|v|_t\quad \forall v\in H^t(\Omega).
+    \end{equation}
+\end{lem}
+\begin{bev}
+    Let $I:H^t(\Omega)\rightarrow \mathcal{P}_{t-1}$ be an interpolation operator of the same type as in Lemma \ref{lem:6.2}. Then by the same lemma and the fact that $Iv\in\ker L$, we get
+    \begin{equation}
+        \|Lv\|=\|L(v-Iv)\|\geq \|L\|\cdot\|v-Iv\|_t\geq c\|L\| \cdot |v|_t,
+    \end{equation}
+    where the constant $c$  is the same as in Equation \ref{eq:lem_6.2}.
+    \label{lem:6.3}
+\end{bev}
