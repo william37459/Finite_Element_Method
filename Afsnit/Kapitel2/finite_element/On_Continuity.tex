@@ -34,7 +34,7 @@ Since the values and the points at each edge is the same, polynomials from
 neighbouring elements reduce to the same polynomial, and we get global 
 continuity.
 \end{exmp}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \input{Afsnit/Kapitel2/fig/triangle_element.tex}
     \caption{Triangle element, with nodes for $t=5$}\label{fig:triangle_nodal}
@@ -89,12 +89,12 @@ becomes harder.
 
 Many different types of finite elements exists, and can differ wildly in how they 
 are constructed. In Example\ref{exmp:c0_triangle_con} and~\ref{exmp:c1_triangle_con} 
-the finite elements are constructed using a nodal system - specifying all elements of $\Pi$ 
+the finite elements are constructed using a nodal system-specifying all elements of $\Pi$ 
 uniquely through values at a number of points. However something like Hsieh–Clough–Tocher element 
 is constructed by subdividing triangles into further triangles and using 
 cubic polynomials.
 
-These previous examples show how to construct finite elements `well' - as 
+These previous examples show how to construct finite elements `well'-as 
 the solution we find obeys the requirement, namely either being $C^0(\OO)$ or 
 $C^1(\OO)$. However elements can also be constructed badly, as we will 
 show here. In rectangular elements we use a polynomial family with 
