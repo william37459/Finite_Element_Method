@@ -23,7 +23,8 @@ We can therefore assume from this point on that $a$ is $H^1$ elliptic.
 \end{defn}
 With this definition, we can start looking at the existence of solutions to problems which are defined using this type of condition.
 \input{Afsnit/Kapitel1/sætninger/neumann_bc_løsning_eksistens.tex}
-Using this definition, we can look at the Poisson equation with Neumann boundary conditions. Thus
+Not all Neumann problems fulfill the assumption that $a_0(x)>0$. For example in the 
+Neumann Poisson problem,  
 \begin{align}
 \label{eq:Neumann_Poisson}
 \begin{split}
@@ -31,6 +32,7 @@ Using this definition, we can look at the Poisson equation with Neumann boundary
     \frac{\partial u}{\partial \mathbf{n}} &= g \quad \text{on } \partial \Omega.
 \end{split}
 \end{align}
+one can find $a_0(x)=0$. We remedy that by constructing asub space $V$.
 Due to the fact that~\eqref{eq:Neumann_Poisson} only contains derivatives with respect to $u$,
  additive constants independent of $u$ are unimportant.
 Thus if $u$ satisfies~\eqref{eq:Neumann_Poisson}, then $u + c$ also satisfies~\eqref{eq:Neumann_Poisson} for any constant $c$.
@@ -58,7 +60,8 @@ Then from~\eqref{eq:Neumann_Poisson_weak} we get
 \int_{\Omega} -f dx &= \int_{\partial \OO} g ds.
 \end{split}
 \end{align}
-Since $V$ by construction is a closed and linear subspace of a Hilbert space, 
+The integral used in $V$ is a bounded linear functional, and thus 
+$V$ is a closed and linear subspace of a Hilbert space, 
 V is complete with respect to the norm, and is therefore also a Hilbert space. 
 We can then use Corollary~\ref{cor:lax_milgram} 
  and get $u\in V$, where %TODO skal vi uddybe hvorfor $V$ er closed (kig på Cauchy følger) & Linear
@@ -80,3 +83,6 @@ so $v \in V$. For every $u\in H^1(\OO)\setminus V$ we can find a fitting
 constant such that $u+c \in V$. Every classical solution of the 
 variational problem corresponding to a Neumann Boundary condition therefore 
 satisfies \eqref{eq:Neumann_Poisson}, and \eqref{eq:Neumann_Poisson} becomes the weak formulation.
+
+The end result is we look for the solution $u\in V$, and use test functions 
+$v\in H^1(\OO)$.
