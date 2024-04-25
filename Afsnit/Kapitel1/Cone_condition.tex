@@ -1,13 +1,29 @@
 \begin{defn}{Cone}
-    
+Let $\mathbf{a}_i\in\RR^m\setminus\vec{0}$ be the columns in some matrix 
+$A\in \RR^{m \times n}$, and let $x_i\geq 0$ be the entries for some vector $\mathbf{x}\in \RR^n$.
+ Then
+\begin{equation*}
+    V(A,\mathbf{x}) =\left \{ \sum_{i=1}^{n} x_i \mathbf{a}_i \right \},
+\end{equation*}
+is a cone. 
+\end{defn}
+In $\RR^2$ this reduces to a simple triangle, as seen in Figure~\ref{fig:cone_condition_true}
+\begin{defn}{Cone Condition}~\label{def:cone_condition}
+    Let $E$ be a Euclidean space and let $G$ be an open subset of $E$.
+    Then $G$ fulfills the cone condition if
+    \begin{equation*}
+        \forall g \in G\,\, \exists x\in \RR^n
+        \, \exists A\in \RR^{m \times n} \,\, :
+        V(A,\mathbf{x})\neq \varnothing \land
+        g + V(A, \mathbf{x}) \subset G. % + er translation
+    \end{equation*}
+    This means: at all points in $G$, we can create a non-empty cone,
+     such that the cone is contained 
+    in $G$.
 \end{defn}
 
-
-
-
-
-
-\begin{defn}{Cone Condition}~\label{def:cone_condition}
+\iffalse
+\begin{defn}{Cone Condition}
     Let $E$ be a Euclidean space and let $G$ be an open subset of $E$.
     Let $\varepsilon >0$, and define 
     $V(w, l)$ to be a cone with vertex at origo, opening $\varepsilon$, axis $w$,
@@ -25,6 +41,7 @@
     with some height, pointing in some direction, such that the cone is contained 
     in $G$.
 \end{defn}
+\fi
 \begin{figure}[H]
     \centering
     \begin{subfigure}{.3\textwidth}
