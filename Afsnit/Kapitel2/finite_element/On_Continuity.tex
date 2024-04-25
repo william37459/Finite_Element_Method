@@ -7,7 +7,7 @@ using different examples.
 Say, to start, we only require the solution to be continuous, 
 everywhere on $\OO$.
 To do so, when the solution transitions from element to element, 
-the solution must "match up", coming from each element. 
+the solution must `match up', coming from each element. 
 One way to include this in the construction can be seen in the 
 following example.
 \begin{exmp}{\quad\label{exmp:c0_triangle_con}}
@@ -25,8 +25,7 @@ $s = (t+1)(t+2)/2$ points such that:
 An illustration of this can be seen in Figure~\ref{fig:triangle_nodal}, for 
 $t=5$.
 By choosing values for each point, every polynomial on each $T_i$ 
-is uniquely determined (the proof of uniqueness can be found in 
-\cite{Braess}, page 64).
+is uniquely determined (the proof of uniqueness can be found in~\cite{Braess}, page 64).
 By restricting the polynomials to an edge, they become polynomials of 
 one variable, and are uniquely determined by the values at the $t+1$ points 
 on that edge.
@@ -38,8 +37,7 @@ continuity.
 \begin{figure}[h]
     \centering
     \input{Afsnit/Kapitel2/fig/triangle_element.tex}
-    \caption{Triangle element, with nodes for $t=5$}
-    \label{fig:triangle_nodal}
+    \caption{Triangle element, with nodes for $t=5$}\label{fig:triangle_nodal}
 \end{figure}
 Example~\ref{exmp:c0_triangle_con} demonstrates, that global continuity are 
 somewhat easy to obtain, and constructing finite elements using polynomials 
@@ -53,7 +51,7 @@ themselves must match up, but the first derivatives must now also match.
 We express this using the normal derivative, and showcase this in the 
 following example. 
 \begin{exmp}{\quad\label{exmp:c1_triangle_con}}
-   As in Example \ref{exmp:c0_triangle_con}, 
+   As in Example~\ref{exmp:c0_triangle_con}, 
     for some $\OO$, let $\mathcal{T}$ be an admissible partition into 
     triangles, and let $\Pi_i = \mathcal{P}_5$ for each finite element.
     Remember that $\dim(\mathcal{P}_5) = 21$.
@@ -85,24 +83,24 @@ following example.
     solution in $C^1(\OO)$. This element is well known, and called 
     Argyris element.
 \end{exmp}
-As we can see from Example \ref{exmp:c1_triangle_con}, by requiring a 
+As we can see from Example~\ref{exmp:c1_triangle_con}, by requiring a 
 solution be differentiable, construction of finite elements and computation 
 becomes harder. 
 
 Many different types of finite elements exists, and can differ wildly in how they 
-are constructed. In Example \ref{exmp:c0_triangle_con} and \ref{exmp:c1_triangle_con} 
+are constructed. In Example\ref{exmp:c0_triangle_con} and~\ref{exmp:c1_triangle_con} 
 the finite elements are constructed using a nodal system - specifying all elements of $\Pi$ 
 uniquely through values at a number of points. However something like Hsieh–Clough–Tocher element 
 is constructed by subdividing triangles into further triangles and using 
 cubic polynomials.
 
-These previous examples show how to construct finite elements "well" - as 
+These previous examples show how to construct finite elements `well' - as 
 the solution we find obeys the requirement, namely either being $C^0(\OO)$ or 
 $C^1(\OO)$. However elements can also be constructed badly, as we will 
 show here. In rectangular elements we use a polynomial family with 
 tensor products:
 \begin{equation*}
-    \mathcal{Q}_t = \{ f(x,y)= \sum_{0\leq i,k \leq t} c_{ik}x^iy^k \}.
+    \mathcal{Q}_t = \{ f(x,y)= \sum_{0\leq i,k \leq t} c_{ik}x^i y^k \}.
 \end{equation*}
 In the following example we will show how constructing finite elements 
 can go wrong.
@@ -130,10 +128,9 @@ can go wrong.
 \begin{figure}[h]
     \centering
     \input{Afsnit/Kapitel2/fig/square_element_rotated.tex}
-    \caption{A quadrilateral element at $45^\circ$ from the axis}
-    \label{fig:quad_element_bad}
+    \caption{A quadrilateral element at $45^\circ$ from the axis}\label{fig:quad_element_bad}
 \end{figure}
-As can be seen in Examples \ref{exmp:c0_triangle_con}, \ref{exmp:c1_triangle_con}, 
-and \ref{exmp:c0_square_bad}, there are many different ways to construct 
+As can be seen in Examples~\ref{exmp:c0_triangle_con},~\ref{exmp:c1_triangle_con}, 
+and~\ref{exmp:c0_square_bad}, there are many different ways to construct 
 finite elements, and doing so is not an exercise divorced from $\OO$ or 
 the requirements on the solution.

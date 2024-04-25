@@ -6,8 +6,7 @@ for polynomials of degree $t-1$ or less. Then there exists a constant $c=c(\omeg
 \begin{equation}
     \|u-Iu\|_t\leq c\|u\|_t\quad \forall u\in H^t(\Omega).
     \label{eq:lem_6.2}
-\end{equation}
-\label{lem:6.2}
+\end{equation}~\label{lem:6.2}
 \end{lem}
 
 \begin{bev}
@@ -15,14 +14,40 @@ for polynomials of degree $t-1$ or less. Then there exists a constant $c=c(\omeg
     \begin{equation*}
         \||v\|| = |v|_t + \sum_{i=1}^s |v(z_i)|.
     \end{equation*}
-it an then be shown that the norms $\||\cdot\||$ and $\|\cdot\|_t$ are equivalent on $H^t(\Omega)$. Thus
+it can then be shown that the norms $\||\cdot\||$ and $\|\cdot\|_t$ are equivalent on $H^t(\Omega)$. Thus
 \begin{align*}
     \|u-Iu\|_t&\leq c\||u-Iu\||\\
     &= c(|u-Iu|_t + \sum_{i=1}^s|(u-Iu)(z_i)|)\\
     &= c|u-Iu|_t \\
     &= c|u|_t.
 \end{align*}
+This holds due to the fact that $Iu$ is a polynomial of degree $t-1$, which means that $D^{\alpha} Iu = 0 \text{ forall } |\alpha|=0$, thus $(Iu)(z_1)=u(z_i)$.
 
+We now move on to proving one direction of the equivalence of the norms. 
+It can be shown that the imbedding $H^t\hookrightarrow H^2 \hookrightarrow C^0$ is continous (see~\cite{Braess} page 49). Thus
+\begin{equation*}
+    |v(z_i)|\leq c\|v\|_t\quad \text{for } i=1,2,\ldots,s.
+\end{equation*} 
+and
+\begin{equation*}
+    \||v\||\leq (1+cs)\|v\|_t.
+\end{equation*}
+Now the opposite direction, suppose 
+\begin{equation*}
+    \|v\|_t\leq c\||v\||\quad \text{for all } v\in H^t(\Omega)
+\end{equation*}
+fails for every positive number $c$. Then there exists some sequence $(v_k)$ in $H^t(\Omega)$ such that
+\begin{equation*}
+    \|v_k\|_t=1,\quad \||v_k\||\leq \frac{1}{k},\quad k=1,2,\ldots
+\end{equation*}
+Now it can be shown that a subsequence of $(v_k)$ converges in $\in H^{t-1}(\Omega)$ (see~\cite{Braess} page 32). We can therefore assume that $(v_k)$ itself converges, thus $(v_k)$ is a Cauchy sequence in $H^{t-1}(\Omega)$.
+This together with the fact that $|v_k|_t$ and $\|v_k-v_\ell\|_t^2\leq\|v_k-v_\ell\|_{t-1}^2$, we get that $(v_k)$ is a Cauchy sequence in $H^t(\Omega)$, and thus converges in $H^t(\Omega)$.
+Due to the completeness of $H^t(\Omega)$, we get convergence in the sense of $H^t$ of an element $v^*\in H^t(\Omega)$. 
+Thus by the continuity, we get 
+\begin{equation}
+    \|v^*\|_t = 1\quad \text{and }\||v^*\||=0. 
+\end{equation}
+If $|v^*|_t = 0$ this implies that $v^*$ is a polinomial of degree $t-1$, and for $v^*(z_i)=0$ for $i=1,2,\ldots,s$, we get $v^*=0$. This is a contradiction, which proves the equivalence of the norms.
 \end{bev}
 
 \begin{lem}{Bramble-Hilbert Lemma}
@@ -33,10 +58,9 @@ it an then be shown that the norms $\||\cdot\||$ and $\|\cdot\|_t$ are equivalen
     \end{equation}
 \end{lem}
 \begin{bev}
-    Let $I:H^t(\Omega)\rightarrow \mathcal{P}_{t-1}$ be an interpolation operator of the same type as in Lemma \ref{lem:6.2}. Then by the same lemma and the fact that $Iv\in\ker L$, we get
+    Let $I:H^t(\Omega)\rightarrow \mathcal{P}_{t-1}$ be an interpolation operator of the same type as in Lemma~\ref{lem:6.2}. Then by the same lemma and the fact that $Iv\in\ker L$, we get
     \begin{equation}
         \|Lv\|=\|L(v-Iv)\|\geq \|L\|\cdot\|v-Iv\|_t\geq c\|L\| \cdot |v|_t,
     \end{equation}
-    where the constant $c$  is the same as in Equation \ref{eq:lem_6.2}.
-    \label{lem:6.3}
+    where the constant $c$  is the same as in Equation~\ref{eq:lem_6.2}.~\label{lem:6.3}
 \end{bev}
