@@ -15,12 +15,13 @@
    pointing normal on $\partial \OO$, defined almost everywhere.
 \end{thmx}
 \begin{bev}
-   Obviously $ {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO}$ is a bounded linear functional, 
+   Due to the Trace Theorem, \ref{thm:trace}, the functional $(g,v)_{0,\partial \OO}$ is bounded,
+   and thus $ {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO}$ is a bounded linear functional, 
    and since $a$ is $H^1$ elliptic, Theorem~\ref{thm:lax_milgram} gives us the
    uniqueness and existence of $u$.
    Corollary~\ref{cor:lax_milgram} gives us
    \begin{equation}
-      a(u,v) = {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} \quad \forall v \in H^1(\OO). \label{eq:neumann_lax}
+      a(u,v) = {(f,v)}_{0,\OO} + {(g,v)}_{0,\partial\OO} \quad \forall v \in H^1(\OO). \label{eq:neumann_lax}
    \end{equation}
    We now move on to the ``if and only if'' part of the theorem. Start by 
    assuming $u \in C^2(\OO)\cap C^1(\bar{\OO})$.
@@ -41,7 +42,7 @@
    we cannot do here. However, with the same arguments regarding summing and substituting, 
    we get
    \begin{equation}
-      a(v,v) - {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} = 
+      a(u,v) - {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} = 
       \int_\OO v[Lu - f] dx + \int_{\partial \OO}
      \left[ \sum_{i,k}  \mathbf{n}_i a_{ik} \partial_k u-g \right]v ds.
      \label{eq:existence_neumann_last_eq}
@@ -50,7 +51,8 @@
    the last integral in~\eqref{eq:existence_neumann_last_eq} must be $0$.
 
    Suppose that for some $i$ and $k$ the function $v_0 = \mathbf{n}_i a_{ik} \partial_k u -g$ does 
-   not vanish. Then $\int_{\partial\OO}v_0^2ds>0$, and by the density of 
+   not vanish on $\partial \OO$. 
+   Then $\int_{\partial\OO}v_0^2ds>0$, and by the density of 
    $C^1(\bar{\OO})$ in $C^0(\bar{\OO})$, there exists a $v\in C^1(\bar{\OO})$
    such that  $\int_{\partial\OO}v_0\cdot vds>0$, which cannot happen, due that 
    what we found using~\eqref{eq:existence_neumann_last_eq}. 

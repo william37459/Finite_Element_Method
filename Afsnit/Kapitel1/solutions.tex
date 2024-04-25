@@ -42,38 +42,20 @@ unless otherwise stated.
 %FIXME Beskriv hvorfor en elliptic diff operator giver en elliptic a
 
 \section{Homogeneous Dirichlet Conditions}
-Since we are trying to solve the PDE over some space $\Omega$, we write
+Since we are trying to solve the PDE over some domain $\Omega$, we write
 \begin{align}
 \begin{split}
-    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
-    u &= g \quad \text{on } \partial \Omega.
+    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem_homogeneous} \\
+    u &= 0 \quad \text{on } \partial \Omega. 
 \end{split}
 \end{align}
-A boundary condition on the form~\eqref{eq:b_v_problem} is called a 
-Dirichlet condition, which is when $u$ itself is specified on the boundary. 
-If $u=0$ on the boundary we have homogeneous boundary conditions, which we usually assume 
-to make things easier. If that is not the case, we can
-transform the problem. To do this, we assume there exists a function 
-$\tilde{u}$ such that $\tilde{u}=g$ on $\partial \Omega$. Then we define 
-$w = u - \tilde{u}$ and $\tilde{f}=f-L\tilde{u}$ and we get that
-\begin{align}
-\begin{split}
-    Lw &= \tilde{f} \quad \text{in } \Omega \label{eq:b_v_problem_homogeneous} \\
-    w &= 0 \quad \text{on } \partial \Omega. 
-\end{split}
-\end{align}
-To make these explicit demands for $u$ on $\partial \OO$ can 
-be rather restrictive.
-Instead we can make implicit restrictions, by constraining 
-$\partial _i u$ on $\partial \OO$.
-This will be dealt with later.
-
+The assumption that $u=0$ is often far too restrictive, but we will soften this later.
 We now use Theorem~\ref{thm:charac_theorem} to show a link between classical 
 solutions and solutions of appropriate variational problems.
 \input{Afsnit/Kapitel1/sætninger/Minimal_Property.tex}
 The same kind of proof can be used to show that a solution $u$ to~\eqref{eq:min_prop_variational_problem} which fulfills 
-$u\in C^2(\OO) \cap C^0(\OO)$ is also a classical solution. 
-When $u\in C^2(\OO) \cap C^0(\OO)$ the variational problem and 
+$u\in C^2(\OO) \cap C^0(\bar{\OO})$ is also a classical solution. 
+When $u\in C^2(\OO) \cap C^0(\bar{\OO})$ the variational problem and 
 homogeneous boundary value problem are thusly equivalent.
 We can therefore use the variational problem to find solutions, making the
  the following theorem useful.
@@ -111,10 +93,19 @@ and is therefore desirable. So we now look at the existence of weak solutions.
 
 \section{Inhomogeneous Dirichlet Conditions}
 The theory in the previous section have been regarding homogeneous 
-Dirichlet problems. However, as mentioned before, inhomogeneous
+Dirichlet problems; however, if we soften the requirement for $u$ on $\partial\OO$,
+and write 
+\begin{align}
+\begin{split}
+    Lu &= f \quad \text{in } \Omega \label{eq:b_v_problem} \\
+    u &= g \quad \text{on } \partial \Omega,
+\end{split}
+\end{align}
+we get an inhomogeneous Dirichlet boundary condition.
+However, inhomogeneous
 Dirichlet problems can be turned into homogeneous Dirichlet problems 
 using Theorem~\ref{thm:existence_hom_dirichlet}. 
-Recall the inhomogeneous Dirichlet problem, Equation~\eqref{eq:b_v_problem}, and let 
+In the inhomogeneous Dirichlet problem, Equation~\eqref{eq:b_v_problem}, let 
 $\tilde{u} \in C^2(\OO)\cap C^0(\bar{\OO}) \cap H^1(\OO)$ be a function such that 
 \begin{equation*}
    \tilde{u} = g \quad \text{on } \partial \OO,
