@@ -1,0 +1,35 @@
+\begin{defn}
+    Let $m\geq 1, H^m_0(\Omega\subset V\subset H^m(\Omega))$, and suppose $a(\cdot,\cdot)$ is a $V$-elliptic bilinear form. 
+    Then the variational problem
+    \begin{equation}
+        a(u,v) = (f,v)_0\quad \text{for all } v\in V
+    \end{equation}
+    is called $H^s$-regular provided that there exists a constant $C=(\Omega,a,s)$ such that for every  $f\in H^{s-2m}(\Omega)$,
+    there is a solution $u\in H^s(\Omega)$ satisfying
+    \begin{equation}
+        \|u\|_s\leq c\|f\|_{s-2m}.
+    \end{equation}
+    \label{defn:7.1}
+\end{defn}
+
+\begin{thmx}{Regularity Theorem}
+    Let a be an $H^1_0$-elliptic bilinear form with sufficiently smooth coefficient functions. Then the following holds. 
+    \begin{enumerate}
+        \item If $\Omega$ is convex, then the Dirichlet problem is $H^2$-regular. 
+        \item If $\Omega$ has a $C^s$ boundary with $s\geq 2$, then the Dirichlet problem is $H^s$-regular.
+    \end{enumerate}
+\end{thmx}
+
+\begin{thmx}{\quad}
+    Suppose $\mathcal{T}_h$ is a family of shape-regular triangulations of $\Omega$. Then the finite element approximation $u_h\in S_h = \mathcal{M}^k_0(k\geq 1)$ satisfies
+    \begin{align}
+        \begin{split}
+            \|u-u_h\|_1&\leq ch\|u\|_2\ \\
+            &\leq ch\|f\|_0.
+        \end{split}
+    \end{align}
+\end{thmx}
+\begin{bev}
+    From the fact $\Omega$ is convex, we get that the problem is $H^2$-regular and that $\|u\|_2 \leq c_1\|f\|_0$.
+
+\end{bev}
