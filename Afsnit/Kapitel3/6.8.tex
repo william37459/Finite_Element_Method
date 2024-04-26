@@ -4,3 +4,17 @@
         {\|v_h\|}_{t,h} \leq ch^{m-t}\|v_h\|_{m,h} for v \in \Pi_{ref}
     \end{equation}
 \end{thmx}
+
+\begin{proof}
+    By the Transformation Formula~\ref{thm:transformation} we can reduce the proof to only consider the reference element. Since all norms on finite dimensional vector spaces are equivalent it suffices to show
+    \begin{equation}
+        |v|_{t,T_{ref}} \leq c |v|_{m, T_{ref}} \quad \forall v \in \Pi_{ref}
+    \end{equation}
+    with $c = c(\Pi_{ref})$. To obtain the inequality we consider the vector space $\Pi_{ref}\oplus \mathcal{P}_{m-1}$. Let $Iv \in \mathcal{P}_{m-1}$ be a polynomial that interpolates $v$ at fixed points. $|Iv|_t = 0$, since $t > m-1$ and the Bramble-Hilbert lemma we get
+    \begin{align}
+        |v|_t &= |v-Iv|_t \leq ||v-Iv||_t \\
+              &\leq c||v-Iv||_m 
+              &\leq c|v|_m\label{eq:bramble-hilbert-1}
+    \end{align}
+    where~\eqref{eq:bramble-hilbert-1} follows from the Bramble-Hilbert lemma with $L=1-I$. To extend to elements of size $h$, the same procedure as~\ref{thm:6.4} should be applied. This results in the factor $ch^{m-t}$ in the estimate. Lastly by summing the square of the expressions over all triangles or quadrilaterials leads to the desired result.
+\end{proof}
