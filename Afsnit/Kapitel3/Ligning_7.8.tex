@@ -1,0 +1,45 @@
+We will now prove the statement
+\begin{equation}
+    \|u-u_h\|_{\infty}\leq ch|u|_2.
+\end{equation}
+\begin{bev}
+    For a function $v\in H^2(T_{\text{ref}})$, we let $Iv$ be its interpolant in the polynomial space $\Pi_{\text{ref}}$.
+    We have that $H^2\subset C^0$ and therefore 
+    \begin{equation}
+        \|v-Iv\|_{\infty,T_\text{ref}} \leq c|v|_{2,T_\text{ref}}
+        \label{eq:7.9}
+    \end{equation}
+    from the Bramble-Hilbert lemma \ref{lem:Bramble-Hilbert}.
+    Now let $u$ be the solution to the variational problem, and $I_hu$ be the interpolant in $S_h$.
+    Then we choose an element $T$ in the triangulation, which we without loss of generality assume to be uniform. 
+    Let $\hat{u}$ be the affine transformation of $u|_T$ to the reference triangle.
+    Then by Equation \ref{eq:7.9} and the transformation formula %FIXME label her
+    \begin{align}
+        \begin{split}
+            \|u-I_hu\|_{\infty,T} &= \|\hat{u} - I\hat{u}\|_{\infty,T_{\text{ref}}} \\
+            &\leq c|\hat{u}|_{2,T_{\text{ref}}} \\
+            &\leq ch|u|_{2,T} \\
+            &\leq ch|u|_{2,\Omega}.
+        \end{split}
+        \label{eq:7.10}
+    \end{align}
+    From taking the maximum over all triangles, we get
+    \begin{equation}
+        \|u - I_hu \|_{\infty,\Omega} \leq ch|u|_{2,\Omega}.
+    \end{equation}
+    Then by the affine argument, we can obtain the inverse estimate as
+    \begin{equation}
+        \|v_h\|_{\infty,\Omega} \leq ch^{-1} \|v_h\|_{0,\Omega} \quad \text{for all } v_h\in S_h.
+    \end{equation}
+    Then using Theorem \ref{thm:6.4} and Corollary %FIXME label her
+    we get
+    \begin{equation}
+        \|u-I_hu\|_{0,\Omega} \leq ch^2|u|_{2,\Omega}\quad \text{for } u_h-I_hu\in S_h.
+    \end{equation}
+    We then use the inverse estimate from earlier. Thus 
+    \begin{align}
+        \|u-u_h\|_{\infty,\Omega} &\leq \|u-I_hu\|_{\infty,\Omega} + \|u_h-I_hu\|_{\infty,\Omega} \\
+        &\leq \|u-I_hu\|_{\infty,\Omega} + ch^{-1} \|u_h-I_hu\|_{0,\Omega}.
+    \end{align}
+    The equations \ref{eq:6.5} and \ref{eq:7.10} then proves the statement.
+\end{bev}
