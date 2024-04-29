@@ -1,17 +1,17 @@
-\begin{thmx}{Aubin–Nitsche}
+\begin{thmx}{Aubin–Nitsche \label{thm:aubin-nitsche}}
     Let $H$ be a Hilbert space with norm $|\cdot|$ and a scalar product $(\cdot,\cdot)$.
     Let $V\subset H$ be a Hilbert space for another norm $\|\cdot\|$, and let 
-    $V \hookrightarrow H$, the imbedding from $V$ to $H$ be continuous.
+    $V \hookrightarrow H$, the imbedding from $V$ to $H$ be continuous,
+    and $\forall g \in H$, let $\varphi_g \in V$ denote the unique weak solution to 
+    \begin{equation}
+        a(w,\varphi_g) = (g,w) \quad \forall w\in V. \label{eq:aubin_nitsche_antagelse}
+    \end{equation}
+    Here $a(\cdot,\cdot)$ is a bilinear continuous form.
     Then the finite element solution $u_h\in S_h \subset V$ obeys
     \begin{equation*}
         |u-u_h| \leq C \|u-u_h\| \sup_{g\in H} \left \{ \frac{1}{|g|} \inf_{v \in S_h} \|\varphi_g - v\| \right \},
     \end{equation*}
     where $\sup$ is over all $g\in H$ such that $|g|\neq 0$.
-    Here $\forall g \in H$, $\varphi_g \in V$ denotes the unique weak solution to 
-    \begin{equation*}
-        a(w,\varphi_g) = (g,w) \quad \forall w\in V.
-    \end{equation*}
-    Here $a(\cdot,\cdot)$ is a bilinear continuous form.
 \end{thmx}
 \begin{bev}
     Assume $|g|\neq 0$ for some $g\in H$. Then,
@@ -22,12 +22,30 @@
     By completeness of $H$, if take $\sup$ over all $g\in H$ such that 
     $|g|\neq 0$ (as in the theorem), we still get a $g\in H$, and get 
     an equality, meaning we can write:
-    \begin{equation*}
-        \sup_{g\in H} \frac{(g,w)}{|g|} = |w|.
-    \end{equation*}
+    \begin{equation}
+        \sup_{g\in H} \frac{(g,w)}{|g|} = |w|. \label{eq:duality_argument}
+    \end{equation}
     The solution $u$ and finite element solution $u_h$ is given by 
     \begin{align*}
         a(u,v) &= f(v) \quad \forall v \in V, \\
         a(u_h,v) &= f(v) \quad \forall v \in S_h.
+    \end{align*}
+    From this we get $a(u-u_h,v)=0$, $\forall v\in S_h$, which we use with the assumption in 
+    Equation~\ref{eq:aubin_nitsche_antagelse}, and the continuity of $a(\cdot,\cdot)$ to get
+    \begin{align*}
+        (g,u-u_h) &= a(u-u_h,\varphi _g) \\
+                  &= a(u-u_h,\varphi _g) -0 \\
+                  &=a(u-u_h,\varphi _g) -a(u-u_h,v) \\
+                  &=a(u-u_h, \varphi_g -g) \\
+                  &\leq C \|u-u_h\| \cdot \|\varphi_g-v\|.
+    \end{align*}
+    Using $v\in S_h$ which gives the smallest norm, we get 
+    \begin{equation*}
+        (g,u-u_h) \leq C \|u-u_h\| \cdot \inf_{v\in S_h} \|\varphi_g-v\|.
+    \end{equation*}
+    Using Equation~\ref{eq:duality_argument} on $u-u_h$, we then get 
+    \begin{align*}
+        |u-u_h| &= \sup_{g\in H} \frac{(g,u-u_h)}{|g|} \\
+        &\leq C \| u-u_h\| \sup_{g\in H} \left \{ \frac{1}{|g|} \inf_{v \in S_h} \|\varphi_g - v\| \right \}.
     \end{align*}
 \end{bev}
