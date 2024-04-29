@@ -13,11 +13,16 @@
     \end{equation}
     where $\left< \mathcal{l}, w \right> := {\left( \nabla v_h, \nabla w \right)}_0 + {\left( v_h, w \right)}_0$.Obviously, $||v_h||_1 \leq ||v||_1$. An important result in the proof is the $L_2$-error estimate from Corollary 7.7 %FIXME ref
 
-    %TODO Skriv teksten
+    \begin{equation}
+        ||v - v_h||_0 \leq c_1h||v-v_h||_1 \leq 2c_1h||v||_1.
+    \end{equation}
+
+    This can be combined with the inverse estimate to obtain %FIXME ref
 
     \begin{align}
         || \mathcal{Q}_h v ||_1 &\leq || \mathcal{Q}_h v - v_h||_1 + ||v_h||_1 \\
                                 &\leq c_2 h^{-1} ||\mathcal{Q}_h \left( v - v_h \right)||_0 + ||v_h||_1 \leq c_2h^{-1}||v-v_h||_0 + ||v||_1 \\
                                 &\leq c_2h^{-1}2c_1h||v||_1 + ||v||_1.
     \end{align}
+    With $c = 1+ 2c_1c_2$, the result follows.
 \end{bev}
