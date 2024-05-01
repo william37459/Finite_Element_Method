@@ -1,0 +1,27 @@
+\begin{kor}{\quad}
+   Assume $\mathcal{T}_h$ is a family of shape regular triangulations of $\OO$.
+   If $u\in H^1(\OO)$ is the solution of the variational problem, then 
+   \begin{equation*}
+    \|u-u_h\|_0 \leq cCh \|u-u_h\|_1.
+   \end{equation*}
+   If $f\in L_2(\OO)$ and $u\in H^2(\OO)$, then 
+   \begin{equation*}
+    \|u-u_h\|_0 \leq cC^2h^2 \|f\|_0.
+   \end{equation*}
+\end{kor}
+\begin{bev}
+   We want to use Theorem~\ref{thm:aubin-nitsche}, which we can by 
+   using the following observations. Set 
+    \begin{equation*}
+        H = H^0(\OO) \quad \text{and} \quad V = H^1_0(\OO).
+    \end{equation*}
+    Then $V \subset H$, and the norms 
+    \begin{equation*}
+        |\cdot| = \|\cdot\|_0 \quad \text{and} \quad \|\cdot\| = \|\cdot\|_1,
+    \end{equation*}
+    by $\|\cdot\|_0 \leq \|\cdot\|_1$ gives us continuity of the imbedding.
+    We then get
+    \begin{equation*}
+        \|u-u_h\|_0 \leq C \|u-u_h\|_1 \sup_{g\in H} \left \{ \frac{1}{|g|} \inf_{v \in S_h} \|\varphi_g - v\|_1 \right \},
+    \end{equation*}
+\end{bev}
