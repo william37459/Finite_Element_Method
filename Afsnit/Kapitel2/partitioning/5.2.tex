@@ -1,5 +1,5 @@
 
-\begin{thmx}{\quad}
+\begin{thmx}{\quad\label{thm:h-and-c_connection}}
     Let $k\geq1$ and suppose $\Omega$ is bounded. Then a piecewise infinitely differentiable function $v:\bar{\Omega}\rightarrow \mathbb{R}$
     belongs to $H^k(\Omega)$ if and only if $v\in C^{k-1}(\bar{\Omega})$.
 \end{thmx}
@@ -66,3 +66,7 @@
     After differentiating $k-1$ times, we arrive at the case we have just proven. 
     The theorem is thus true for $k>1$.
 \end{bev}
+In Theorem~\ref{thm:h-and-c_connection} $\OO$ could be the entire domain; 
+however it could also just be a cell. This gives us some local requirements. 
+If we want a solution which is locally $C^2$ (not on a cell edge), every function in the 
+finite elements must be $H^3$.

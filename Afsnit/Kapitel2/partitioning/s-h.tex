@@ -1,10 +1,10 @@
 The idea of $S_h$ is to solve the same variational problem as in the global case, 
-but in a smaller space-meaning solving
+but in a smaller space; so the problem becomes
 \begin{equation*}
     J(v) = \frac{1}{2}a(v,v) - \ell(v) \to \underset{S_h}{\min}.
 \end{equation*}
 The only difference is in the space we look for a solution, namely $S_h$. From 
-earlier theory, we know that the solution is given by 
+earlier theory, we know that the solution is given by an $u_h$ which solves
 \begin{equation*}
     a(u_h,v) = \ell(v) \quad \forall v \in S_h.
 \end{equation*}
@@ -23,11 +23,14 @@ equations
 \end{equation*}
 Letting $a(\psi_i,\psi_j)$ be the $j,i$-entries in a matrix $A$, $z_i$ and $\ell(\psi_i)$ 
 be the entries the vectors $z$ and $b$ respectively, this can be written in matrix form 
-\begin{equation*}
-    Az = b.
-\end{equation*}
+\begin{equation}
+    Az = b. \label{eq:matrix_equation}
+\end{equation}
+When using FEM, Equation~\eqref{eq:matrix_equation} is what we use to find the solution; 
+the other big part of FEM is constructing $A$, which is dependent on the partitioning of $\OO$, 
+as this partitioning decides what $S_h$ and the basisvectors are.
 
-It can be shown that the matrix $A$ is symmetric and positive definite, when $a$ is an $H^m$-elliptic bilinear form, as follows. 
+It can be shown that the matrix $A$ is symmetric and positive definite, when $a$ is an $H^m$-elliptic bilinear form, which we do now. 
 The symmetry of $A$ follows directly from the symmetry of $a$, as $a$ is $H^m$-elliptic.
 To show that $A$ is positive definite, we need to show that $x^T Ax > 0$ for all $x \neq 0$. Thus
 \begin{align*}
@@ -35,4 +38,6 @@ To show that $A$ is positive definite, we need to show that $x^T Ax > 0$ for all
     &= a\left(\sum_{k} x_k\psi_k,\sum_{i} x_i\psi_i\right) \\
     &= a(u_h,u_h) \geq \alpha \|u_h\|^2 > 0.
 \end{align*}
+
 From now on, we will assume for simplicity that $V\subset H^m(\Omega)$ and $a$ is $V$-elliptic. %TODO Uddyb hvad V er
+
