@@ -1,7 +1,14 @@
-We will now prove the statement
-\begin{equation}
-    \|u-u_h\|_{\infty}\leq ch|u|_2.
-\end{equation}
+\begin{thmx}{\quad}
+    Let the $L_\infty$-norm be 
+    \begin{equation*}
+        \|v\|_{\infty, \OO} = \sup_{x\in\OO} |v(x)|.
+    \end{equation*}
+    Then 
+    for a $H^2$-regular variational problem with a solution $u$, the following holds;
+    \begin{equation}
+        \|u-u_h\|_{\infty}\leq ch|u|_2.
+    \end{equation}
+\end{thmx}
 \begin{bev}
     For a function $v\in H^2(T_{\text{ref}})$, we let $Iv$ be its interpolant in the polynomial space $\Pi_{\text{ref}}$.
     We have that $H^2\subset C^0$ and therefore 
@@ -9,11 +16,11 @@ We will now prove the statement
         \|v-Iv\|_{\infty,T_\text{ref}} \leq c|v|_{2,T_\text{ref}}
         \label{eq:7.9}
     \end{equation}
-    from the Bramble-Hilbert lemma~~\ref{lem:Bramble-Hilbert}.
+    by Lemma~\ref{lem:Bramble-Hilbert}.
     Now let $u$ be the solution to the variational problem, and $I_h u$ be the interpolant in $S_h$.
     Then we choose an element $T$ in the triangulation, which we without loss of generality assume to be uniform. 
     Let $\hat{u}$ be the affine transformation of $u|_T$ to the reference triangle.
-    Then by Equation~\ref{eq:7.9} and the transformation formula %FIXME label her
+    Then by Equation~\ref{eq:7.9} and the transformation formula,~\ref{thm:transformation};
     \begin{align}
         \begin{split}
             \|u-I_h u\|_{\infty,T} &= \|\hat{u} - I\hat{u}\|_{\infty,T_{\text{ref}}} \\
@@ -31,7 +38,7 @@ We will now prove the statement
     \begin{equation}
         \|v_h\|_{\infty,\Omega} \leq ch^{-1} \|v_h\|_{0,\Omega} \quad \text{for all } v_h\in S_h.
     \end{equation}
-    Then using Theorem~\ref{thm:6.4} and Corollary %FIXME label her
+    Then using Theorem~\ref{thm:6.4} and Corollary~\ref{kor:7.7}
     we get
     \begin{equation}
         \|u-I_h u\|_{0,\Omega} \leq ch^2|u|_{2,\Omega}\quad \text{for } u_h-I_h u\in S_h.
@@ -41,5 +48,5 @@ We will now prove the statement
         \|u-u_h\|_{\infty,\Omega} &\leq \|u-I_h u\|_{\infty,\Omega} + \|u_h-I_h u\|_{\infty,\Omega} \\
         &\leq \|u-I_h u\|_{\infty,\Omega} + ch^{-1} \|u_h-I_h u\|_{0,\Omega}.
     \end{align}
-    The equations~\ref{eq:6.5} and~\ref{eq:7.10} then proves the statement.
+    The equations~\eqref{eq:6.5} and~\eqref{eq:7.10} then proves the statement.
 \end{bev}

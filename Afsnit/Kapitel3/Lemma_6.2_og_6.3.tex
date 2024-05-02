@@ -1,12 +1,12 @@
 
-\begin{lem}{\quad}
+\begin{lem}{\quad~\label{lem:6.2}}
 Let $\Omega$ be a domain with a Lipschitz continous boundary which satisfies a cone condition. Furthermore, let $t\geq 2$, and suppose $z_1,z_2,\ldots z_s$ are the
 $s = t(t+1)/2$ prescribed points in $\bar{\Omega}$ such that the interpolation operator $I:H^t \rightarrow \mathcal{P}_{t-1}$ is well defined.
 Then there exists a constant $c$ such that
 \begin{equation}
     \|u-Iu\|_t\leq c\|u\|_t\quad \forall u\in H^t(\Omega).
     \label{eq:lem_6.2}
-\end{equation}~\label{lem:6.2}
+\end{equation}
 \end{lem}
 
 \begin{bev}
@@ -32,7 +32,7 @@ and
 \begin{equation*}
     |||v|||\leq (1+cs)\|v\|_t.
 \end{equation*}
-Now the opposite direction, suppose 
+For the opposite direction, suppose 
 \begin{equation*}
     \|v\|_t\leq c|||v|||\quad \text{for all } v\in H^t(\Omega)
 \end{equation*}
@@ -41,26 +41,34 @@ fails for every positive number $c$. Then there exists some sequence $(v_k)$ in 
     \|v_k\|_t=1,\quad |||v_k|||\leq \frac{1}{k},\quad k=1,2,\ldots
 \end{equation*}
 Now it can be shown that a subsequence of $(v_k)$ converges in $\in H^{t-1}(\Omega)$ (see~\cite{Braess} page 32). We can therefore assume that $(v_k)$ itself converges, thus $(v_k)$ is a Cauchy sequence in $H^{t-1}(\Omega)$.
-This together with the fact that $|v_k|_t$ and $\|v_k-v_\ell\|_t^2\leq\|v_k-v_\ell\|_{t-1}^2$, we get that $(v_k)$ is a Cauchy sequence in $H^t(\Omega)$, and thus converges in $H^t(\Omega)$.
-Due to the completeness of $H^t(\Omega)$, we get convergence in the sense of $H^t$ of an element $v^*\in H^t(\Omega)$. 
+This together with the fact that $|v_k|_t\to 0$ and
+ %$\|v_k-v_\ell\|_t^2\leq\|v_k-v_\ell\|_{t-1}^2 + (|v_k|_t + |v_l|_t)^2$, 
+\begin{align*}
+    \|v_k-v_\ell\|_t^2 &= \|v_k-v_\ell\|_{t-1}^2 + |v_k-v_\ell|_t^2 \\
+    & \leq\|v_k-v_\ell\|_{t-1}^2 + (|v_k|_t + |v_\ell|_t)^2 ,
+\end{align*}
+ we get that $(v_k)$ is a Cauchy sequence in $H^t(\Omega)$, and thus converges in $H^t(\Omega)$.
 Thus by the continuity, we get 
 \begin{equation}
     \|v^*\|_t = 1\quad \text{and }|||v^*|||=0. 
 \end{equation}
-If $|v^*|_t = 0$ this implies that $v^*$ is a polinomial of degree $t-1$, and for $v^*(z_i)=0$ for $i=1,2,\ldots,s$, we get $v^*=0$. This is a contradiction, which proves the equivalence of the norms.
+If $|v^*|_t = 0$ this implies that $v^*$ is a polinomial of degree $t-1$, and from $v^*(z_i)=0$ for $i=1,2,\ldots,s$, we get $v^*=0$. 
+This is a contradiction, which proves the equivalence of the norms. %TODO Contradiction af hvad??
 \end{bev}
 
 \begin{lem}{Bramble-Hilbert Lemma}
-    Let $\Omega$ be a domain with Lipschitz continous boundary. Suppose $t\geq 2$ and that $L$ is a bounded linear mapping of $H^t(\Omega)$ into a normed linear space $Y$.
-    If $\mathcal{P}_{t-1}\subset \ker L$, then there exists a constant $c=c(\Omega)\|L\|\geq 0$ such that
+    Let $\Omega$ be a domain with a Lipschitz continous boundary. Suppose $t\geq 2$ and that $L$ is a bounded linear mapping from $H^t(\Omega)$ into a normed linear space $Y$.
+    If $\mathcal{P}_{t-1}\subset \ker L$, then there exists a constant $c$ such that
+    \label{lem:Bramble-Hilbert}
     \begin{equation}
         \|Lv\|\leq c|v|_t\quad \forall v\in H^t(\Omega).
-    \end{equation}\label{lem:Bramble-Hilbert}
+    \end{equation}
 \end{lem}
 \begin{bev}
-    Let $I:H^t(\Omega)\rightarrow \mathcal{P}_{t-1}$ be an interpolation operator of the same type as in Lemma~\ref{lem:6.2}. Then by the same lemma and the fact that $Iv\in\ker L$, we get
+    Let $I:H^t(\Omega)\rightarrow \mathcal{P}_{t-1}$ be an interpolation operator of the same type as in Lemma~\ref{lem:6.2}.
+     Then by the same lemma and the fact that $Iv\in\ker L$, we get
     \begin{equation}
-        \|Lv\|=\|L(v-Iv)\|\geq \|L\|\cdot\|v-Iv\|_t\geq c\|L\| \cdot |v|_t,
+        \|Lv\|=\|L(v-Iv)\|\leq \|L\|\cdot\|v-Iv\|_t\leq c\|L\| \cdot |v|_t,
     \end{equation}
     where the constant $c$  is the same as in Equation~\ref{eq:lem_6.2}.~\label{lem:6.3}
 \end{bev}

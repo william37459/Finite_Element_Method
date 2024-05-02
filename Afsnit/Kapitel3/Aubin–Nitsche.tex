@@ -1,7 +1,7 @@
-\begin{thmx}{Aubin–Nitsche \label{thm:aubin-nitsche}}
+\begin{thmx}{Aubin–Nitsche Theorem\label{thm:aubin-nitsche}}
     Let $H$ be a Hilbert space with norm $|\cdot|$ and a scalar product $(\cdot,\cdot)$.
-    Let $V\subset H$ be a Hilbert space for another norm $\|\cdot\|$, and let 
-    $V \hookrightarrow H$, the imbedding from $V$ to $H$ be continuous,
+    Let $V\subset H$ be a Hilbert space for another norm $\|\cdot\|$, let the imbedding
+    $V \hookrightarrow H$ be continuous,
     and $\forall g \in H$, let $\varphi_g \in V$ denote the unique weak solution to 
     \begin{equation}
         a(w,\varphi_g) = (g,w) \quad \forall w\in V. \label{eq:aubin_nitsche_antagelse}
@@ -19,9 +19,9 @@
     \begin{equation*}
         (g,w) \leq |g| \cdot |w| \implies \frac{(g,w)}{|g|} \leq |w|.
     \end{equation*}
-    By completeness of $H$, if take $\sup$ over all $g\in H$ such that 
-    $|g|\neq 0$ (as in the theorem), we still get a $g\in H$, and get 
-    an equality, meaning we can write:
+    By completeness of $H$, if we take supremum over all $g\in H$ such that 
+    $|g|\neq 0$, we still get a $g\in H$, and get 
+    an equality, meaning we can write
     \begin{equation}
         \sup_{g\in H} \frac{(g,w)}{|g|} = |w|. \label{eq:duality_argument}
     \end{equation}

@@ -1,27 +1,35 @@
-\begin{thmx}{\quad}
-    Let $t \geq 2$, and suppose $\mathcal{T}_h$ is a shape-regular triangulation of $\OO$. Then there exists a constant $c = c(\OO, \kappa, t)$ such that
+\begin{thmx}{\quad\label{thm:6.4}}
+    Let $t \geq 2$, and suppose $\mathcal{T}_h$ is a shape-regular triangulation of $\OO$. Then there exists a constant $c$ such that
     \begin{equation}
-        \norm{u - I_h u}_{m,h} \leq c h^{t-m} \norm{u}_{t, H^t(\OO)}, \quad for u \in H^t(\OO), \quad 0 \leq m \leq t,
+        \norm{u - I_h u}_{m,h} \leq c h^{t-m} \norm{u}_{t, H^t(\OO)}, \quad \forall u \in H^t(\OO), \quad 0 \leq m \leq t,
         \label{eq:6.5}
     \end{equation}
-    where $I_h u$ denotes the interpolation by a piecewise polynomial of degreee $t-1$.\label{thm:6.4}
+    where $I_h u$ denotes the interpolation by a piecewise polynomial of degreee $t-1$.
 \end{thmx}
 
 \begin{bev}
-    It is enough to establish the following inequality
+    For this proof, we use the $r_i$ as the radius of the smallest circle containing $T_i\in \mathcal{T}_h$, 
+    and $\rho_i$ as the radius of the largest inscribed circle in $T_i$.
+    We start by proving the following inequality;
     \begin{equation}
-        ||u-I_h u||_{m,T_j} \leq c h^{t-m} |u|_{t,T_j}, \quad for all u \in H^t(T_j)
+        ||u-I_h u||_{m,T_j} \leq c h^{t-m} |u|_{t,T_j}, \quad \forall u \in H^t(T_j)
     \end{equation}
-    for every triangle $T_j$ of a shape-regular triangulation $\mathcal{T}_h$. By choosing a reference triangle with $\hat{r} = 2^{-1/2}$, $\hat{\rho} = {(2+\sqrt{2})}^{-1}$ and letting $F : T_{ref} \to T$ with $T = T_j \in \mathcal{T}_h$. We can apply *Lemma 6.2* on the reference triangle and using the transformations formula *ref* in both directions, we get
+    for every triangle $T_j$ of a shape-regular triangulation $\mathcal{T}_h$. 
+    By choosing a reference triangle with $\hat{r} = 2^{-1/2}$, $\hat{\rho} = {(2+\sqrt{2})}^{-1}$ and letting $F : \hat{T} \to T$ with $T = T_j \in \mathcal{T}_h$, 
+    we can apply Lemma~\ref{lem:6.2} on the reference triangle and using the transformations formula, Theorem~\ref{thm:transformation}, in both directions, we get
     \begin{align}
+        \begin{split}
         ||u-I_h u||_{m,T_j} &\leq c ||B^{-1}||^m |\det B |^{1/2} |\hat{u} - I_h \hat{u}|_{m,T_{ref}} \\
                             &\leq c ||B^{-1}||^m |\det B |^{1/2} c | \hat{u} |_{t,T_{ref}} \\
                             &\leq c ||B^{-1}||^m |\det B |^{1/2} \cdot c ||B||^t \cdot |\det B |^{1/2} |u|_{t,T}  \\
-                            &\leq c \left( ||B||  \cdot ||B^{-1}||^m \right) ||B||^{t-m} |u|_{t,T}
+                         &\leq c \left( ||B||  \cdot ||B^{-1}||^m \right) ||B||^{t-m} |u|_{t,T}.
+        \end{split}
     \end{align}
-    Furthermore, by shape regularity, $r / \rho \leq \kappa$, and $||B|| \cdot ||B^{-1}|| \leq \left( 2 + \sqrt{2} \right)\kappa$. Thus, we get that *ref* $||B|| \leq h/\hat{\rho}\leq 4h$. With all this we have
+    Furthermore, by shape regularity, $r_i / \rho_i \leq \kappa$ for all $T_i$ in $\mathcal{T}$, and $||B|| \cdot ||B^{-1}|| \leq \left( 2 + \sqrt{2} \right)\kappa$. 
+    Thus we get that *ref* $||B|| \leq h/\hat{\rho}\leq 4h$. %TODO Informationen omkring ligning (6.9) skal tilføjes
+    With all this we have
     \begin{equation}
-        ||u-I_h u||_{\mathcal{l},T_j} \leq c h^{t-\mathcal{l}} |u|_{t,T}
+        ||u-I_h u||_{\ell,T_j} \leq c h^{t-\ell} |u|_{t,T}
     \end{equation}
-    Lastly by squaring and summing the terms from $\mathcal{l}$ to $m$ we get the desired result.
+    Lastly by squaring and summing the terms from $\ell$ to $m$ we get the desired result.
 \end{bev}
