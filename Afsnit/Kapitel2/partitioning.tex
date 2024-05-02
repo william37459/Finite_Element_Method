@@ -1,5 +1,16 @@
 \section{Partitioning}
+Partitioning some space simply means splitting it into a bunch of subspaces. 
+There are different ways to do that and different desirable qualities. 
+The important one will be covered later.
+
+By partitioning $\OO$, we also create a new space of functions over $\OO$. 
+By splicing the function over each cell, we can create all kinds of 
+discontinious function; this, however, does not help us reach our goal. 
+For each cell, we create certain requirements on the edges for the functions 
+over this cell. The functions which obey these requirements make up $S_h$.
 \input{Afsnit/Kapitel2/partitioning/s-h.tex}
 \input{Afsnit/Kapitel2/defs/mesh.tex}
 \input{Afsnit/Kapitel2/partitioning/Cea's_Lemma.tex}
 \input{Afsnit/Kapitel2/partitioning/5.2.tex}
+We now move from discussing $\OO$, to what a finite element is,
+and how to construct them.
