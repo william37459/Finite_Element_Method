@@ -1,4 +1,4 @@
-\begin{thmx}{\quad}
+\begin{thmx}{\quad\label{thm:max_error}}
     Let the $L_\infty$-norm be 
     \begin{equation*}
         \|v\|_{\infty, \OO} = \sup_{x\in\OO} |v(x)|.
@@ -50,3 +50,8 @@
     \end{align}
     The equations~\eqref{eq:6.5} and~\eqref{eq:7.10} then proves the statement.
 \end{bev}
+Theorem~\ref{thm:max_error} gives us, as the observant reader might have guessed, 
+a maximum size of the error of our FEM approximation.
+If the variational problem is sufficiently regular (meaning $H^2$)
+the error should
+become smaller as $h$ becomes smaller.

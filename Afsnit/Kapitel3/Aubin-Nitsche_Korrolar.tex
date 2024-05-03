@@ -1,3 +1,4 @@
+We use the previous theorem to prove an inequality more relevant to our situation.
 \begin{kor}{\quad\label{kor:7.7}}
    Assume $\mathcal{T}_h$ is a family of shape regular triangulations of $\OO$.
    If $u\in H^1(\OO)$ is the solution of the variational problem, then 
@@ -31,3 +32,10 @@
     \end{equation*}
     and Theorem~\ref{thm:aubin-nitsche} implies the result.
 \end{bev}
+If the variational problem is sufficiently regular,
+Corollary~\ref{kor:7.7} gives us a connection between $f$ in our original problem, 
+and how big the error of our FEM approximation can be. 
+However, the norms used to this error is measured does not describe the error 
+at singular points; there still might be points where the error grows uncontrolably large, 
+if we just use Corollary~\ref{kor:7.7}. 
+To remedy that we use the next theorem.
