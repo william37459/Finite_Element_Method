@@ -1,3 +1,10 @@
+When using a transformation from one shape-regular grid to another, we do not get extra terms which can be seen by looking at the geometric interpretation.
+Let $F:T_1 \to T_2 : \hat{x} \mapsto B\hat{x} + x_0$ be a bijective affine mapping.\ we define $\rho_1$ and $r_i$ to be the radius of the largest inscribed circle and the radius of the smallest circle containing $T_1$ respectively.
+Given $x \in \mathbb{R}^2$, with $||x|| \leq 2 \rho_1$, such that $x = y_1 - z_1$, where $y_1$ and $z_1$ are the points in $T_1$. Since $F(y_1), F(z_1) \in T_2$, we have that $||Bx|| \leq 2r_2$, thus
+\begin{equation}\label{eq:6.9}
+    ||B|| \leq \frac{r_2}{\rho_1}
+\end{equation}
+
 \begin{thmx}{\quad\label{thm:6.4}}
     Let $t \geq 2$, and suppose $\mathcal{T}_h$ is a shape-regular triangulation of $\OO$. Then there exists a constant $c$ such that
     \begin{equation}
@@ -26,7 +33,7 @@
         \end{split}
     \end{align}
     Furthermore, by shape regularity, $r_i / \rho_i \leq \kappa$ for all $T_i$ in $\mathcal{T}$, and $||B|| \cdot ||B^{-1}|| \leq \left( 2 + \sqrt{2} \right)\kappa$. 
-    Thus we get that *ref* $||B|| \leq h/\hat{\rho}\leq 4h$. %TODO Informationen omkring ligning (6.9) skal tilføjes
+    From Equation~\eqref{eq:6.9} we get $||B|| \leq h/\hat{\rho}\leq 4h$.
     With all this we have
     \begin{equation}
         ||u-I_h u||_{\ell,T_j} \leq c h^{t-\ell} |u|_{t,T}
