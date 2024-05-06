@@ -45,7 +45,7 @@ This together with the fact that $|v_k|_t\to 0$ and
  %$\|v_k-v_\ell\|_t^2\leq\|v_k-v_\ell\|_{t-1}^2 + (|v_k|_t + |v_l|_t)^2$, 
 \begin{align*}
     \|v_k-v_\ell\|_t^2 &= \|v_k-v_\ell\|_{t-1}^2 + |v_k-v_\ell|_t^2 \\
-    & \leq\|v_k-v_\ell\|_{t-1}^2 + (|v_k|_t + |v_\ell|_t)^2 ,
+    & \leq\|v_k-v_\ell\|_{t-1}^2 + {(|v_k|_t + |v_\ell|_t)}^2 ,
 \end{align*}
  we get that $(v_k)$ is a Cauchy sequence in $H^t(\Omega)$, and thus converges in $H^t(\Omega)$.
 Thus by the continuity, we get 
@@ -58,8 +58,7 @@ This is a contradiction, which proves the equivalence of the norms. %TODO Contra
 
 \begin{lem}{Bramble-Hilbert Lemma}
     Let $\Omega$ be a domain with a Lipschitz continous boundary. Suppose $t\geq 2$ and that $L$ is a bounded linear mapping from $H^t(\Omega)$ into a normed linear space $Y$.
-    If $\mathcal{P}_{t-1}\subset \ker L$, then there exists a constant $c$ such that
-    \label{lem:Bramble-Hilbert}
+    If $\mathcal{P}_{t-1}\subset \ker L$, then there exists a constant $c$ such that~\label{lem:Bramble-Hilbert}
     \begin{equation}
         \|Lv\|\leq c|v|_t\quad \forall v\in H^t(\Omega).
     \end{equation}
