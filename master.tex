@@ -6,6 +6,28 @@
 \author{}
 \date{}
 
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 \begin{document}
 
 \input{Formalia/structure.tex}
@@ -21,9 +43,14 @@
 %KAPITEL 3
 \input{Afsnit/Kapitel3/main.tex}
 
+\input{Afsnit/Application/main.tex}
+
 \input{Afsnit/Konklusion/konklusion.tex}
 
 \bibliography{Bibliografi/Litteratur.bib}
 
+\appendix
+\chapter{Code}
+\lstinputlisting{test.py}
 
 \end{document}
