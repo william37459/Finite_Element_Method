@@ -77,9 +77,7 @@ def convergence_rate(Ns = [4, 8, 16, 32, 64], deg=1):
     for i, N in enumerate(Ns):
         uh, u_ex, domain, V, tdim = solver(N, deg)
         comm = uh.function_space.mesh.comm
-        error = fem.form((uh - u_ex)**2 * ufl.dx)
-        E = np.sqrt(comm.allreduce(fem.assemble_scalar(error), MPI.SUM))
-        Es[i] = E
+        Es[i] = error_L2(uh, u_numpy, degree_raise=3)
         hs[i] = 1. / Ns[i]
         result.append([f"{hs[i]:.2e}", f"{Es[i]:.2e}"])
     return result
