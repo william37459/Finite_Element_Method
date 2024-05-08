@@ -8,6 +8,7 @@ import dolfinx.fem.petsc
  
 def u_ex(mod):
     return lambda x: mod.exp(x[0]+x[1])*mod.cos(x[0])*mod.sin(x[1])+x[0]
+
 u_ufl = u_ex(ufl)
 u_numpy = u_ex(np)
 
@@ -36,8 +37,8 @@ def solver(N=10, degree=2):
     domain.topology.create_connectivity(fdim, tdim)
     boundary_facets = mesh.exterior_facet_indices(domain.topology)
     boundary_dofs   = fem.locate_dofs_topological(V, fdim, boundary_facets)
-    bc = fem.dirichletbc(default_scalar_type(0), boundary_dofs, V)
-    bc      = fem.dirichletbc(uD, boundary_dofs)
+    #bc = fem.dirichletbc(default_scalar_type(0), boundary_dofs, V)
+    bc = fem.dirichletbc(uD, boundary_dofs)
     
     # bilinear form
     a       = ufl.dot(ufl.grad(u), ufl.grad(v)) * ufl.dx
@@ -51,28 +52,18 @@ def solver(N=10, degree=2):
 
 uh, u_ex, domain, V, tdim = solver()
  
- 
-pv.off_screen = True
-topology, cell_types, geometry = dolfinx.plot.vtk_mesh(domain, tdim)
-grid = pv.UnstructuredGrid(topology, cell_types, geometry)
- 
-plotter = pv.Plotter()
-plotter.add_mesh(grid,show_edges=True)
-plotter.view_xy()
-plotter.save_graphic('mesh.svg')
- 
-u_topology, u_cell_types, u_geometry = plot.vtk_mesh(V)
-u_grid = pv.UnstructuredGrid(u_topology, u_cell_types, u_geometry)
-u_grid.point_data["u"] = uh.x.array.real
-u_grid.set_active_scalars("u")
-u_plotter = pv.Plotter()
-u_plotter.add_mesh(u_grid,show_edges=True)
-u_plotter.view_xy()
-u_plotter.save_graphic('contour.svg')
+#Ns = [4, 8, 16, 32, 64]
+#Es = np.zeros(len(Ns), dtype=default_scalar_type)
+#hs = np.zeros(len(Ns), dtype=np.float64)
+#for i, N in enumerate(Ns):
+#    uh, u_ex = solve_poisson(N, degree=1)
+#    comm = uh.function_space.mesh.comm
+#    # One can send in either u_numpy or u_ex
+    # For L2 error estimations it is reccommended to send in u_numpy
+    # as no JIT compilation is required
+#    Es[i] = error_L2(uh, u_numpy)
+#    hs[i] = 1. / Ns[i]
+#    if comm.rank == 0:
+#        print(f"h: {hs[i]:.2e} Error: {Es[i]:.2e}")
 
-warped = u_grid.warp_by_scalar()
-plotter2 = pv.Plotter()
-plotter2.add_mesh(warped, show_edges=True, show_scalar_bar=True)
-u_plotter.save_graphic('3d.svg')
-
-
+ 
