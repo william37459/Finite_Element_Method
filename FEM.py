@@ -77,14 +77,19 @@ def convergence_rate(Ns = [4, 8, 16, 32, 64], deg=1):
     for i, N in enumerate(Ns):
         uh, u_ex, domain, V, tdim = solver(N, deg)
         comm = uh.function_space.mesh.comm
-        Es[i] = error_L2(uh, u_numpy, degree_raise=3)
-        hs[i] = 1. / Ns[i]
-        result.append([f"{hs[i]:.2e}", f"{Es[i]:.2e}"])
-    return result
+        Es[i] = f"{error_L2(uh, u_numpy, degree_raise=3):.2e}"
+        hs[i] = f"{(1. / Ns[i]):.2e}"
+    return [list(hs), list(Es)]
 
-def tabulate_convergence_rate(start=1, end=11): 
+def tabulate_convergence_rate(start=1, end=3): 
     for i in range(start, end):
-        data = convergence_rate(deg=i)
-        print(tabulate(data, tablefmt='latex_raw'))
+        if(i == start):
+            data = convergence_rate(deg=i)
+            data[0].insert(0, " ")
+            data[1].insert(0, f"{i}")
+        else:
+            data.append(convergence_rate(deg=i)[1])
+            data[i].insert(0, f"{i}")
+    print(tabulate(data, tablefmt='latex_raw'))
 
 tabulate_convergence_rate()
