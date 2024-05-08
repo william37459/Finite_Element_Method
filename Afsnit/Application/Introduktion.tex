@@ -1,19 +1,21 @@
 
 We will in this chapter apply the theory developed throughout the project to a specific example. 
 Here we will consider the following problem with Dirichlet boundary conditions.
-We wish to study convergence rate 
+We wish to study convergence rate of the approximate solution, 
+both in context of the size of cells and in degree used in the 
+finite elements. 
+The domain we will be working with is $\OO = \{ (x,y)\in \RR^2 \,|\, -1 \leq x,y \leq 1\}$, 
+which is the square in $\RR^2$ with sidelength $2$, and center in origo.
+We then define the solution 
 \begin{equation}
-    u = \e^{x+y}\cos(x)\sin(y)+x  \quad\text{on }\Omega \label{eq:app_dirichlet}
+    k(x,y) = \e^{x+y}\cos(x)\sin(y)+x  \quad\text{on }\Omega. \label{eq:app_dirichlet}
 \end{equation}
-
-
-
-\begin{align}
-\begin{split}
-    Lu &= f \quad \text{in } \Omega \\
-    u &= g \quad \text{on } \partial \Omega,
-\end{split}
-\end{align}
-Note in this example that, for simplicity, we have chosen the solution $u$ to be the same on the boundary as in the domain.
+We work backwards from the solution to be able to compare the numerical approximation 
+with the real function. Using this $k$, we define the Dirichlet boundary problem to be
+\begin{alignat}{2}
+    Lu &= -\text{div }\nabla k \quad && \text{on } \Omega \\
+    u &= k \quad && \text{on } \partial \Omega, \nonumber
+\end{alignat}
+Note in this example that, for simplicity, we have chosen the solution $k$ to be the same on the boundary as in the domain.
 We will use the finite element method to approximate a solution for the problem. In this context we use the framework FEniCS,
 which is a computational tool for solving partial differential equations. 
