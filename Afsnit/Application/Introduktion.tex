@@ -1,0 +1,11 @@
+
+We will in this chapter apply the theory developed throughout the project to a specific example. 
+Here we will consider the following problem with Dirichlet boundary conditions.
+\begin{alignat*}{2}
+    u &= \e^{x+y}\cos(x)\sin(y)+x && \quad\text{for }u\in\Omega \\
+    u &= \e^{x+y}\cos(x)\sin(y)+x && \quad \text{for } u\in\partial\Omega\\
+    f &= -\nabla u\quad && \quad 
+\end{alignat*}
+Note in this example that, for simplicity, we have chosen the solution $u$ to be the same on the boundary as in the domain.
+We will use the finite element method to approximate a solution for the problem. In this context we use the framework FEniCS,
+which is a computational tool for solving partial differential equations. 
