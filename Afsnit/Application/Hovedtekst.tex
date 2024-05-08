@@ -1,1 +1,9 @@
 
+All references in the following section will be refering to the code listed in \ref{app:Code}.
+
+We start on line 10 by defining our solution $u$ as the function from Equation \eqref{eq:app_dirichlet}.
+After which we define two different interpolations of $u$ using the packages "numpy" and "ufl". 
+Next, we need to define the mesh and the functions space, we will be working in. 
+We do this on line 16-22, where $n$ defines the number of cells in each directions of our mesh, thus we get $n^2$ elements in total.
+Then "degree" defines the degree polynomial we use to interpolate our functions.
+Next step in the process is to define the trial and test functions on the domain $V$, which we do on line 24-26.
