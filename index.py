@@ -61,7 +61,7 @@ plotter = pyvista.Plotter()
 plotter.add_mesh(grid, show_edges=True)
 plotter.view_xy()
 if not pyvista.OFF_SCREEN:
-    plotter.show()
+    plotter.show(cpos="xy", screenshot='./screenshot_1.jpeg')
 else:
     figure = plotter.screenshot("fundamentals_mesh.png")
 
@@ -74,10 +74,11 @@ u_plotter = pyvista.Plotter()
 u_plotter.add_mesh(u_grid, show_edges=True)
 u_plotter.view_xy()
 if not pyvista.OFF_SCREEN:
-    u_plotter.show()
+    u_plotter.show(cpos="xy", screenshot='./screenshot_2.jpeg')
 
 warped = u_grid.warp_by_scalar()
 plotter2 = pyvista.Plotter()
 plotter2.add_mesh(warped, show_edges=True, show_scalar_bar=True)
+plotter2.show(cpos="xy", screenshot='./screenshot_3.jpeg')
 if not pyvista.OFF_SCREEN:
     plotter2.show()
