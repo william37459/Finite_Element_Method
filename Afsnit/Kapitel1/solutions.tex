@@ -8,7 +8,7 @@ To remedy this, we introduce the Trace Theorem, which requires cones and the con
 With Definition~\ref{def:cone_condition}, we can proceed to the Trace Theorem.
 \input{Afsnit/Kapitel1/sætninger/Trace_Theorem.tex}
 Theorem~\ref{thm:trace} guarantees that functions which are not 
-zero on the boundary are at least an $L_2$ function, and as such are bounded. 
+zero on the boundary are at least $L_2$ functions on the boundary, and as such are bounded. 
 \subsection{Attributes of Solutions}
 In this section we examine certain qualities of solutions, and the first step is 
 the ability to characterize solutions to certain problems.
@@ -36,7 +36,7 @@ We start by specifying the bilinear form in Theorem~\ref{thm:charac_theorem}.
  \end{defn}
 From this point forward $a$ will be referring to the bilinear form given by
 \begin{equation}
-   a(u,v) = \int_\Omega \left[\sum_{i,k} a_{ik}\partial_i u\partial_k v+a_0uv\right]dx,
+   a(u,v) = \int_\Omega \left(\sum_{i,k} a_{ik}\partial_i u\partial_k v+a_0uv\right)dx,
 \end{equation}
 unless otherwise stated.
 
@@ -59,8 +59,8 @@ homogeneous boundary value problem are thusly equivalent.
 We can therefore use the variational problem to find solutions, making the
  the following theorem useful.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Thm.tex}
-As all Hilbert spaces are vector spaces, they will be convex by definition in addition we will limit ourselves to complete Hilbert spaces.
-As such, subsets of Hilbert spaces we are going to be working will be as well,
+As all Hilbert spaces are vector spaces, they will be convex by definition. In addition we will limit ourselves to complete Hilbert spaces.
+As such, the subsets of Hilbert spaces we are going to be working will be as well,
 and we can use the following corollary.
 \input{Afsnit/Kapitel1/sætninger/Lax_Milgram_Cor.tex}
 
@@ -74,14 +74,14 @@ This widens the
 space in which we look for solutions.
 For example, by using the variational formulation, we can define a weak solution 
 which no longer requires $u \in C^2(\OO)$.
-\begin{defn}{\quad}
+\begin{defn}{Weak Solution}
     A function $u\in H_0^1(\OO)$ is called a weak solution of 
     the Dirichlet problem with homogeneous boundary conditions,~\eqref{eq:b_v_problem_homogeneous}, if 
      \begin{equation*}
-        a(u,v) = {(\tilde{f},v)}_0 \quad \forall v \in H_0^1(\OO).
+        a(u,v) = {(f,v)}_0 \quad \forall v \in H_0^1(\OO).
      \end{equation*}
      Here $a(u,v)$ is the bilinear from from~\eqref{eq:a(u,v)}, 
-     and ${(\tilde{f},v)}_0$ is a linear bounded functional provided $\tilde{f}\in L^2$, and it can therefore be used as $\ell(v)$ in~\eqref{eq:l(v)}.
+     and ${(f,v)}_0$ is a linear bounded functional provided $f\in L^2$, and it can therefore be used as $\ell(v)$ in~\eqref{eq:l(v)}.
 \end{defn}
 A weak solution only requires $u\in H_0^1(\OO)$, and is clearly less strict. 
 Thus there is a higher chance of a solution existing for any given problem, 

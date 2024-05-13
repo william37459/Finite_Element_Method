@@ -1,10 +1,11 @@
 When using a transformation from one shape-regular grid to another, we do not get extra terms which can be seen by looking at the geometric interpretation.
-Let $F:T_1 \to T_2 : \hat{x} \mapsto B\hat{x} + x_0$ be a bijective affine mapping.\ we define $\rho_1$ and $r_i$ to be the radius of the largest inscribed circle and the radius of the smallest circle containing $T_1$ respectively.
-Given $x \in \mathbb{R}^2$, with $||x|| \leq 2 \rho_1$, such that $x = y_1 - z_1$, where $y_1$ and $z_1$ are the points in $T_1$. Since $F(y_1), F(z_1) \in T_2$, we have that $||Bx|| \leq 2r_2$, thus
+Let $F:T_1 \to T_2$, defined as $ \hat{x} \mapsto B\hat{x} + x_0$ be a bijective affine mapping. 
+We define $\rho_i$ and $r_i$ to be the radius of the largest inscribed circle and the radius of the smallest circle containing $T_i$ respectively.
+Given $x \in \mathbb{R}^2$, with $||x|| \leq 2 \rho_1$, find $y_1, z_1$ such that $x = y_1 - z_1$, where $y_1$ and $z_1$ are points in $T_1$. 
+Since $F(y_1), F(z_1) \in T_2$, we have that $||Bx|| \leq 2r_2$, thus
 \begin{equation}\label{eq:6.9}
-    ||B|| \leq \frac{r_2}{\rho_1}
+    ||B|| \leq \frac{r_2}{\rho_1}.
 \end{equation}
-
 \begin{thmx}{\quad\label{thm:6.4}}
     Let $t \geq 2$, and suppose $\mathcal{T}_h$ is a shape-regular triangulation of $\OO$. Then there exists a constant $c$ such that
     \begin{equation}
@@ -29,7 +30,7 @@ Given $x \in \mathbb{R}^2$, with $||x|| \leq 2 \rho_1$, such that $x = y_1 - z_1
         ||u-I_h u||_{m,T_j} &\leq c ||B^{-1}||^m |\det B |^{1/2} |\hat{u} - I_h \hat{u}|_{m,T_{\text{ref}}} \\
                             &\leq c ||B^{-1}||^m |\det B |^{1/2} c | \hat{u} |_{t,T_{\text{ref}}} \\
                             &\leq c ||B^{-1}||^m |\det B |^{1/2} \cdot c ||B||^t \cdot |\det B |^{1/2} |u|_{t,T}  \\
-                         &\leq c \left( ||B||  \cdot ||B^{-1}||^m \right) ||B||^{t-m} |u|_{t,T}.
+                         &\leq c {\left( ||B||  \cdot ||B^{-1}|| \right)}^m ||B||^{t-m} |u|_{t,T}.
         \end{split}
     \end{align}
     Furthermore, by shape regularity, $r_i / \rho_i \leq \kappa$ for all $T_i$ in $\mathcal{T}$, and $||B|| \cdot ||B^{-1}|| \leq \left( 2 + \sqrt{2} \right)\kappa$. 

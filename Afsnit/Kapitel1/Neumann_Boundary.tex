@@ -1,7 +1,7 @@
 \section{Neumann Boundary Conditions}
 We remind the reader of the bilinear form we are working with,
 \begin{equation}
-   a(u,v) = \int_\Omega \left[\sum_{i,k} a_{ik}\partial_i u\partial_k v+a_0uv\right]dx,
+   a(u,v) = \int_\Omega \left(\sum_{i,k} a_{ik}\partial_i u\partial_k v+a_0uv\right)dx.
 \end{equation}
 We now require $a_0(x)$ in the Elliptic PDE, see~\ref{def:pde_classification}, to be bounded from below by a positive number (and so also in $a$). 
 Inequality~\eqref{eq:alpha_ellipticity} will also be true for smaller $\alpha$, so if 
@@ -32,7 +32,7 @@ Neumann Poisson problem,
     \frac{\partial u}{\partial \mathbf{n}} &= g \quad \text{on } \partial \Omega.
 \end{split}
 \end{align}
-one can find $a_0(x)=0$. We remedy that by constructing asub space $V$.
+one can find $a_0(x)=0$. We remedy that by constructing a subspace $V$.
 Due to the fact that~\eqref{eq:Neumann_Poisson} only contains derivatives with respect to $u$,
  additive constants independent of $u$ are unimportant.
 Thus if $u$ satisfies~\eqref{eq:Neumann_Poisson}, then $u + c$ also satisfies~\eqref{eq:Neumann_Poisson} for any constant $c$.

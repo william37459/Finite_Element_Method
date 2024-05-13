@@ -1,6 +1,7 @@
 
-We will in this chapter apply the theory developed throughout the project to a specific example. 
-Here we will consider the following problem with Dirichlet boundary conditions.
+We will in this chapter apply the theory developed throughout the project to a specific example, which will be a modified 
+version of some of the examples from~\cite{"fen-tutorial"}.
+Here we will consider a problem with Dirichlet boundary conditions.
 We wish to study convergence rate of the approximate solution, 
 both in context of the size of cells and in degree used in the 
 finite elements. 
@@ -17,5 +18,6 @@ with the real function. Using this $k$, we define the Dirichlet boundary problem
     u &= k \quad && \text{on } \partial \Omega, \nonumber
 \end{alignat}
 Note in this example that, for simplicity, we have chosen the solution $k$ to be the same on the boundary as in the domain.
-We will use the finite element method to approximate a solution for the problem. In this context we use the framework FEniCS,
-which is a computational tool for solving partial differential equations. 
+We will use the finite element method to approximate a solution for the problem. In this context we use the framework FEniCSx,
+which is a computational tool for solving PDE's. 
+FEniCSx consists of several different parts, which can be seen in~\cite{BarattaEtal2023},~\cite{ScroggsEtal2022}, and~\cite{BasixJoss}.

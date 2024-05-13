@@ -1,16 +1,17 @@
 \begin{thmx}{Trace Theorem}~\label{thm:trace}
-    Let $\Omega$ be a bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\Omega$ satisfies the cone condition. Then there exists a bounded linear mapping 
+    Let $\Omega$ be bounded, and suppose $\Omega$ has a piecewise smooth boundary. In addition, suppose $\Omega$ satisfies the cone condition. Then there exists a bounded linear mapping 
     \begin{equation*}
-        \gamma : H^1(\Omega) \to L_2(\partial \Omega)
+        \gamma : H^1(\Omega) \to L_2(\partial \Omega),
     \end{equation*}
+    where $\|\gamma(v)\|_{0,\partial \OO} \leq c \|v\|_{1,\OO}$, and $\gamma (v) = v|_{\partial \OO}$, for all $v\in C^1(\OO)$.
 \end{thmx}
 \begin{bev}
     The presented proof will only be done in two dimensions, but can be generalised to higher dimensions.
-    Suppose the boundary is piecewise smooth, and for the finitely many points where the boundary is not smooth the cone condition is satisfied. We can split the boundary into a finite number of smooth pieces $\partial \Omega_1, \partial \Omega_2, \dots, \partial \Omega_m$, where each $\partial \Omega_i$ after rotation of the coordinate system gives us
+    Suppose the boundary is piecewise smooth, and for the finitely many points where the boundary is not smooth the cone condition is satisfied. We can split the boundary into a finite number of smooth pieces $\partial \Omega_1, \partial \Omega_2, \dots, \partial \Omega_m$, where each $\partial \Omega_i$ after rotation of the coordinate system gives us;
     \begin{enumerate}
         \item For some function $\phi = \phi_i \in C^1[y_1, y_2]$, we have
             \[ \Gamma_i = \{ (x,y) \in \RR^2 \quad | \quad x = \phi(y), y_1 \leq y \leq y_2 \}. \]
-        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_n \}$ is contained in $\Omega$, where $r > 0$ is sufficiently small. 
+        \item The domain $\Omega_i = \{ (x,y) \subset \RR^2 \quad | \quad \phi(y) < x <\phi(y) + r, y_1 < y < y_2 \}$ is contained in $\Omega$, where $r > 0$ is sufficiently small. 
     \end{enumerate}
     Firstly a function $v \in C^1(\bar{\Omega})$ and a point $(x,y) \in \partial \Omega$ can be written as
     \begin{equation}
@@ -23,20 +24,20 @@
         r v(\phi(y), y) dt &= \int_0^r   v(\phi(y) + t, y) dt - \int_0^r \int_s^r \partial_1 v(\phi(y) + s, y) \, dt ds \\
         r v(\phi(y), y) dt &= \int_0^r v(\phi(y) + t, y) dt - \int_0^r \partial_1 v(\phi(y) + t, y)(r-t) dt.
     \end{align*}
-    By squaring the former equation, using a form of Young's inequality ${(a+b)}^2 \leq 2a^2 + 2b^2$, and appply the Cauchy-Schwarz inequality to the squares of the integrals results in
+    By squaring the former equation, using a form of Young's inequality ${(a+b)}^2 \leq 2a^2 + 2b^2$, and applying the Cauchy-Schwarz inequality to the squares of the integrals results in
     \begin{equation}
-        r^2 v^2(\phi(y), y) \leq 2 \int_0^r 1 dt \int_0^r v^2(\phi(y) + t, y) \, dt +  2\int_0^r t^2 \int_0^r | \partial_1  v(\phi(y) + t, y) |^2 dt
+        r^2 v^2(\phi(y), y) \leq 2 \int_0^r 1 dt \int_0^r v^2(\phi(y) + t, y) \, dt +  2\int_0^r t^2 \int_0^r | \partial_1  v(\phi(y) + t, y) |^2 dt.
     \end{equation}
     By subsituting $\int 1 dt = r$ and $\int t^2 dt = \frac{r^3}{3}$, dividing by $r^2$ and integrating over $y$, we obtain
     \begin{align*}
         \int_{y_1}^{y_2} v^2(\phi(y), y) dy &\leq  2r^{-1} \int_{\Omega_i} v^2 dx dy + \frac{2r}{3} \int_{\Omega_i} | \partial_1 v |^2 dx dy \\
-        &\leq  2r^{-1} \int_{\Omega_i} v^2 dx dy + r \int_{\Omega_i} | \partial_1 v |^2 dx dy 
+        &\leq  2r^{-1} \int_{\Omega_i} v^2 dx dy + r \int_{\Omega_i} | \partial_1 v |^2 dx dy.
     \end{align*}
     On $\partial\Omega$ the arc length differential is given by $ds = \sqrt{1 + \phi'{(y)}^2} dy$. Thus, we have
     \begin{equation}
         \int_{\partial\Omega} v^2 ds \leq c_i \left[ 2r^{-1} \| v \|_0^2 + r | v |^2_1 \right],
     \end{equation}
-    Where $c_i = \text{max}\{\sqrt{1+{\phi'}^2} | y_1 \leq y \leq y_2 \}$. Setting $c=(r+2r^{-1})\sum_{i=1}^m c_i$, results in
+    where $c_i = \text{max}\{\sqrt{1+{\phi'}^2} \,|\, y_1 \leq y \leq y_2 \}$. Setting $c=(r+2r^{-1})\sum_{i=1}^m c_i$, results in
     \begin{equation}
         \| v \|_{0,\partial\Omega} \leq c \| v \|_{1,\Omega}.
     \end{equation}
