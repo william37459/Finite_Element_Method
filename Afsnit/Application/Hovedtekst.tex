@@ -7,3 +7,22 @@ Next, we need to define the mesh and the functions space, we will be working in.
 We do this on line 16-22, where $n$ defines the number of cells in each directions of our mesh, thus we get $n^2$ elements in total.
 Then "degree" defines the degree polynomial we use to interpolate our functions.
 Next step in the process is to define the trial and test functions on the domain $V$, which we do on line 24-26.
+
+We then define the boundary condition, where we set the value of $u$ to be equal to a constant on the boundary of the domain,
+giving us a Dirichlet boundary condition. With the boundary condition established, we can move on to defining the bilinear form $a$ and the linear form $L$.
+With all this in place, we can now solve the problem using the PETSc package in FEniCS. Now we formulate the problem we want the program to solve, and use the function defined earlier to get the result. 
+After obtaining the solution, we can look at the error. We compute this using the $L_2$ norm.
+
+The error in itself is not very interesting, as it does not give us any information about the convergence rate.
+The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh.
+Ideally we would like the error to decrease as we decrease the mesh size. This corresponds to showing that the error $e=k_e-k_h$ is bounded by $\|e\|\leq Ch^r$, 
+with being the mesh size, $r$ the convergence rate and $C$ some constant independent of $h$.
+
+We will show this imperically by computing the error for different mesh sizes and comparing them. 
+This is done by defining a function which returns a table showing the error for different mesh sizes.
+
+---------------------------
+%!FIXIT: Indsæt tabel her
+
+The tabel shows that the error decreases as we decrease the mesh size for all degrees of the polynomials.
+This is is ideal as it shows us that the error is bounded by $\|e\|\leq Ch^r$. (right?)
