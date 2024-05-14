@@ -14,7 +14,7 @@ We do this for convience, as numpy are better for numerical apporiximations, and
 easier to work with in FEniCSx.
 Next, we need to define the mesh and the function space we will be working in. 
 We do this on line 16-22, where $N$ defines the number of cells in each directions of our mesh, resulting in $N^2$ elements in total.
-Then "degree" defines the degree of polynomials we use in each cell.
+Then `degree' defines the degree of polynomials we use in each cell.
 Next step in the process is to define the space of trial functions 
 and the space of test functions, which we do on line 24-26.
 In a different situation, these two spaces could have been different.
@@ -29,15 +29,39 @@ After obtaining the solution, we can look at the error, which can be computed us
 %with being the mesh size, $r$ the convergence rate and $C$ some constant independent of $h$.
 The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh and degree of polynomials.
 We will show this imperically by computing the error for different mesh sizes and degrees and comparing them. 
-In Table~\ref{tab:convergence}, the error for five different mesh sizes, and 10 degrees of polynomials can be seen.
+In Table~\ref{tab:convergence}, 
+the error for five different mesh sizes are shown. 
+For each different mesh, the solution have been approximated using polynomials of degree one through ten.
+%The table shows the error decreases as we decrease the cell size for all degrees of the polynomials, 
+%and smaller sizes of cells increases the convergence rate dramatically. 
+%For example, at $h=0.03125$, the error is less than $40$ already at degree $6$, and 
+%for $h=0.0625$ to reach the same error, we need a degree of $8$, while bigger cells do not 
+%even reach that size of error.
+%Besides that, we can observe for a polynomial of degree $10$ the error changes by a factor $10^{-9}$ from a 
+%cell size of $0.25$ to $0.015625$. Meanwhile, for a polynomial of degree $5$ the error changes by a 
+%factor $10^{-6}$, and for a polynomial of degree $1$ the error changes by a factor $10^{-2}$. 
+%The degree of polynomials used to approximate thus affect the error, and convergence rate, greatly, 
+%which is in conjunction with both earlier theory and intuition. 
+As can be seen in Table~\ref{tab:convergence}, every time the degree of polynomials used in 
+approximations are increased by $1$, the error changes with a factor $10^{-1}$ or factor 
+$10^{-2}$, while a similar trend can be seen every time the cell size is halved. 
 
-The table shows the error decreases as we decrease the cell size for all degrees of the polynomials, 
-and smaller sizes of cells increases the convergence rate dramatically. 
-For example, at $h=0.03125$, the error is less than $40$ already at degree $6$, and 
-for $h=0.0625$ to reach the same error, we need a degree of $8$, while bigger cells do not 
-even reach that size of error.
+However, when the error is very small, an increase in degree or decrease in cell size results in 
+a increase in error; this can for example be seen at $h=0.0625$ from degree $9$ to $10$, and 
+at $h=0.0156$ from degree $5$ to $6$. 
+Also, for degree $6$, the error also increases as the cell size is halved from $0.0312$ to $0.0156$.
+This can be explained both by computational accuracy for 
+numbers of this size, meaning rounding error and truncation, and the ratio between the radii of the
+inner and outer circles might increase, which can also be a factor here.
 \begin{figure}[ht]
-    \center
-    \input{Appendix/tabel_fejl.tex}
+    \center~\input{Appendix/tabel_fejl.tex}
     \caption{Table of convergence rate of errors}\label{tab:convergence}
 \end{figure}
+There can be some question as to whether using polynomials of degree $10$ and $64^2$ cells over a 
+$2$ by $2$ square is computationally practical in other settings. 
+This is where an evaluation of physical properties, like observational accuracy, desired precision and other 
+factors would come into play.
+There also exists algorithms for refining a coarse mesh. It involves finding hanging nodes, triangle 
+points which dissects other triangle edges, and splitting the triangles which are dissected. 
+However, making cells too small can cause the error estimates to diverge, as the ratio between the radii of the
+inner and outer circles might increase.

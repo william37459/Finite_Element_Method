@@ -17,7 +17,7 @@ def solver(N=10, degree=2):
     ## Define domain and functionspace over it
     domain = mesh.create_rectangle(
         comm=MPI.COMM_WORLD,
-        points=((-10, -10), (10, 10)),
+        points=((-1, -1), (1, 1)),
         n=(N, N))
     V = fem.functionspace(domain, ("Lagrange", degree))
 
@@ -81,7 +81,7 @@ def convergence_rate(Ns = [4, 8, 16, 32, 64], deg=1):
         hs[i] = f"{(1. / Ns[i]):.2e}"
     return [list(hs), list(Es)]
 
-def tabulate_convergence_rate(start=1, end=3): 
+def tabulate_convergence_rate(start=1, end=11): 
     for i in range(start, end):
         if(i == start):
             data = convergence_rate(deg=i)
