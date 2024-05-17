@@ -70,26 +70,46 @@ def error_L2(uh, u_ex, degree_raise=3):
     return np.sqrt(error_global)
 
 
-def convergence_rate(Ns = [4, 8, 16, 32, 64], deg=1):
+def error_H10(uh, u_ex, degree_raise=3):
+    degree = uh.function_space.ufl_element().degree()
+    family = uh.function_space.ufl_element().family()
+    mesh = uh.function_space.mesh
+    W = fem.FunctionSpace(mesh, (family, degree + degree_raise))
+    u_W = fem.Function(W)
+    u_W.interpolate(uh)
+    u_ex_W = fem.Function(W)
+    if isinstance(u_ex, ufl.core.expr.Expr):
+        u_expr = fem.Expression(u_ex, W.element.interpolation_points)
+        u_ex_W.interpolate(u_expr)
+    else:
+        u_ex_W.interpolate(u_ex)
+    e_W = fem.Function(W)
+    e_W.x.array[:] = u_W.x.array - u_ex_W.x.array
+    error_H10 = fem.form(ufl.dot(ufl.grad(e_W), ufl.grad(e_W)) * ufl.dx)
+    E_H10 = np.sqrt(mesh.comm.allreduce(fem.assemble_scalar(error_H10), MPI.SUM))
+    return E_H10
+
+
+def convergence_rate(error, Ns = [4, 8, 16, 32, 64], deg=1):
     result = []
     Es = np.zeros(len(Ns), dtype=default_scalar_type)
     hs = np.zeros(len(Ns), dtype=np.float64)
     for i, N in enumerate(Ns):
         uh, u_ex, domain, V, tdim = solver(N, deg)
         comm = uh.function_space.mesh.comm
-        Es[i] = f"{error_L2(uh, u_numpy, degree_raise=3):.2e}"
+        Es[i] = f"{error(uh, u_numpy, degree_raise=3):.2e}"
         hs[i] = f"{(1. / Ns[i]):.2e}"
     return [list(hs), list(Es)]
 
-def tabulate_convergence_rate(start=1, end=11): 
+def tabulate_convergence_rate(error, start=1, end=11): 
     for i in range(start, end):
         if(i == start):
-            data = convergence_rate(deg=i)
+            data = convergence_rate(error=error,deg=i)
             data[0].insert(0, " ")
             data[1].insert(0, f"{i}")
         else:
-            data.append(convergence_rate(deg=i)[1])
+            data.append(convergence_rate(error=error, deg=i)[1])
             data[i].insert(0, f"{i}")
     print(tabulate(data, tablefmt='latex_raw'))
 
-#tabulate_convergence_rate()
+tabulate_convergence_rate(error_H10)
