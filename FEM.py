@@ -92,4 +92,4 @@ def tabulate_convergence_rate(start=1, end=3):
             data[i].insert(0, f"{i}")
     print(tabulate(data, tablefmt='latex_raw'))
 
-tabulate_convergence_rate()
+#tabulate_convergence_rate()
