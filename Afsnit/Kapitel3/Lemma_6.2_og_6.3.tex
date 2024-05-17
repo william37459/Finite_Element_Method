@@ -1,6 +1,6 @@
 
 \begin{lem}{\quad~\label{lem:6.2}}
-Let $\Omega$ be a domain with a Lipschitz continous boundary which satisfies a cone condition. Furthermore, let $t\geq 2$, and suppose $z_1,z_2,\ldots z_s$ are the
+Let $\Omega$ be a domain with a Lipschitz continuous boundary which satisfies a cone condition. Furthermore, let $t\geq 2$, and suppose $z_1,z_2,\ldots z_s$ are the
 $s = t(t+1)/2$ prescribed points in $\bar{\Omega}$ such that the interpolation operator $I:H^t \rightarrow \mathcal{P}_{t-1}$ is well defined.
 Then there exists a constant $c$ such that
 \begin{equation}
@@ -21,10 +21,10 @@ It can then be shown that the norms $|||\cdot|||$ and $\|\cdot\|_t$ are equivale
     &= c|u-Iu|_t \\
     &= c|u|_t.
 \end{align*}
-This holds due to the fact that $Iu$ is a polynomial of degree $t-1$, which means that $D^{\alpha} Iu = 0 \text{ forall } |\alpha|=0$, thus $(Iu)(z_1)=u(z_i)$.
+This holds due to the fact that $Iu$ is a polynomial of degree $t-1$, which means that $D^{\alpha} Iu = 0 \text{ for all } |\alpha|=t$, thus $(Iu)(z_i)=u(z_i)$.
 
 We now move on to proving one direction of the equivalence of the norms. 
-It can be shown that the imbedding $H^t\hookrightarrow H^2 \hookrightarrow C^0$ is continous (see~\cite{Braess} page 49). Thus
+It can be shown that the imbedding $H^t\hookrightarrow H^2 \hookrightarrow C^0$ is continuous (see~\cite{Braess} page 49). Thus
 \begin{equation*}
     |v(z_i)|\leq c\|v\|_t\quad \text{for } i=1,2,\ldots,s.
 \end{equation*} 
@@ -36,30 +36,30 @@ For the opposite direction, suppose
 \begin{equation*}
     \|v\|_t\leq c|||v|||\quad \text{for all } v\in H^t(\Omega)
 \end{equation*}
-fails for every positive number $c$. Then there exists some sequence $(v_k)$ in $H^t(\Omega)$ such that
+fails for every positive number $c$. Then there exists some sequence $\{v_k\}_{k=1}^\infty$ in $H^t(\Omega)$ such that
 \begin{equation*}
     \|v_k\|_t=1,\quad |||v_k|||\leq \frac{1}{k},\quad k=1,2,\ldots
 \end{equation*}
-Now it can be shown that a subsequence of $(v_k)$ converges in $\in H^{t-1}(\Omega)$ (see~\cite{Braess} page 32). We can therefore assume that $(v_k)$ itself converges, thus $(v_k)$ is a Cauchy sequence in $H^{t-1}(\Omega)$.
+Now it can be shown that a subsequence of $\{v_k\}_{k=1}^\infty$ converges in $\in H^{t-1}(\Omega)$ (see~\cite{Braess} page 32). We can therefore assume that $\{v_k\}_{k=1}^\infty$ itself converges, thus $\{v_k\}_{k=1}^\infty$ is a Cauchy sequence in $H^{t-1}(\Omega)$.
 This together with the fact that $|v_k|_t\to 0$ and
  %$\|v_k-v_\ell\|_t^2\leq\|v_k-v_\ell\|_{t-1}^2 + (|v_k|_t + |v_l|_t)^2$, 
 \begin{align*}
     \|v_k-v_\ell\|_t^2 &= \|v_k-v_\ell\|_{t-1}^2 + |v_k-v_\ell|_t^2 \\
     & \leq\|v_k-v_\ell\|_{t-1}^2 + {(|v_k|_t + |v_\ell|_t)}^2 ,
 \end{align*}
- we get that $(v_k)$ is a Cauchy sequence in $H^t(\Omega)$, and thus converges in $H^t(\Omega)$.
+ we get that $\{v_k\}_{k=1}^\infty$ is a Cauchy sequence in $H^t(\Omega)$, and thus converges in $H^t(\Omega)$.
 Thus by the continuity, we get 
 \begin{equation}
     \|v^*\|_t = 1\quad \text{and }|||v^*|||=0. 
 \end{equation}
-If $|v^*|_t = 0$ then $v^*$ is a polinomial of degree $t-1$, and from $v^*(z_i)=0$ for $i=1,2,\ldots,s$, we get $v^*=0\notin \mathcal{P}_{t-1}$,
+If $|v^*|_t = 0$ then $v^*$ is a polynomial of degree $t-1$, and from $v^*(z_i)=0$ for $i=1,2,\ldots,s$, we get $v^*=0\notin \mathcal{P}_{t-1}$,
 which is a contradiction, and proves the equivalence of the norms.
 \end{bev}
 
 Using Lemma~\ref{lem:6.2}, we can now define and prove the Bramble-Hilbert Lemma.
 
 \begin{lem}{Bramble-Hilbert Lemma}
-    Let $\Omega$ be a domain with a Lipschitz continous boundary. Suppose $t\geq 2$ and that $L$ is a bounded linear mapping from $H^t(\Omega)$ into a normed linear space $Y$.
+    Let $\Omega$ be a domain with a Lipschitz continuous boundary. Suppose $t\geq 2$ and that $L$ is a bounded linear mapping from $H^t(\Omega)$ into a normed linear space $Y$.
     If $\mathcal{P}_{t-1}\subset \ker L$, then there exists a constant $c$ such that~\label{lem:Bramble-Hilbert}
     \begin{equation}
         \|Lv\|\leq c|v|_t\quad \forall v\in H^t(\Omega).

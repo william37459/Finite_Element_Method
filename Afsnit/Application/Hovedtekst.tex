@@ -1,28 +1,67 @@
 
-All references in the following section will be refering to the code listed in \ref{app:Code}.
+All references in the following section will be refering to the code listed in Appendix~\ref{app:Code}.
 
-We start on line 10 by defining our solution $u$ as the function from Equation \eqref{eq:app_dirichlet}.
-After which we define two different interpolations of $u$ using the packages "numpy" and "ufl". 
-Next, we need to define the mesh and the functions space, we will be working in. 
-We do this on line 16-22, where $n$ defines the number of cells in each directions of our mesh, thus we get $n^2$ elements in total.
-Then "degree" defines the degree polynomial we use to interpolate our functions.
-Next step in the process is to define the trial and test functions on the domain $V$, which we do on line 24-26.
+There are three big parts. The first is a solver, 
+which solves a FEM-problem, using a certain number of cells, and a certain degree of polynomials. 
+The second is a function which calculates the error in $L_2$,
+which comes directly from~\cite{"fen-tutorial"}. 
+The last part is two functions which loops over a different amount of cells and degree of polynomials, 
+and outputs a table. 
 
-We then define the boundary condition, where we set the value of $u$ to be equal to a constant on the boundary of the domain,
-giving us a Dirichlet boundary condition. With the boundary condition established, we can move on to defining the bilinear form $a$ and the linear form $L$.
-With all this in place, we can now solve the problem using the PETSc package in FEniCS. Now we formulate the problem we want the program to solve, and use the function defined earlier to get the result. 
-After obtaining the solution, we can look at the error. We compute this using the $L_2$ norm.
+We start on line 10 by defining our solution $u$ as the function from Equation~\eqref{eq:app_dirichlet},
+after which we define two different interpolations of $u$ using the packages "numpy" and "ufl". 
+We do this for convience, as numpy are better for numerical apporiximations, and ufl is 
+easier to work with in FEniCSx.
+Next, we need to define the mesh and the function space we will be working in. 
+We do this on line 16-22, where $N$ defines the number of cells in each directions of our mesh, resulting in $N^2$ elements in total.
+Then `degree' defines the degree of polynomials we use in each cell.
+Next step in the process is to define the space of trial functions 
+and the space of test functions, which we do on line 24-26.
+In a different situation, these two spaces could have been different.
 
-The error in itself is not very interesting, as it does not give us any information about the convergence rate.
-The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh.
-Ideally we would like the error to decrease as we decrease the mesh size. This corresponds to showing that the error $e=k_e-k_h$ is bounded by $\|e\|\leq Ch^r$, 
-with being the mesh size, $r$ the convergence rate and $C$ some constant independent of $h$.
+We then define the boundary condition, which is simply the function $k$, as mentioned earlier.
+With the boundary condition established we can move on to defining the bilinear form $a$ and the linear form $L$.
+With all this in place, we can now solve the problem using the PETSc package in FEniCSx. 
+After obtaining the solution, we can look at the error, which can be computed using the $L_2$ norm.
 
-We will show this imperically by computing the error for different mesh sizes and comparing them. 
-This is done by defining a function which returns a table showing the error for different mesh sizes.
+%The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh.
+%Ideally we would like the error to decrease as we decrease the mesh size. This corresponds to showing that the error $e=k_e-k_h$ is bounded by $\|e\|\leq Ch^r$, 
+%with being the mesh size, $r$ the convergence rate and $C$ some constant independent of $h$.
+The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh and degree of polynomials.
+We will show this imperically by computing the error for different mesh sizes and degrees and comparing them. 
+In Table~\ref{tab:convergence}, 
+the error for five different mesh sizes are shown. 
+For each different mesh, the solution have been approximated using polynomials of degree one through ten.
+%The table shows the error decreases as we decrease the cell size for all degrees of the polynomials, 
+%and smaller sizes of cells increases the convergence rate dramatically. 
+%For example, at $h=0.03125$, the error is less than $40$ already at degree $6$, and 
+%for $h=0.0625$ to reach the same error, we need a degree of $8$, while bigger cells do not 
+%even reach that size of error.
+%Besides that, we can observe for a polynomial of degree $10$ the error changes by a factor $10^{-9}$ from a 
+%cell size of $0.25$ to $0.015625$. Meanwhile, for a polynomial of degree $5$ the error changes by a 
+%factor $10^{-6}$, and for a polynomial of degree $1$ the error changes by a factor $10^{-2}$. 
+%The degree of polynomials used to approximate thus affect the error, and convergence rate, greatly, 
+%which is in conjunction with both earlier theory and intuition. 
+As can be seen in Table~\ref{tab:convergence}, every time the degree of polynomials used in 
+approximations are increased by $1$, the error changes with a factor $10^{-1}$ or factor 
+$10^{-2}$, while a similar trend can be seen every time the cell size is halved. 
 
----------------------------
-%!FIXIT: Indsæt tabel her
-
-The tabel shows that the error decreases as we decrease the mesh size for all degrees of the polynomials.
-This is is ideal as it shows us that the error is bounded by $\|e\|\leq Ch^r$. (right?)
+However, when the error is very small, an increase in degree or decrease in cell size results in 
+a increase in error; this can for example be seen at $h=0.0625$ from degree $9$ to $10$, and 
+at $h=0.0156$ from degree $5$ to $6$. 
+Also, for degree $6$, the error also increases as the cell size is halved from $0.0312$ to $0.0156$.
+This can be explained both by computational accuracy for 
+numbers of this size, meaning rounding error and truncation, and the ratio between the radii of the
+inner and outer circles might increase, which can also be a factor here.
+\begin{figure}[ht]
+    \center~\input{Appendix/tabel_fejl.tex}
+    \caption{Table of convergence rate of errors}\label{tab:convergence}
+\end{figure}
+There can be some question as to whether using polynomials of degree $10$ and $64^2$ cells over a 
+$2$ by $2$ square is computationally practical in other settings. 
+This is where an evaluation of physical properties, like observational accuracy, desired precision and other 
+factors would come into play.
+There also exists algorithms for refining a coarse mesh. It involves finding hanging nodes, triangle 
+points which dissects other triangle edges, and splitting the triangles which are dissected. 
+However, making cells too small can cause the error estimates to diverge, as the ratio between the radii of the
+inner and outer circles might increase.

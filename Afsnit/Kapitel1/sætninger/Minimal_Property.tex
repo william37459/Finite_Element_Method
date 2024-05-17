@@ -1,13 +1,13 @@
 \begin{thmx}{Minimal Property}
     Let an elliptic PDE be given, and let $a_{ik}$ be the entries in the positive definite matrix $A$ for the PDE.
-    Every classical solution of the boundary-value problem, given by
+    Every classical solution of the boundary-value problem given by
 \begin{align}
 \begin{split}
     -\sum_{i,k} \partial_i (a_{ik}\partial_k u) + a_0 u &= f \quad \text{in } \Omega  \\
     u &= 0 \quad \text{on } \partial \Omega,
 \end{split}
 \end{align}
-    is a solution to the variational problem, given by
+    is a solution to the variational problem given by
     \[
         J(v)=\int_\Omega \left [\frac{1}{2}\sum_{i,k} a_{ik} \partial_i v\partial_k v + \frac{1}{2} a_0 v^2 -fv\right ]dx \longrightarrow \min,
     \]
@@ -15,7 +15,7 @@
     \label{thm:minimal_property} 
 \end{thmx}
 \begin{bev}
-    We start off by applying Green's formula
+    We start off by applying Green's formula,
     \begin{equation}
     \label{eq:Greens_formula}
         \int_\Omega v\partial_i w dx = -\int_\Omega w \partial_i v dx + \int_{\partial \Omega} v w \mathbf{n}_i ds.

@@ -1,3 +1,5 @@
+If a domain is regular enough it results in more requirements for the solution, which 
+we will introduce here.
 To introduce the Regularity Theorem, we must first define when a domain can be classified as regular
 
 \begin{defn}{\quad\label{defn:7.1}}
@@ -12,18 +14,24 @@ To introduce the Regularity Theorem, we must first define when a domain can be c
         \|u\|_s\leq c\|f\|_{s-2m}.
     \end{equation}
 \end{defn}
-
+We now introduce the theorem which uses regularity, without proof. Further information can be found in \cite{Braess}.
 \begin{thmx}{Regularity Theorem}
     Let $a(\cdot,\cdot)$ be a $H^1_0$-elliptic bilinear form with sufficiently smooth coefficient functions. Then the following holds; 
     \begin{enumerate}
-        \item if $\Omega$ is convex, then the Dirichlet problem is $H^2$-regular, 
-        \item if $\Omega$ has a $C^s$ boundary with $s\geq 2$, then the Dirichlet problem is $H^s$-regular.
+        \item if $\Omega$ is convex the Dirichlet problem is $H^2$-regular, 
+        \item if $\Omega$ has a $C^s$ boundary with $s\geq 2$ the Dirichlet problem is $H^s$-regular.
     \end{enumerate}
 \end{thmx}
 
 %\textbf{ANTAG HER, AT $\OO$ ER POLYGONELT OG KONVEKS}
 
-From this point on we will assume $\OO$ to be convex and polygonal, this is to ensure that a triangulation of $\OO$ is possible. In extension to this we can now look at the error of the finite element approximation.
+From this point on we will assume $\OO$ to be convex and polygonal to ensure that a triangulation of $\OO$ is possible. 
+In extension to this we can now look at the error of the finite element approximation.
+To do this, let $\mathcal{T}_h$ be a triangulation of $\OO$, and
+\begin{align*}
+    \mathcal{M}^k_0 =& \{ v \in L_2(\OO) \,|\, v|_T \in \mathcal{P} \text{ for every } T \in \mathcal{T}_h \} \cap C^0(\OO) \\
+    =& \{ v \in L_2(\OO) \,|\, v|_T \in \mathcal{P} \text{ for every } T \in \mathcal{T}_h \} \cap H^1(\OO) .
+\end{align*}
 
 \begin{thmx}{\quad}
     Suppose $\mathcal{T}_h$ is a family of shape-regular triangulation of $\Omega$. 
@@ -37,12 +45,11 @@ From this point on we will assume $\OO$ to be convex and polygonal, this is to e
     \end{align}\label{thm:7.3}
 \end{thmx}
 \begin{bev}
-    From the fact $\Omega$ is convex, we get that the problem is $H^2$-regular and that $\|u\|_2 \leq c_1\|f\|_0$.
-    From Theorem~\ref{thm:6.4} we get that some $v_h\in S_h$ satisfying 
+    Since $\Omega$ is convex the problem is $H^2$-regular and that $\|u\|_2 \leq c_1\|f\|_0$.
+    From Theorem~\ref{thm:6.4} some $v_h\in S_h$ exists, which satisfy 
     \begin{equation}
-    \|u-v_h\|_{1,\Omega} = \|u-v_h\|_{1,h} \leq c_2h\|u\|_{2,\Omega}
+    \|u-v_h\|_{1,\Omega} = \|u-v_h\|_{1,h} \leq c_2h\|u\|_{2,\Omega}.
     \end{equation}
-    exists. 
     Combining the prior statements with Céa's Lemma~\ref{lem:cea}, and 
     define $c = (1+c_1)c_2C/\alpha$ 
     to obtain Equation~\ref{eq:7.3}.

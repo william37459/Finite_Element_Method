@@ -1,5 +1,5 @@
 \begin{thmx}{Inverse Estimates\label{thm:inverse}}
-    Let $S_h$ be an affine family of finite elements, consisting of piecewise polynmoials of degreee $k$ associated with uniform partitions. 
+    Let $S_h$ be an affine family of finite elements, consisting of piecewise polynomials of degreee $k$ associated with uniform partitions. 
     Then there exists a constant $c$ such that for all $0 \leq m \leq t$,
     \begin{equation}
         {\|v_h\|}_{t,h} \leq ch^{m-t}\|v_h\|_{m,h} \quad \forall v \in \Pi_{\text{ref}}
@@ -14,10 +14,10 @@
     \end{equation}
     for some constant $c$.
     To obtain the inequality we consider the vector space $\Pi_{\text{ref}}\oplus \mathcal{P}_{m-1}$. Let $Iv \in \mathcal{P}_{m-1}$ be a polynomial that interpolates $v$ at fixed points. $|Iv|_t = 0$, since $t > m-1$ 
-    and by Bramble-Hilbert, \ref{lem:Bramble-Hilbert}, we get
+    and by Bramble-Hilbert,~\ref{lem:Bramble-Hilbert}, we get
     \begin{align}
-        |v|_t &= |v-Iv|_t \leq ||v-Iv||_t \\
-              &\leq c||v-Iv||_m \\
+        |v|_t &= |v-Iv|_t \leq ||v-Iv||_t \nonumber\\
+              &\leq c||v-Iv||_m \nonumber\\
               &\leq c'|v|_m\label{eq:bramble-hilbert-1}
     \end{align}
     where~\eqref{eq:bramble-hilbert-1} follows from the Bramble-Hilbert lemma with $L=1-I$. To extend to elements of size $h$, the same procedure as~\ref{thm:6.4} should be applied. This results in the factor $ch^{m-t}$ in the estimate. Lastly by summing the square of the expressions over all triangles or quadrilaterials leads to the desired result.

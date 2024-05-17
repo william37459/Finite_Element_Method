@@ -15,7 +15,7 @@ $u_h$ can be found using the following weak formulation:
 \begin{equation*}
     a(u_h, \psi_i) = \ell(\psi_i) \quad i = 1, 2, \ldots, N.
 \end{equation*}
-As $u_h \in S_h$, $u_h$ can be found to be a linear combination of the basis-fuctions, with 
+As $u_h \in S_h$, $u_h$ can be found to be a linear combination of the basis-functions, with 
 coefficients $z_i$, $i=1, 2, \ldots, N$. As $a$ is bilinear, we get the system of 
 equations
 \begin{equation*}
@@ -34,7 +34,7 @@ It can be shown that the matrix $A$ is symmetric and positive definite, when $a$
 The symmetry of $A$ follows directly from the symmetry of $a$, as $a$ is $H^m$-elliptic.
 To show that $A$ is positive definite, we need to show that $x^T Ax > 0$ for all $x \neq 0$. Thus
 \begin{align*}
-    x^T Ax &= \sum_{i,j} x_i A_{ik}x_k \\
+    x^T Ax &= \sum_{i,k} x_i A_{ik}x_k \\
     &= a\left(\sum_{k} x_k\psi_k,\sum_{i} x_i\psi_i\right) \\
     &= a(u_h,u_h) \geq \alpha \|u_h\|^2 > 0.
 \end{align*}
