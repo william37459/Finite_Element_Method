@@ -9,7 +9,7 @@ Since $F(y_1), F(z_1) \in T_2$, we have that $||Bx|| \leq 2r_2$, thus
 \begin{thmx}{\quad\label{thm:6.4}}
     Let $t \geq 2$, and suppose $\mathcal{T}_h$ is a shape-regular triangulation of $\OO$. Then there exists a constant $c$ such that
     \begin{equation}
-        \norm{u - I_h u}_{m,h} \leq c h^{t-m} \norm{u}_{t, H^t(\OO)}, \quad \forall u \in H^t(\OO), \quad 0 \leq m \leq t,
+        \norm{u - I_h u}_{m,h} \leq c h^{t-m} |u|_{t, H^t(\OO)}, \quad \forall u \in H^t(\OO), \quad 0 \leq m \leq t,
         \label{eq:6.5}
     \end{equation}
     where $I_h u$ denotes the interpolation by a piecewise polynomial of degreee $t-1$.
@@ -29,7 +29,7 @@ Since $F(y_1), F(z_1) \in T_2$, we have that $||Bx|| \leq 2r_2$, thus
         \begin{split}
         ||u-I_h u||_{m,T_j} &\leq c ||B^{-1}||^m |\det B |^{1/2} |\hat{u} - I_h \hat{u}|_{m,T_{\text{ref}}} \\
                             &\leq c ||B^{-1}||^m |\det B |^{1/2} c | \hat{u} |_{t,T_{\text{ref}}} \\
-                            &\leq c ||B^{-1}||^m |\det B |^{1/2} \cdot c ||B||^t \cdot |\det B |^{1/2} |u|_{t,T}  \\
+                            &\leq c ||B^{-1}||^m |\det B |^{1/2} \cdot c ||B||^t \cdot |\det B |^{-1/2} |u|_{t,T}  \\
                          &\leq c {\left( ||B||  \cdot ||B^{-1}|| \right)}^m ||B||^{t-m} |u|_{t,T}.
         \end{split}
     \end{align}

@@ -5,7 +5,8 @@ There are three big parts. The first is a solver,
 which solves a FEM-problem, using a certain number of cells, and a certain degree of polynomials. 
 The second is a function which calculates the error in $L_2$,
 which comes directly from~\cite{"fen-tutorial"}. 
-The last part is two functions which loops over a different amount of cells and degree of polynomials, 
+The last part is two functions, which loop over 
+various numbers of cells and polynomial degrees, 
 and outputs a table. 
 
 We start on line 10 by defining our solution $u$ as the function from Equation~\eqref{eq:app_dirichlet},
@@ -21,7 +22,7 @@ In a different situation, these two spaces could have been different.
 
 We then define the boundary condition, which is simply the function $k$, as mentioned earlier.
 With the boundary condition established we can move on to defining the bilinear form $a$ and the linear form $L$.
-With all this in place, we can now solve the problem using the PETSc package in FEniCSx. 
+With all this in place, we can now solve the problem using the PETSc interface from FEniCSx. 
 After obtaining the solution, we can look at the error, which can be computed using the $L_2$ norm.
 
 %The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh.
@@ -63,5 +64,5 @@ This is where an evaluation of physical properties, like observational accuracy,
 factors would come into play.
 There also exists algorithms for refining a coarse mesh. It involves finding hanging nodes, triangle 
 points which dissects other triangle edges, and splitting the triangles which are dissected. 
-However, making cells too small can cause the error estimates to diverge, as the ratio between the radii of the
+However, making cells distorted can cause the error estimates to diverge, as the ratio between the radii of the
 inner and outer circles might increase.

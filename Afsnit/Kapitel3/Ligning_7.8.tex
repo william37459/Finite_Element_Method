@@ -1,12 +1,12 @@
 \begin{thmx}{\quad\label{thm:max_error}}
     Let the $L_\infty$-norm be 
     \begin{equation*}
-        \|v\|_{\infty, \OO} = \sup_{x\in\OO} |v(x)|.
+        \|v\|_{\infty, \OO} = \esssup_{x\in\OO} |v(x)|.
     \end{equation*}
     Then 
     for a $H^2$-regular variational problem with a solution $u$, the following holds;
     \begin{equation}
-        \|u-u_h\|_{\infty}\leq ch|u|_2.
+        \|u-u_h\|_{\infty, \OO}\leq ch|u|_2.
     \end{equation}
 \end{thmx}
 \begin{bev}
@@ -28,27 +28,32 @@
             &\leq ch|u|_{2,T} \\
             &\leq ch|u|_{2,\Omega}.
         \end{split}
-        \label{eq:7.10}
     \end{align}
     From taking the maximum over all triangles, we get
     \begin{equation}
         \|u - I_h u \|_{\infty,\Omega} \leq ch|u|_{2,\Omega}.
+        \label{eq:7.10}
     \end{equation}
     Then by the affine argument, we can obtain the inverse estimate as
     \begin{equation}
         \|v_h\|_{\infty,\Omega} \leq ch^{-1} \|v_h\|_{0,\Omega} \quad \text{for all } v_h\in S_h.
     \end{equation}
     Then using Theorem~\ref{thm:6.4} and Corollary~\ref{kor:7.7}
+    for $u_h-I_h u\in S_h$
     we get
-    \begin{equation}
-        \|u-I_h u\|_{0,\Omega} \leq ch^2|u|_{2,\Omega}\quad \text{for } u_h-I_h u\in S_h.
-    \end{equation}
+    \begin{align*}
+        \|u_h-I_h u\|_{0,\Omega} &= \| (u-I_h u)-(u-u_h)\|_{0,\Omega} \\
+        & \leq \| u-I_h u\|_{0,\Omega}+\|u-u_h\|_{0,\Omega} \\
+        &\leq ch^2|u|_{2,\Omega}.
+    \end{align*}
     We then use the inverse estimate from earlier. Thus 
     \begin{align}
         \|u-u_h\|_{\infty,\Omega} &\leq \|u-I_h u\|_{\infty,\Omega} + \|u_h-I_h u\|_{\infty,\Omega} \\
-        &\leq \|u-I_h u\|_{\infty,\Omega} + ch^{-1} \|u_h-I_h u\|_{0,\Omega}.
+        &\leq \|u-I_h u\|_{\infty,\Omega} + ch^{-1} \|u_h-I_h u\|_{0,\Omega} \\
+        &\leq ch|u|_{2,\Omega} + ch^{-1} ch^2|u|_{2,\Omega}\\ 
+        &\leq \tilde{c}h|u|_{2,\Omega},
     \end{align}
-    The equations~\eqref{eq:6.5} and~\eqref{eq:7.10} then proves the statement.
+    which is the theorem.    
 \end{bev}
 Theorem~\ref{thm:max_error} gives us, as the observant reader might have guessed, 
 a maximum size of the error of our FEM approximation.

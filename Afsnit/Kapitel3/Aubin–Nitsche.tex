@@ -1,4 +1,4 @@
-Previously we introduced different boundaries to specific problems and we now expand on these to obtain a stronger error boundary for the finite element approximation. 
+Previously we introduced different bounds to specific problems and we now expand on these to obtain a stronger error bounds for the finite element approximation. 
 We do this by introducing the Aubin–Nitsche Theorem.
 \begin{thmx}{Aubin–Nitsche Theorem\label{thm:aubin-nitsche}}
     Let $H$ be a Hilbert space with norm $|\cdot|$ and a scalar product $(\cdot,\cdot)$.
@@ -21,9 +21,11 @@ We do this by introducing the Aubin–Nitsche Theorem.
     \begin{equation*}
         (g,w) \leq |g| \cdot |w| \implies \frac{(g,w)}{|g|} \leq |w|.
     \end{equation*}
-    By completeness of $H$, if we take supremum over all $g\in H$ such that 
-    $|g|\neq 0$, we still get a $g\in H$, and get 
-    an equality, meaning we can write
+    By using $g=w$ we get 
+    \begin{equation*}
+        \frac{(w,w)}{|w|} = |w| \leq |w|.
+    \end{equation*}
+    By taking supremum, we get
     \begin{equation}
         \sup_{g\in H} \frac{(g,w)}{|g|} = |w|. \label{eq:duality_argument}
     \end{equation}

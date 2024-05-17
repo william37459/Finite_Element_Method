@@ -1,16 +1,16 @@
-In this chapter we examine ways to find the solutions described in the previous chapter.
+In this chapter we examine ways to numerically approximate the solutions described in the previous chapter.
 The idea is essentially to partition the domain $\OO$ into a finite amount 
 of subsets, preferably with certain qualities, which we will discuss later. 
 
 Using these subsets, we can define a subspace of $H^m(\OO)$ or $H^m_0(\OO)$ 
 with a finite dimension, called $S_h$. 
 This could be a space of piecewise polynomials. 
-The variational problem, $J(v)$, can then be 
+The variational problem can then be 
 solved over this space, since an infinite number of dimensions can make 
 computation difficult, or impossible.
 
 There will be $2$ parts; in one we 
-will examine how the solution of $J$ behaves in $S_h$ versus the full space, 
+will examine how the minimizers of $J$ behaves in $S_h$ versus the full space, 
 and in the other we will discuss partitioning $\OO$, using a mesh.
 An \emph{element} or \emph{cell} is a 
 subset of $\OO$, meaning a geometric object, 
@@ -19,5 +19,5 @@ triple consisting of; a subset of $\OO$, a space of functions, and a set of
 linearly independent functionals on these functions.
 When the context makes the meaning clear, we might deviate from 
 this convention.
-We will start by limiting our discussion to a polygonial $\OO \in \RR^2$, which 
+We will start by limiting our discussion to a polygonial $\OO \subset \RR^2$, which 
 can be partitioned into triangles or quadrilaterals.

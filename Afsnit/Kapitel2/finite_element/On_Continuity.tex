@@ -11,19 +11,19 @@ the solution must `match up', coming from each element.
 One way to include this in the construction can be seen in the 
 following example.
 \begin{exmp}{\quad\label{exmp:c0_triangle_con}}
-For some $\OO$, let $\mathcal{T}$ be an admissible partition into 
+For some $\OO\subset \RR^2$, let $\mathcal{T}$ be an admissible partition into 
 triangles. 
 Let $t >0$, and for each finite element, let $\Pi = \mathcal{P}_t$, resulting 
 in finite elements with complete polynomials.
 In each $T_i$ place
-$s = (t+1)(t+2)/2$ points such that:
-\begin{itemize}
-    \item The points create a grid
-    \item There are $t+1$ points on each edge of $T_i$
-    \item Every point not on an edge is on an orthogonal intersection of lines drawn between points on the edges 
-\end{itemize} 
+$s = (t+1)(t+2)/2$ points such 
+there are $t+1$ points on each edge of $T_i$, with shared edges also 
+sharing points.
 An illustration of this can be seen in Figure~\ref{fig:triangle_nodal}, for 
 $t=5$.
+The points inside the triangle would not have to be as regular as they 
+have been depicted here, nor would the triangle hvave to be.
+
 By choosing values for each point, every polynomial on each $T_i$ 
 is uniquely determined (the proof of uniqueness can be found in~\cite{Braess}, page 64).
 By restricting the polynomials to an edge, they become polynomials of 
@@ -37,7 +37,7 @@ continuity.
 \begin{figure}[ht]
     \centering
     \input{Afsnit/Kapitel2/fig/triangle_element.tex}
-    \caption{Triangle element, with nodes for $t=5$}\label{fig:triangle_nodal}
+    \caption{A possible triangle element}\label{fig:triangle_nodal}
 \end{figure}
 Example~\ref{exmp:c0_triangle_con} demonstrates, that global continuity are 
 somewhat easy to obtain, and constructing finite elements using polynomials 
@@ -55,9 +55,9 @@ following example.
     for some $\OO$, let $\mathcal{T}$ be an admissible partition into 
     triangles, and let $\Pi_i = \mathcal{P}_5$ for each finite element.
     Remember that $\dim(\mathcal{P}_5) = 21$.
-    Let the values of the derivatives at each vertice be given up 
+    Let the values of the derivatives at each vertex be given up 
     to the $2$nd order, as well as the value of the normal derivative at the 
-    midpoint of each element.
+    midpoint of each side of each element.
     
     To ensure a solution in $C^1(\OO)$, 
     we now check the solution three ways; inside each element ($1$), 
@@ -74,9 +74,7 @@ following example.
     \textbf{1:} Inside each element, the solution is polynomial of degree $5$, 
     and therefore also $C^1(T_i)$.
 
-    \textbf{2:} At each vertice there is $6$ derivatives up to order $2$, which 
-    determines a polynomial of degree $5$ uniquely, and grants first 
-    degree differentiablity.
+    \textbf{2:} At each SPG ANTON
 
     \textbf{3:} Along the edge, the polynomials reduce to $1$ variable, and the 
     normal derivative is a polynomial of degree $4$. Since it follows 
@@ -116,13 +114,13 @@ can go wrong.
    \begin{equation*}
     f(x,y) = a + bx + cy + dxy.
    \end{equation*}
-   By specifying the values at every vertice of the element, every 
+   By specifying the values at every vertex of the element, every 
    function in $\Pi_i$ is uniquely determined. 
    As neighbouring elements share two vertices and values, and every $f\in\Pi_i$
    restricted to an edge is a linear function, we are guaranteed global 
    continuity. However, 
     as seen in Figure~\ref{fig:quad_element_bad}, if the element is rotated 
-   at $45^\circ$, the term $dxy$ disappears and global continuity are longer 
+   at $45^\circ$, the term $dxy$ disappears and global continuity is longer 
    guaranteed.
 
    This can of course be remedied by either choosing elements differently, 

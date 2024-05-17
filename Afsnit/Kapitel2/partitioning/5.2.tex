@@ -30,11 +30,11 @@
     \begin{equation}
         \int_\Omega \phi w_i dxdy = -\int_\Omega \partial_i \phi v dxdy.
     \end{equation}
-    Which by Definition~\ref{def:weak_derivative} implies that $w_i$ is the first order weak derivative of $v$.
+    This, by Definition~\ref{def:weak_derivative}, implies that $w_i$ is the first order weak derivative of $v$.
     As $v\in C^0(\bar\Omega)$ we get $v \in L_2(\OO)$. These facts together results in $v\in H^1(\OO)$ by definition.
 
     We now examine the other implication. 
-    Assuming $v\in H^1(\OO)$ we wish to show $v \in C^0(\bar{\OO})$. 
+    Assuming $v\in H^1(\OO)$ and piecewise differentiable, we wish to show $v \in C^0(\bar{\OO})$. 
     First we examine $v$ in the neighborhood of an edge of an element, and rotate the edge so it lies on the $y$-axis. 
     On the edge we define the interval $[y_1-\delta, y_2+\delta]$ for $y_1$ and $y_2$ on the edge, and $y_1<y_2$, and 
     $\delta > 0$.
@@ -49,8 +49,8 @@
     Suppose $v \in C^{\infty}(\OO)$. From the Cauchy-Scwarz inequality we get
     \begin{align}
         |\psi(x_2) -\psi(x_1)|^2 &= \left| \int_{x_1}^{x_2} \int_{y_1}^{y_2} \partial_1 v dx dy \right|^2\\
-        &\leq \left| \int_{x_1}^{x_2} \int_{y_1}^{y_2} 1 dx dy \right| \cdot | v |_{1, \OO}^2\\
-        &\leq |x_2 - x_1| \cdot |y_2 - y_1| \cdot | v |_{1, \OO}^2,
+        &\leq \left| \int_{x_1}^{x_2} \int_{y_1}^{y_2} 1 dx dy \right|^2 \cdot | v |_{1, \OO}^2\\
+        &\leq |x_2 - x_1|^2 \cdot |y_2 - y_1|^2 \cdot | v |_{1, \OO}^2,
     \end{align}
     which is Lipschitz continuity.
     Reusing the same density argument, since $C^\infty(\OO)$ is dense in $H^1(\OO)$, the previous inequality 

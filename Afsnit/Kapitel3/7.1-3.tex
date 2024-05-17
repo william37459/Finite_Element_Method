@@ -29,8 +29,8 @@ From this point on we will assume $\OO$ to be convex and polygonal to ensure tha
 In extension to this we can now look at the error of the finite element approximation.
 To do this, let $\mathcal{T}_h$ be a triangulation of $\OO$, and
 \begin{align*}
-    \mathcal{M}^k_0 =& \{ v \in L_2(\OO) \,|\, v|_T \in \mathcal{P} \text{ for every } T \in \mathcal{T}_h \} \cap C^0(\OO) \\
-    =& \{ v \in L_2(\OO) \,|\, v|_T \in \mathcal{P} \text{ for every } T \in \mathcal{T}_h \} \cap H^1(\OO) .
+    \mathcal{M}^k_0 =& \{ v \in L_2(\OO) \,|\, v|_T \in \mathcal{P}_k \text{ for every } T \in \mathcal{T}_h \} \cap C^0(\OO) \\
+    =& \{ v \in L_2(\OO) \,|\, v|_T \in \mathcal{P}_k \text{ for every } T \in \mathcal{T}_h \} \cap H^1(\OO) .
 \end{align*}
 
 \begin{thmx}{\quad}
@@ -46,7 +46,7 @@ To do this, let $\mathcal{T}_h$ be a triangulation of $\OO$, and
 \end{thmx}
 \begin{bev}
     Since $\Omega$ is convex the problem is $H^2$-regular and that $\|u\|_2 \leq c_1\|f\|_0$.
-    From Theorem~\ref{thm:6.4} some $v_h\in S_h$ exists, which satisfy 
+    From Theorem~\ref{thm:6.4} some $v_h\in S_h$ exists, which satisfies
     \begin{equation}
     \|u-v_h\|_{1,\Omega} = \|u-v_h\|_{1,h} \leq c_2h\|u\|_{2,\Omega}.
     \end{equation}
