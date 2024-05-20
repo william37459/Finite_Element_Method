@@ -9,7 +9,7 @@ import numpy as np
 import random
 from matplotlib import pyplot as plt
 
-def tabulate_convergence_rate(start=1, end=4): 
+def tabulate_convergence_rate(start=1, end=11): 
     chart = pv.Chart2D()
 
     for i in range(start, end):
