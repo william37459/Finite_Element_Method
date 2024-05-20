@@ -1,11 +1,26 @@
-To get a better overview of the error, we have made a graph of the error for different degrees of the polynomial and different sizes of $h$.
-This makes it more managable to see how the the different degrees and mesh sizes affect the error. 
-We see on Figure~\ref{fig:l2-fejl-plot} that in general the error decreases as the degree of the polynomial increases, although this is not the case for all mesh sizes.
-We see that the error decreases as the mesh size decreases up to polynomials of degree $8$, which can be seen more accurately in Table~\ref{tab:convergence_l2}, but this trend changes after this point.
-This trend should generally not be the case, but this could be due to the fact that the error is so small that the rounding errors become more significant.
-The $H^1$ error shown on Figure~\ref{fig:h1-fejl-plot} generally has the same tendency as the $L_2$ error, but as mentioned earlier the error is generally higher.
-However, the order of polynomial, where the tendency changes is different for the $H^1$ error, as it changes at degree $9$ instead of $8$, see Table~\ref{tab:convergence_H1}.
-Furthermore, after the change in tendency, the error does not increase as drastically as for the $L_2$ error. 
+To get a better overview of the error, 
+we have made a graph of the error for different degrees of the polynomial 
+and different sizes of $h$.
+This makes it more managable to see how the the different degrees and mesh 
+sizes affect the error. 
+We see on Figure~\ref{fig:l2-fejl-plot} that in general the error 
+decreases as the degree of the polynomial increases, 
+although this is not the case for all mesh sizes.
+We see that the error decreases as the mesh size decreases up 
+to polynomials of degree $8$, 
+which can be seen more accurately in Table~\ref{tab:convergence_l2}, 
+but this trend changes after this point.
+This trend should generally not be the case, 
+but this could be due to the fact that the error is so small that the 
+rounding errors become more significant.
+The $H^1$ error shown on Figure~\ref{fig:h1-fejl-plot} generally 
+has the same tendency as the $L_2$ error, 
+but as mentioned earlier the error is generally higher.
+However, the order of polynomial, where the tendency changes is 
+different for the $H^1$ error, as it changes at degree $9$ instead of $8$, 
+see Table~\ref{tab:convergence_H1}.
+Furthermore, after the change in tendency, 
+the error does not increase as drastically as for the $L_2$ error. 
 
 \begin{figure}
     \begin{centering}
