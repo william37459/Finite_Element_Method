@@ -101,7 +101,7 @@ def convergence_rate(error, Ns = [4, 8, 16, 32, 64], deg=1):
         hs[i] = f"{(1. / Ns[i]):.2e}"
     return [list(hs), list(Es)]
 
-def tabulate_convergence_rate(error, start=1, end=11): 
+def tabulate_convergence_rate(error, start=1, end=4): 
     for i in range(start, end):
         if(i == start):
             data = convergence_rate(error=error,deg=i)
@@ -112,4 +112,4 @@ def tabulate_convergence_rate(error, start=1, end=11):
             data[i].insert(0, f"{i}")
     print(tabulate(data, tablefmt='latex_raw'))
 
-#tabulate_convergence_rate(error_H10)
+tabulate_convergence_rate(error_H10)
