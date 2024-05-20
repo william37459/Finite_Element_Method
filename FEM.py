@@ -85,7 +85,7 @@ def error_H10(uh, u_ex, degree_raise=3):
         u_ex_W.interpolate(u_ex)
     e_W = fem.Function(W)
     e_W.x.array[:] = u_W.x.array - u_ex_W.x.array
-    error_H10 = fem.form(ufl.dot(ufl.grad(e_W), ufl.grad(e_W)) * ufl.dx)
+    error_H10 = fem.form(ufl.dot(ufl.grad(e_W), ufl.grad(e_W)) * ufl.dx + ufl.dot(e_W,e_W) * ufl.dx)
     E_H10 = np.sqrt(mesh.comm.allreduce(fem.assemble_scalar(error_H10), MPI.SUM))
     return E_H10
 
