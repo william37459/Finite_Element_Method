@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 
 def tabulate_convergence_rate(start=1, end=11): 
     chart = pv.Chart2D()
-
+    # for error in [FEM.error_H10, FEM.error_L2 ]:
     for i in range(start, end):
         h_and_error = FEM.convergence_rate(error=FEM.error_L2, deg=i)
         # chart.scatter(np.log(h_and_error[0]), np.log(h_and_error[1]), style="o", color=[random.randrange(1, 255), random.randrange(1, 255), random.randrange(1, 255)], label=f"Degree {i}")
