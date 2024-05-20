@@ -74,13 +74,15 @@ following example.
     \textbf{1:} Inside each element, the solution is polynomial of degree $5$, 
     and therefore also $C^1(T_i)$.
 
-    \textbf{2:} At each SPG ANTON
+    \textbf{2:} At each vertex, the function and the derivatives in the direction of the edge is 
+    is known. On the edge a polynomial of degree $5$ have 6 degrees of freedom, 
+    so the derivatives at the vertices guarantee global continuity.
 
     \textbf{3:} Along the edge, the polynomials reduce to $1$ variable, and the 
     normal derivative is a polynomial of degree $4$. Since it follows 
     the derivatives up to the first order at each end of the edge, and 
     the value is given at the midpoint, the normal derivative is uniquely 
-    determined as well.
+    determined as well, ensuring the continuity of the normal derivative.
 
     Thus the normal derivative is continuous everywhere, resulting in a 
     solution in $C^1(\OO)$. This element is well known, and called 
