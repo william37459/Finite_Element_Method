@@ -4,21 +4,21 @@ We see on Figure~\ref{fig:l2-fejl-plot} that in general the error decreases as t
 We see that the error decreases as the mesh size decreases up to polynomials of degree $8$, which can be seen more accurately in Table~\ref{tab:convergence_l2}, but this trend changes after this point.
 This trend should generally not be the case, but this could be due to the fact that the error is so small that the rounding errors become more significant.
 The $H^1$ error shown on Figure~\ref{fig:h1-fejl-plot} generally has the same tendency as the $L_2$ error, but as mentioned earlier the error is generally higher.
-However, the order of polynomial, where the tendency changes is different for the $H^1$ error, as it changes at degree $9$ instead of $8$, see Tabel~\ref{tab:convergence_H1}.
+However, the order of polynomial, where the tendency changes is different for the $H^1$ error, as it changes at degree $9$ instead of $8$, see Table~\ref{tab:convergence_H1}.
 Furthermore, after the change in tendency, the error does not increase as drastically as for the $L_2$ error. 
 
 \begin{figure}
     \begin{centering}
-    \includegraphics[scale=0.6]{l2-fejl-plot.jpeg}
+    \includegraphics[width=0.8\textwidth]{Afsnit/Application/figurer/l2-fejl-plot.jpeg}
     \caption{Plot of the $L_2$ error for the different degrees of the polynomial and different sizes of $h$.}
-    \end{centering}
     \label{fig:l2-fejl-plot}
-    \end{figure}
+    \end{centering}
+\end{figure}
 
 \begin{figure}
     \begin{centering}
-    \includegraphics[scale=0.6]{h1-fejl-plot.png}
+    \includegraphics[width=0.8\textwidth]{Afsnit/Application/figurer/h1-fejl_plot.png}
     \caption{Plot of the $H^1$ error for the different degrees of the polynomial and different sizes of $h$.}
-    \end{centering}
     \label{fig:h1-fejl-plot}
-    \end{figure}
+    \end{centering}
+\end{figure}
