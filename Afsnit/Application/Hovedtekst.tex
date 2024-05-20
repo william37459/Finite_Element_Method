@@ -23,12 +23,13 @@ In a different situation, these two spaces could have been different.
 We then define the boundary condition, which is simply the function $k$, as mentioned earlier.
 With the boundary condition established we can move on to defining the bilinear form $a$ and the linear form $L$.
 With all this in place, we can now solve the problem using the PETSc interface from FEniCSx. 
-After obtaining the solution, we can look at the error, which can be computed using the $L_2$ norm.
-
+\input{Afsnit/Application/Grafer.tex}
 %The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh.
 %Ideally we would like the error to decrease as we decrease the mesh size. This corresponds to showing that the error $e=k_e-k_h$ is bounded by $\|e\|\leq Ch^r$, 
 %with being the mesh size, $r$ the convergence rate and $C$ some constant independent of $h$.
-The convergence rate tells us how fast the error decreases as we increase the number of elements in our mesh and degree of polynomials.
+
+Examining the error can show us the 
+convergence rate, which tells us how fast the error decreases as we increase the number of elements in our mesh and degree of polynomials.
 We will show this imperically by computing the error for different mesh sizes and degrees and comparing them. 
 In Table~\ref{tab:convergence_l2}, 
 the error for five different mesh sizes are shown. 
