@@ -1,23 +1,25 @@
 
 All references in the following section will be refering to the code listed in Appendix~\ref{app:Code}.
 
-There are three big parts. The first is a solver, 
+There are three big parts, contained in section~\ref{app:FEM}. 
+The other 2 code files, found in section~\ref{app:code_plots}, are for the plots found in this chapter.
+The first part in~\ref{app:FEM} is a solver, 
 which solves a FEM-problem, using a certain number of cells, and a certain degree of polynomials. 
-The second is a function which calculates the error in $L_2$,
+The second is two functions which calculates the error in $L_2$ and $H^1$,
 which comes directly from~\cite{"fen-tutorial"}. 
 The last part is two functions, which loop over 
 various numbers of cells and polynomial degrees, 
 and outputs a table. 
 
-We start on line 10 by defining our solution $u$ as the function from Equation~\eqref{eq:app_dirichlet},
+We start on line 11 by defining our solution $u$ as the function from Equation~\eqref{eq:app_dirichlet},
 after which we define two different interpolations of $u$ using the packages "numpy" and "ufl". 
 We do this for convience, as numpy are better for numerical apporiximations, and ufl is 
 easier to work with in FEniCSx.
 Next, we need to define the mesh and the function space we will be working in. 
-We do this on line 16-22, where $N$ defines the number of cells in each directions of our mesh, resulting in $N^2$ elements in total.
+We do this on line 20-23, where $N$ defines the number of cells in each directions of our mesh, resulting in $N^2$ elements in total.
 Then `degree' defines the degree of polynomials we use in each cell.
 Next step in the process is to define the space of trial functions 
-and the space of test functions, which we do on line 24-26.
+and the space of test functions, which we do on line 26-27.
 In a different situation, these two spaces could have been different.
 
 We then define the boundary condition, which is simply the function $k$, as mentioned earlier.
@@ -52,9 +54,9 @@ However, when the error is very small, an increase in degree or decrease in cell
 an increase in error; this can for example be seen at $h=0.0625$ from degree $9$ to $10$, and 
 at $h=0.0156$ from degree $5$ to $6$. 
 Also, for degree $6$, the error also increases as the cell size is halved from $0.0312$ to $0.0156$.
-This can be explained both by computational accuracy for 
+This could be explained both by computational accuracy for 
 numbers of this size, meaning rounding error and truncation, and the ratio between the radii of the
-inner and outer circles might increase, which can also be a factor here.
+inner and outer circles might increase, which could also be a factor here.
 \begin{figure}[ht]
     \center~\input{Appendix/tabel_fejl.tex}
     \caption{Table of convergence rate of errors using the $L_2$-norm}\label{tab:convergence_l2}
