@@ -2,8 +2,92 @@
 \section{Finite Element Method}
 \subsection{Opdeling}
 \begin{frame}{$S_h$}{}
-\end{frame}
+    Ud fra $H^m(\OO)$ or $H^m_0(\OO)$ definer et endeligt underrum
 
+\begin{equation*}
+    J(v) = \frac{1}{2}a(v,v) - \ell(v) \to \underset{S_h}{\min}.
+\end{equation*}
+
+\begin{equation*}
+    a(u_h,v) = \ell(v) \quad \forall v \in S_h.
+\end{equation*}
+\end{frame}
+\begin{frame}{Basisvektorer}
+   \begin{itemize}
+    \item Let $ \{ \psi_1, \psi_2, \ldots, \psi_N \}$ be a basis for $S_h$ 
+    \item $ a(u_h, \psi_i) = \ell(\psi_i) \quad i = 1, 2, \ldots, N $ 
+    \item $\sum_{k=1}^N z_k a(\psi_k,\psi_i) = \ell(\psi_i) \quad i = 1,2,\ldots,N $
+   \end{itemize} 
+   \begin{equation*}
+    Az = b
+   \end{equation*}
+\end{frame}
+\begin{frame}{Sammenhæng mellem $H^k$ og $C^{k-1}$}
+   \begin{theorem}
+    Let $k\geq1$ and suppose $\Omega$ is bounded. Then a piecewise infinitely differentiable function $v:\bar{\Omega}\rightarrow \mathbb{R}$
+    belongs to $H^k(\Omega)$ if and only if $v\in C^{k-1}(\bar{\Omega})$.
+   \end{theorem} 
+\end{frame}
+\begin{frame}{Bevis}
+    Vi begrænser os til $\RR^2$ og starter med $k=1$. Antag $v\in C^0(\bar{\OO})$. 
+    Lad $\phi \in C^\infty_0(\OO)$
+    \begin{align}
+    \begin{split}
+    \int_\Omega \phi w_i dxdy &= \sum_j\int_{T_j} \phi \partial_i v dx dy \\
+        &= \sum_j \left( -\int_{T_j} \partial_i \phi v dxdy + \int_{\partial T_j} \phi v \mathbf{n}_i ds\right).
+    \end{split}
+    \end{align}
+    Hvilket resulterer i:
+    \begin{equation}
+        \int_\Omega \phi w_i dxdy = -\int_\Omega \partial_i \phi v dxdy.
+    \end{equation}
+\end{frame}
+\begin{frame}{Bevis}
+   \begin{itemize}
+    \item Antag $v\in H^1(\OO)$ 
+    \item Roter kanten så vi ligger på $y$-aksen 
+    \item Definer $[y_1-\delta, y_2 +\delta]$, $y_1<y_2$ på kanten
+   \end{itemize} 
+   Definer 
+    \begin{equation}
+        \psi (x) = \int_{y_1}^{y_2} v(x,y) dy.
+    \end{equation}
+    \begin{align}
+        |\psi(x_2) -\psi(x_1)|^2 &= \left| \int_{x_1}^{x_2} \int_{y_1}^{y_2} \partial_1 v dx dy \right|^2\\
+        &\leq \left| \int_{x_1}^{x_2} \int_{y_1}^{y_2} 1 dx dy \right|^2 \cdot | v |_{1, \OO}^2\\
+        &\leq |x_2 - x_1|^2 \cdot |y_2 - y_1|^2 \cdot | v |_{1, \OO}^2,
+    \end{align}
+\end{frame}
 \subsection{Finite Elements}
-\begin{frame}{Konstruktion}{}
+\begin{frame}{Finite Element og reference}{}
+    Lad 
+    \begin{equation*}
+        (T,\Pi,\Sigma)
+    \end{equation*}
+    være et finite element.
+    \begin{definition}[Reference Finite Element]
+    Let $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ be a finite element 
+    with $T_{\text{ref}}\in \mathcal{T}$ for som admissible partition of 
+    $\OO$, and 
+    $F$ an affine transformation. 
+    Assume that for $T_i\in\mathcal{T}$ the following 
+    is true for the corresponding finite element $(T_i, \Pi_i,\Sigma_i)$:
+    \begin{itemize}
+        \item $F(T_{\text{ref}}) = T_i$
+        \item $\{ f\circ F \,|\,  f \in \Pi_i \} =\Pi_{\text{ref}}  $
+        \item $\{ s(f\circ F) \,|\, f \in \Pi_i, s \in \Sigma_{\text{ref}} \} = \Sigma_i$
+    \end{itemize}
+    If the previous equalities are true for all $T_i\in \mathcal{T}$ we call 
+    $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ the finite reference 
+    element.
+    \end{definition}
+\end{frame}
+\subsection{Konstruktion}
+\begin{frame}{Eksempel på konstruktion}
+\begin{enumerate}
+    \item Lad $\OO\subset \RR^2$, og $\mathcal{T}$ være en admissible partition for trekanter 
+    \item Lad $t >0$ og $\Pi = \mathcal{P}_t$ for alle finite elements  
+    \item Placer $s = (t+1)(t+2)/2$ punkter, med $t+1$ på hver kant
+\end{enumerate}
+Kontinuitet vs. differentiabilitet
 \end{frame}
