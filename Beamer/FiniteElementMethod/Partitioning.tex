@@ -1,28 +1,4 @@
-\begin{frame}{Finite Element Method}{General Idea}
-    \begin{itemize}
-        \item Partition the domain $\Omega$.
-        \item Define subspace with finite dimension $S_h$.
-        \item Elements/Cells.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Finite Element Method}{Partitioning}
-    \begin{itemize}
-        \item Splicing functions over each cell.
-        \item Edge restrictions.
-        \item Solve the varational problem over $S_h$.
-        \begin{equation}
-            J(v) = \frac{1}{2} a(v,v) - \ell(v) \rightarrow \min_{S_h}.
-        \end{equation}
-        \item Solution $u_h \in S_h$,
-        \begin{equation}
-            a(u_h,v) = \ell(v) \quad \forall v \in S_h.
-        \end{equation}
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Finite Element Method}{Finite Elements}
-    \begin{defn}{Finite Element}
         A finite element is a triple $(T, \Pi,\Sigma)$ which has the following properties:
         \label{def:finite_element}
         \begin{enumerate}
@@ -31,13 +7,12 @@
             \item $\Sigma$ is a set of $s$ linearly independent functionals on $\Pi$. 
             Every $p\in \Pi$ is uniquely defined by the values of the $s$ functionals in $\Sigma$.
         \end{enumerate}
-    \end{defn}
 \end{frame}
 
 \begin{frame}{Finite Element Method}{Reference Finite Element}
     \begin{itemize}
         \item Why do we need a Reference Finite Element?
-        \item \begin{defn}
+        \item 
             Let $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ be a finite element 
         with $T_{\text{ref}}\in \mathcal{T}$ for som admissible partition of 
         $\OO$, and 
@@ -52,14 +27,5 @@
         If the previous equalities are true for all $T_i\in \mathcal{T}$ we call 
         $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ the finite reference 
         element.
-        \end{defn}
     \end{itemize}
-\end{frame}
-
-\begin{frame}{Finite Element Method}{Partition into triangles and quadrilaterals}
-    \begin{itemize}
-        \item Triangulation.
-        \item Quadrilateral partition.
-    \end{itemize}
-    
 \end{frame}

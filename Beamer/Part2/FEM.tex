@@ -1,16 +1,28 @@
 
 \section{Finite Element Method}
+\begin{frame}{Finite Element Method}{General Idea}
+    \begin{itemize}
+        \item Partition the domain $\Omega$.
+        \item Define subspace with finite dimension $S_h$.
+        \item Elements/Cells.
+    \end{itemize}
+\end{frame}
 \subsection{Opdeling}
 \begin{frame}{$S_h$}{}
     Ud fra $H^m(\OO)$ or $H^m_0(\OO)$ definer et endeligt underrum
 
-\begin{equation*}
-    J(v) = \frac{1}{2}a(v,v) - \ell(v) \to \underset{S_h}{\min}.
-\end{equation*}
-
-\begin{equation*}
-    a(u_h,v) = \ell(v) \quad \forall v \in S_h.
-\end{equation*}
+    \begin{itemize}
+        \item Splicing functions over each cell.
+        \item Edge restrictions.
+        \item Solve the varational problem over $S_h$.
+        \begin{equation}
+            J(v) = \frac{1}{2} a(v,v) - \ell(v) \rightarrow \min_{S_h}.
+        \end{equation}
+        \item Solution $u_h \in S_h$,
+        \begin{equation}
+            a(u_h,v) = \ell(v) \quad \forall v \in S_h.
+        \end{equation}
+    \end{itemize}
 \end{frame}
 \begin{frame}{Basisvektorer}
    \begin{itemize}
@@ -59,29 +71,7 @@
     \end{align}
 \end{frame}
 \subsection{Finite Elements}
-\begin{frame}{Finite Element og reference}{}
-    Lad 
-    \begin{equation*}
-        (T,\Pi,\Sigma)
-    \end{equation*}
-    være et finite element.
-    \begin{definition}[Reference Finite Element]
-    Let $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ be a finite element 
-    with $T_{\text{ref}}\in \mathcal{T}$ for som admissible partition of 
-    $\OO$, and 
-    $F$ an affine transformation. 
-    Assume that for $T_i\in\mathcal{T}$ the following 
-    is true for the corresponding finite element $(T_i, \Pi_i,\Sigma_i)$:
-    \begin{itemize}
-        \item $F(T_{\text{ref}}) = T_i$
-        \item $\{ f\circ F \,|\,  f \in \Pi_i \} =\Pi_{\text{ref}}  $
-        \item $\{ s(f\circ F) \,|\, f \in \Pi_i, s \in \Sigma_{\text{ref}} \} = \Sigma_i$
-    \end{itemize}
-    If the previous equalities are true for all $T_i\in \mathcal{T}$ we call 
-    $(T_{\text{ref}}, \Pi_{\text{ref}},\Sigma_{\text{ref}})$ the finite reference 
-    element.
-    \end{definition}
-\end{frame}
+\input{FiniteElementMethod/Partitioning.tex}
 \subsection{Konstruktion}
 \begin{frame}{Eksempel på konstruktion}
 \begin{enumerate}
