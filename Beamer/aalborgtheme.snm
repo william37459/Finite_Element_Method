@@ -1,1 +1,5 @@
-\beamer@slide {def:finite_element}{4}
+\beamer@slide {thm:existence_hom_dirichlet}{9}
+\beamer@slide {thm:neumann_solution_existence}{11}
+\beamer@slide {eq:neuman_condition_boundary}{11}
+\beamer@slide {def:finite_element}{18}
+\beamer@slide {eq:aubin_nitsche_antagelse}{24}

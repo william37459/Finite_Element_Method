@@ -1,11 +1,93 @@
 
 \section{PDE og grænsebetingelser}
-\subsection{Dirichlet}
-\begin{frame}{Homogene Dirichlet Grænsebetingelser}{}
+\subsection{Basis om PDE}
+\begin{frame}{Basis om PDE}{}
+    \begin{equation*}
+        f(x) = c(x) u + \sum_{i=1}^{n}b_i(x)u_{x_{i}}
+       - \sum_{i,k=1}^{n}a_{ik}(x)u_{x_i x_k}
+   \end{equation*}    
+
+   Elliptisk i $x$, hvis $A(x)$ er positiv definit
 \end{frame}
 
-\begin{frame}{Inhomogene Dirichlet Grænsebetingelser}{}
+\begin{frame}{Differential operator}{}
+    Lad $L$ være den partielle differential operator defineret som
+    \begin{equation}
+        Lu = - \sum_{i,k=1}^n \partial_i(a_{ik} \partial_k u)+ a_0u,
+    \end{equation}
+    hvor $a_{ik}$ er indgange i en matrix $A(x)$.
 \end{frame}
+
+\begin{frame}{Sobolev rum}{}
+    Lad $m \geq 0$ være et helttal, så er $H^m(\Omega)$
+    \begin{equation*}
+        H^m(\Omega) = \{  f \in L_2(\Omega) \mid \partial ^{\alpha}f \in 
+        L_2(\Omega) \quad \forall |\alpha| \leq m  \}.
+    \end{equation*}
+    **** Skal ikke med ****
+    In other words, $H^m(\Omega)$ is the set of functions in $L_2(\Omega)$ 
+    which possess weak derivatives up to degree $m$.
+\end{frame}
+
+\begin{frame}{Friedrichs ulighed}{}
+    Lad $\Omega$ være indeholdt i en hyperkube med sidelængde $s$. Så gælder
+    \begin{equation*}
+        \| v \|_{k} \leq s |v|_{k+1}, \forall v \in H_0^1(\Omega), C \in \RR.
+    \end{equation*}
+\end{frame}
+
+\subsection{Dirichlet}
+\begin{frame}{Homogene Dirichlet Grænsebetingelser}{}
+    \begin{align*}
+        Lu &= f \quad \text{in } \Omega\\
+        u &= 0 \quad \text{on } \partial \Omega.
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Minimal egenskab}{}
+    Let an elliptic PDE be given, and let $a_{ik}$ be the entries in the positive definite matrix $A$ for the PDE.
+    Every classical solution of the boundary-value problem given by
+    \begin{align}
+        -\sum_{i,k} \partial_i (a_{ik}\partial_k u) + a_0 u &= f \quad \text{in } \Omega  \\
+        u &= 0 \quad \text{on } \partial \Omega,
+    \end{align}
+        is a solution to the variational problem given by
+        \[
+            J(v)=\int_\Omega \left [\frac{1}{2}\sum_{i,k} a_{ik} \partial_i v\partial_k v + \frac{1}{2} a_0 v^2 -fv\right ]dx \longrightarrow \min,
+        \]
+        among all functions in $C^2(\Omega)\cap C^0(\bar{\Omega})$ with zero boundary values.
+\end{frame}
+
+\begin{frame}{Eskistens sætning}{}
+    Let $L$ be the second order uniformly elliptic partial differential operator from~\eqref{def:pde_operator}.\label{thm:existence_hom_dirichlet}
+    Then the homogeneous Dirichlet problem, always has a weak solution in $H_0^1(\OO)$. It is a minimum of the variational problem
+   \begin{equation}
+       J(v)=\frac{1}{2} a(v,v) - {(f, v)}_0 \rightarrow \text{min}
+   \end{equation}
+   over $H_0^1(\OO)$.
+\end{frame}
+
 \subsection{Neumann}
 \begin{frame}{Neumann Grænsebetingelser}{}
+    Let $\frac{\partial u}{\partial \mathbf{n}}= \mathbf{n}\cdot \nabla u$ be the normal derivative. Then the Neumann boundary condition is given by
+    \begin{equation}
+        \frac{\partial u}{\partial \mathbf{n}}  = g\quad \text{on } \partial \Omega.
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Neumann Grænsebetingelser}{}
+    Let $\OO$  be bounded, have a piecewise smooth boundary, and satisfy the~\label{thm:neumann_solution_existence}
+    cone condition. Let $f \in L_2( \OO)$ and $g\in L_2(\partial \OO)$.
+    There exists a unique $u \in H^1(\OO)$ that solves the variational problem 
+    \begin{equation*}
+     J(v) = \frac{1}{2}a(v,v) - {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} \to \min.
+    \end{equation*}
+    Also, $u \in C^2(\OO)\cap C^1(\bar{\OO})$ if and only if a classical solution 
+    of 
+    \begin{align}
+     Lu &= f \quad \text{ in }\OO, \nonumber \\
+     \sum_{i,k}  \mathbf{n}_i a_{ik} \partial_k u &= g \quad \text{ on } \partial \OO, \label{eq:neuman_condition_boundary}
+    \end{align}
+    exists, in which case these $2$ solutions are the same. Here $\mathbf{n}$ is outward 
+    pointing normal on $\partial \OO$, defined almost everywhere.
 \end{frame}
