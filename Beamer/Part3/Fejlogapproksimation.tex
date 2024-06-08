@@ -1,4 +1,5 @@
 \section{Teoretiske fejl}
+\iffalse
 \begin{frame}{Sætning 4.6}{}
     \begin{theorem}
     Let $t \geq 2$, and suppose $\mathcal{T}_h$ is a shape-regular triangulation of $\OO$. Then there exists a constant $c$ such that
@@ -35,6 +36,20 @@
     \end{equation}
 %VI HAR SKIFTET \ell OG m
 \end{frame}
+\fi
+\begin{frame}{$H$-regularitet}
+    \begin{theorem}
+    Suppose $\mathcal{T}_h$ is a family of shape-regular triangulation of $\Omega$. 
+    Then the finite element approximation $u_h\in S_h = \mathcal{M}^k_0$, $k\geq 1$ satisfies
+    \begin{align}
+        \begin{split}
+            \|u-u_h\|_1&\leq ch\|u\|_2\ \\
+            &\leq ch\|f\|_0.
+        \end{split}
+        \label{eq:7.3}
+    \end{align}\label{thm:7.3}
+    \end{theorem}
+\end{frame}
 
 \begin{frame}{Aubin–Nitsche}
     \begin{theorem}
@@ -54,7 +69,16 @@
     \end{theorem}
 \end{frame}
 
+\iffalse    Vi starter med
+    \begin{equation*}
+        (g,w) \leq |g| \cdot |w| \implies \frac{(g,w)}{|g|} \leq |w|.
+    \end{equation*}
+    \begin{equation}
+        \sup_{g\in H} \frac{(g,w)}{|g|} = |w|. \label{eq:duality_argument}
+    \end{equation}
+    \fi
 \begin{frame}{Bevis}
+    Undersøg finite element solution
     \begin{align*}
         a(u,v) &= f(v) \quad \forall v \in V, \\
         a(u_h,v) &= f(v) \quad \forall v \in S_h\\
@@ -65,7 +89,7 @@
 \begin{frame}{Bevis}
     \begin{align*}
         (g,u-u_h) &= a(u-u_h,\varphi _g) \\
-                  &=a(u-u_h, \varphi_g -g) \\
+                  &=a(u-u_h, \varphi_g -v) \\
                   &\leq C \|u-u_h\| \cdot \|\varphi_g-v\|.
     \end{align*}
 
