@@ -47,6 +47,22 @@
         blandt alle funktioner i $C^2(\Omega)\cap C^0(\bar{\Omega})$ med nul grænse værdier.
 \end{frame}
 
+\begin{frame}{Minimal egenskab}{}
+    Den uniforme ellipticitet medfører følgende punktvise estimat
+    \[
+        \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
+    \]
+    for $C^1(\OO)$ funktioner.
+    Ved at følge de samme tætheds argumenter som i beviset for Friedrichs ulighed, er $C^1(\OO)$ tæt i $H^1(\OO)$, og derfor er alle $u \in H^1(\OO)$ repræsenteret i $C^1(\OO)$, og dermed kan den tidligere antagelse generaliseres til $H^1(\OO)$.
+    Ved at integrere begge sider og anvende $\text{a}_0 \geq 0$ får vi
+    \begin{equation}
+        a(v,v) \geq \alpha \sum_i \int_\OO {\left(\partial_i v\right)}^2 dx = \alpha |v|^2_1, \quad \forall v \in H^1(\OO).
+    \end{equation}
+    Vi ved fra Friedrichs ulighed at $|\cdot|_1$ og $\| \cdot \|_1$ er ækvivalente normer på $H_0^1$,
+    hvilket medfører at $a$ er en $H^1$-elliptisk bilinear form på $H_0^1(\OO)$.
+    Fra Lax-Milgram findes der en entydig svag løsning til variational problemet, som også er en løsning til variations problemet.
+\end{frame}
+
 \begin{frame}{Eskistens sætning}{}
     Lad $L$ være en anden ordens uniformt elliptisk differential operator. Så har det homogene Dirichlet problem altid en svag løsning i $H_0^1(\OO)$. Det er et minimum af variational problemet
    \begin{equation}
