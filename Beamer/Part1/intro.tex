@@ -18,13 +18,6 @@
     \end{equation*}
 \end{frame}
 
-\begin{frame}{Friedrichs ulighed}{}
-    Lad $\Omega$ være indeholdt i en hyperkube med sidelængde $s$. Så gælder
-    \begin{equation*}
-        \| v \|_{k} \leq s |v|_{k+1}, \forall v \in H_0^1(\Omega), C \in \RR.
-    \end{equation*}
-\end{frame}
-
 \subsection{Dirichlet}
 \begin{frame}{Homogene Dirichlet Grænsebetingelser}{}
     \begin{align*}
@@ -47,7 +40,17 @@
         blandt alle funktioner i $C^2(\Omega)\cap C^0(\bar{\Omega})$ med nul grænse værdier.
 \end{frame}
 
-\begin{frame}{Minimal egenskab}{}
+
+\begin{frame}{Eksistens sætning}{}
+    Lad $L$ være en anden ordens uniformt elliptisk differential operator. Så har det homogene Dirichlet problem altid en svag løsning i $H_0^1(\OO)$. Det er et minimum af variational problemet
+   \begin{equation}
+       J(v)=\frac{1}{2} a(v,v) - {(f, v)}_0 \rightarrow \text{min}
+   \end{equation}
+   på $H_0^1(\OO)$.
+\end{frame}
+
+
+\begin{frame}{Eksistens sætning}{Bevis}
     Den uniforme ellipticitet medfører følgende punktvise estimat
     \[
         \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
@@ -61,14 +64,6 @@
     Vi ved fra Friedrichs ulighed at $|\cdot|_1$ og $\| \cdot \|_1$ er ækvivalente normer på $H_0^1$,
     hvilket medfører at $a$ er en $H^1$-elliptisk bilinear form på $H_0^1(\OO)$.
     Fra Lax-Milgram findes der en entydig svag løsning til variational problemet, som også er en løsning til variations problemet.
-\end{frame}
-
-\begin{frame}{Eskistens sætning}{}
-    Lad $L$ være en anden ordens uniformt elliptisk differential operator. Så har det homogene Dirichlet problem altid en svag løsning i $H_0^1(\OO)$. Det er et minimum af variational problemet
-   \begin{equation}
-       J(v)=\frac{1}{2} a(v,v) - {(f, v)}_0 \rightarrow \text{min}
-   \end{equation}
-   på $H_0^1(\OO)$.
 \end{frame}
 
 \subsection{Neumann}
