@@ -55,15 +55,12 @@
     \[
         \sum_{i,k} a_{ik} \partial_i v \partial_k v \geq \alpha \sum_i {\left( \partial_i v \right)}^2,
     \]
-    for $C^1(\OO)$ funktioner.
-    Ved at følge de samme tætheds argumenter som i beviset for Friedrichs ulighed, er $C^1(\OO)$ tæt i $H^1(\OO)$, og derfor er alle $u \in H^1(\OO)$ repræsenteret i $C^1(\OO)$, og dermed kan den tidligere antagelse generaliseres til $H^1(\OO)$.
-    Ved at integrere begge sider og anvende $\text{a}_0 \geq 0$ får vi
+    for $C^1(\OO)$ funktioner.\\
+    Pr tæthedsargumentet er $C^1(\OO)$ tæt i $H^1(\OO)$, kan vi generelaisere antagelserne til $H^1(\OO)$.
     \begin{equation}
         a(v,v) \geq \alpha \sum_i \int_\OO {\left(\partial_i v\right)}^2 dx = \alpha |v|^2_1, \quad \forall v \in H^1(\OO).
     \end{equation}
-    Vi ved fra Friedrichs ulighed at $|\cdot|_1$ og $\| \cdot \|_1$ er ækvivalente normer på $H_0^1$,
-    hvilket medfører at $a$ er en $H^1$-elliptisk bilinear form på $H_0^1(\OO)$.
-    Fra Lax-Milgram findes der en entydig svag løsning til variational problemet, som også er en løsning til variations problemet.
+    Fra Lax-Milgram findes der en entydig svag løsning til variational problemet.
 \end{frame}
 
 \subsection{Neumann}
@@ -74,7 +71,7 @@
     \end{equation}
 \end{frame}
 
-\begin{frame}{Neumann Grænsebetingelser}{}
+\begin{frame}{Neumann Grænsebetingelser}{Løsning}
     Lad $\OO$ være begrænset, have en stykkevis glat rand, og opfylde cone condition. Lad $f \in L_2(\OO)$ og $g\in L_2(\partial \OO)$. Der eksisterer en entydig $u \in H^1(\OO)$ som løser variational problemet
     \begin{equation*}
      J(v) = \frac{1}{2}a(v,v) - {(f,v)}_{0,\OO} - {(g,v)}_{0,\partial\OO} \to \min.
